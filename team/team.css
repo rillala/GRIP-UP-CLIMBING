@@ -1,6 +1,6 @@
 .header {
   height: 550px;
-  background-image: url("/team/team-heroimg.png");
+  background-image: url("team-heroimg.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
