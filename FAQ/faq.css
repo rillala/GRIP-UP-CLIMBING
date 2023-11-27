@@ -1,0 +1,215 @@
+.header {
+  height: 782px;
+  background-image: url("faqheroimg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header .pagelink ul {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1268px;
+  margin: 90px auto 0;
+}
+
+header .pagelink ul a {
+  width: 260px;
+}
+
+/* 海報區域 */
+
+.poster {
+  width: 60%;
+  margin: 100px auto;
+}
+
+.poster .pic {
+  width: 100%;
+  position: relative;
+}
+
+.poster .pic img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.poster .pic .slogan {
+  width: 500px;
+  height: 100px;
+  background-color: var(--orange);
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  left: -190px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 20px;
+  text-align: end;
+}
+
+/* 聯絡資訊區域 */
+
+.contact {
+  width: 66%;
+  max-width: 1268px;
+  margin: 100px auto;
+}
+
+.contact .wrap {
+  display: grid;
+  grid-template-columns: 30% 25% 45%;
+}
+
+.contact .wrap .title {
+  justify-self: end;
+  color: var(--darkblue);
+}
+
+.contact .wrap .info {
+  grid-column: 3/4;
+  align-self: end;
+  padding-top: 20px;
+}
+
+.contact .wrap-info {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  margin: 80px 0;
+}
+
+.contact .wrap-info .office-info {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--darkblue);
+}
+
+.contact .wrap-info .pbig {
+  color: #111;
+}
+
+.contact .wrap-info .media-list {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.contact .wrap-info .media-list img {
+  vertical-align: middle;
+}
+
+.contact .wrap-info .media-list .media-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact .wrap-info .media-list .media-type .subtitle {
+  color: var(--darkblue);
+  margin-bottom: 8px;
+}
+
+/* 問答區域 */
+.qa-area {
+  width: 66%;
+  max-width: 1268px;
+  margin: 100px auto;
+}
+
+.qa-area .wrap {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.qa-area .wrap .title {
+  justify-self: end;
+  color: var(--darkblue);
+}
+
+.qa-area .wrap .qa-type-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-left: 50px;
+  text-align: center;
+}
+
+.qa-area .wrap .qa-type-list .type {
+  width: 200px;
+  height: 85px;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.qa-area .qa-list {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.qa-area .qa-list li .content {
+  display: flex;
+  padding: 0 60px;
+  height: 60px;
+  align-items: center;
+  color: var(--darkblue);
+}
+
+.qa-area .qa-list li .a {
+  display: flex;
+  padding: 0 60px;
+  height: 0;
+  overflow: hidden;
+  align-items: center;
+  color: var(--darkblue);
+  transition: 0.3s ease-in-out;
+}
+
+.qa-area .qa-list li .pbig {
+  color: #111;
+}
+
+.qa-area .qa-list li .q img {
+  vertical-align: middle;
+  transform: rotate(180deg);
+  transition: 0.3s ease-in-out;
+}
+
+.qa-area .qa-list li .qa-type {
+  margin-right: 20px;
+}
+
+.qa-area .qa-list li .btn-icon {
+  flex-grow: 1;
+  text-align: end;
+}
+
+.qa-area .qa-list li .q {
+  background-color: var(--extralightgray);
+}
+
+.qa-area .qa-list li .q + .a {
+  border-top: 1px solid #ccc;
+}
+
+.qa-area .qa-list li .q {
+  border-top: 2px solid var(--lightblue);
+}
+.qa-area .qa-list li:last-child {
+  border-bottom: 2px solid var(--lightblue);
+}
+
+/* QA動畫設置 */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ .a {
+  height: 60px;
+}
+input[type="checkbox"]:checked ~ .q img {
+  transform: none;
+}

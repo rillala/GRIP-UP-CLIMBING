@@ -1,0 +1,209 @@
+.header {
+  height: 782px;
+  background-image: url("courseandactivity-top-image.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header .pagelink ul {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1268px;
+  margin: 90px auto 0;
+}
+
+header .pagelink ul a {
+  width: 260px;
+}
+
+/*課程區塊*/
+.container {
+  margin: 50px auto;
+  width: 66%;
+  max-width: 1268px;
+}
+
+.container .course-info {
+  display: grid;
+  height: 160px;
+  grid-template-columns: 30% 25% 45%;
+  margin-bottom: 50px;
+}
+
+.container .course-info .course-title {
+  grid-column: 1 / 2;
+  text-align: end;
+  color: var(--darkblue);
+}
+
+.container .course-info .course-intro {
+  grid-column: -2 / -1;
+  align-self: flex-end;
+}
+
+.container .course-info .course-intro .subtitle {
+  color: var(--darkblue);
+}
+
+.container .course-info .course-intro .level {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.container .course-info .course-intro .level .round-row {
+  display: flex;
+  justify-self: flex-end;
+}
+
+.container .course-info .course-intro .level .round {
+  margin-right: 14px;
+}
+
+.round {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.round-light {
+  background-color: #d9d9d9;
+}
+.round-dark {
+  background-color: var(--darkblue);
+}
+
+.container {
+  max-width: 1268px;
+  margin: 0 auto 150px;
+}
+
+.container .card-list {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scroll {
+  position: absolute;
+  top: 43%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.scroll:hover {
+  scale: 1.5;
+}
+
+.scroll-right {
+  right: -50px;
+}
+
+.scroll-left {
+  left: -50px;
+}
+
+.card-list .card {
+  width: 260px;
+}
+
+.card-list .card-title {
+  width: 260px;
+  height: 72px;
+  background-color: var(--extralightgray);
+  color: var(--darkblue);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-img {
+  position: relative;
+}
+
+.card .card-img .card-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--darkblue);
+  opacity: 0;
+  margin: 20px 0 10px;
+  width: 100%;
+  transition: 0.3s ease-in-out;
+}
+
+.card .card-img .card-hover a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  height: 220px;
+}
+
+.card img {
+  width: 100%;
+  vertical-align: bottom;
+  margin: 20px 0 10px;
+}
+
+.card:hover .card-hover {
+  opacity: 0.7;
+}
+
+.card .card-level {
+  display: flex;
+  justify-content: center;
+}
+
+.card .card-level .round {
+  margin: 10px 7px;
+}
+
+.card .card-price {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* 頁尾照片區域 */
+.photo {
+  background-color: var(--extralightgray);
+  padding: 120px 0 80px;
+  margin-top: -50px;
+}
+
+.photo .wrap {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1520px;
+  --photogap: 33px;
+}
+
+.photo .wrap #pic-huge {
+  position: relative;
+  margin-right: var(--photogap);
+}
+
+.photo #slogan {
+  position: absolute;
+  bottom: 70px;
+  right: 10px;
+  color: #fff;
+}
+
+.photo .wrap:hover #slogan {
+  color: var(--orange);
+  transition: 0.3s ease-in-out;
+}
+
+.photo .wrap .pic-small {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 1fr;
+  column-gap: var(--photogap);
+  row-gap: var(--photogap);
+}
