@@ -167,6 +167,10 @@ header .top .menu {
   position: relative;
 }
 
+header .top .menu img {
+  cursor: pointer;
+}
+
 /*要顯示下拉menu要改這個*/
 header .top .menu .menu-link-list {
   position: absolute;
