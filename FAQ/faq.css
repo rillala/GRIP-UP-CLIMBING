@@ -126,6 +126,7 @@ header .pagelink ul a {
 .qa-area .wrap .title {
   justify-self: end;
   color: var(--darkblue);
+  text-align: end;
 }
 
 .qa-area .wrap .qa-type-list {
