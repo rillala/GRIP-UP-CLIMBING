@@ -236,7 +236,7 @@ header .pagelink ul a {
   grid-column: 1/3;
   grid-row: 1/2;
   clip-path: polygon(0 0, 52% 0, 100% 100%, 0% 100%);
-  background-image: url(/shop/showleft.png);
+  background-image: url(showleft.png);
   background-size: 100% 100%;
 }
 
@@ -245,7 +245,7 @@ header .pagelink ul a {
   grid-row: 1/2;
   justify-self: end;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 48% 100%);
-  background-image: url(/shop/showright.png);
+  background-image: url(showright.png);
   background-size: 105% 105%;
 }
 
