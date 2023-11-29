@@ -141,6 +141,15 @@ header .pagelink ul a {
   border-bottom: 1px solid #aaa;
 }
 
+.price .table tbody tr td:first-child {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.price .table thead tr:first-child td {
+  color: var(--darkblue);
+}
+
 .price .table .white-bg td {
   background: #fff;
 }
@@ -167,6 +176,31 @@ header .pagelink ul a {
 
 .price .ps p::before {
   content: "*";
+}
+
+/* price hover effect */
+
+.price .ticket-price tbody td {
+  position: relative;
+}
+.price .ticket-price tbody td:hover a.hover {
+  width: 50%;
+}
+
+.price .ticket-price a.hover {
+  position: absolute;
+  display: block;
+  top: 8px;
+  left: 75px;
+  width: 0%;
+  overflow: hidden;
+  padding: 20px 0;
+  background-color: var(--orange);
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 -5px #ccc inset;
+  transition: 0.2s ease-in-out;
 }
 
 /* 場館設施部分--和community dynamic共通grid版型 */
