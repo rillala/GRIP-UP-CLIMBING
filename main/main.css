@@ -103,10 +103,24 @@ header .pagelink ul a {
 
 .latestnews .news-pic img {
   vertical-align: middle;
+  transition: 0.3s ease-in-out;
+}
+
+.latestnews .news-pic {
+  overflow: hidden;
+}
+
+.latestnews .news-pic img:hover {
+  scale: 1.1;
+  transition: 0.5s ease-in-out;
 }
 
 .latestnews a {
   text-decoration: none;
+}
+
+.latestnews .news-list a:hover p {
+  color: var(--orange);
 }
 
 .latestnews .news-list .news-title {
