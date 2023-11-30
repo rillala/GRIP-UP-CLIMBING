@@ -1,8 +1,10 @@
+header {
+  margin: 0 auto;
+}
+
 .header {
-  height: 550px;
   background-image: url("team-heroimg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
+  padding-bottom: 40px;
 }
 
 /*標題和頁面簡介*/
@@ -13,17 +15,6 @@
   max-width: 1268px;
   margin: 150px auto 0;
   color: var(--darkblue);
-}
-
-header .pagelink ul {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1268px;
-  margin: 90px auto 0;
-}
-
-header .pagelink ul a {
-  width: 360px;
 }
 
 .highlight {

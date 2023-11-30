@@ -1,26 +1,21 @@
 .header {
-  height: 782px;
   background-image: url("courseandactivity-top-image.png");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 header .pagelink ul {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1268px;
-  margin: 90px auto 0;
-}
-
-header .pagelink ul a {
-  width: 260px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /*課程區塊*/
+
 .container {
   margin: 50px auto;
   width: 66%;
   max-width: 1268px;
+}
+
+section.content section + section {
+  margin-top: 150px;
 }
 
 .container .course-info {
@@ -73,14 +68,10 @@ header .pagelink ul a {
   background-color: var(--darkblue);
 }
 
-.container {
-  max-width: 1268px;
-  margin: 0 auto 150px;
-}
-
 .container .card-list {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -181,6 +172,10 @@ header .pagelink ul a {
   margin: 0 auto;
   max-width: 1520px;
   --photogap: 33px;
+}
+
+.photo .wrap img {
+  width: 100%;
 }
 
 .photo .wrap #pic-huge {

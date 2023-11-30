@@ -1,19 +1,9 @@
 .header {
-  height: 782px;
   background-image: url("faqheroimg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 header .pagelink ul {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1268px;
-  margin: 90px auto 0;
-}
-
-header .pagelink ul a {
-  width: 260px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 /* 海報區域 */
@@ -115,7 +105,7 @@ header .pagelink ul a {
 .qa-area {
   width: 66%;
   max-width: 1268px;
-  margin: 100px auto;
+  margin: 0 auto;
 }
 
 .qa-area .wrap {

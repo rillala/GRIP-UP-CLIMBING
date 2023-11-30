@@ -172,7 +172,13 @@ input::placeholder {
 
 header {
   width: 66%;
-  margin: 0 auto 0;
+  margin: 0 auto 100px;
+}
+
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
 header .top {
@@ -334,6 +340,21 @@ header .top .menu a:hover {
 }
 .readmore:hover {
   text-decoration: underline;
+}
+
+/* 頁首快速連結按鈕 */
+
+header .pagelink ul {
+  display: grid;
+  align-items: center;
+  column-gap: 4.5vw;
+  max-width: 1268px;
+  margin: 60px auto 0;
+}
+
+header .pagelink ul a {
+  width: 100%;
+  text-align: center;
 }
 
 /* 回到上方 */

@@ -6,14 +6,7 @@
 }
 
 header .pagelink ul {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1268px;
-  margin: 90px auto 0;
-}
-
-header .pagelink ul a {
-  width: 360px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 input[type="checkbox"] {

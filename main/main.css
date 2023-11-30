@@ -1,23 +1,12 @@
 .header {
-  height: 100%;
   background-image: url("main-heroimg.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  padding-bottom: 40px;
 }
 
 /*標題和頁面簡介*/
 
 header .pagelink ul {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1268px;
+  grid-template-columns: repeat(3, 1fr);
   margin: 40px auto 0;
-}
-
-header .pagelink ul a {
-  width: 360px;
 }
 
 /* 這些是universe有的內容再進行修改 */
