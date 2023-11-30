@@ -239,7 +239,7 @@ header .pagelink ul {
   max-width: 1268px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   column-gap: 70px;
 }
 

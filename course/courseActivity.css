@@ -96,10 +96,18 @@ section.content section + section {
 
 .card-list .card {
   width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (width < 1660px) {
+  .card-list .card {
+    width: 220px;
+  }
 }
 
 .card-list .card-title {
-  width: 260px;
+  width: 100%;
   height: 72px;
   background-color: var(--extralightgray);
   color: var(--darkblue);
@@ -157,6 +165,10 @@ section.content section + section {
   display: block;
   text-align: center;
   margin-top: 10px;
+}
+
+.card .card-info {
+  flex-grow: 1;
 }
 
 /* 頁尾照片區域 */

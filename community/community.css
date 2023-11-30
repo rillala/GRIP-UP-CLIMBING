@@ -32,6 +32,11 @@ header .pagelink ul {
   list-style-type: disc;
 }
 
+.join .benefit ul li {
+  white-space: nowrap;
+  overflow: visible;
+}
+
 .join .join-rule .wrap,
 .dynamic .wrap,
 .schedule .wrap {
@@ -69,6 +74,21 @@ header .pagelink ul {
   padding-left: 71%;
   color: var(--darkblue);
   background-color: var(--lightgray);
+}
+
+.join .join-btn .h5 {
+  color: var(--darkblue);
+  padding-left: 71%;
+}
+
+@media (width < 1441px) {
+  .join .join-rule ol li .step {
+    padding-left: 60%;
+  }
+
+  .join .join-btn .h5 {
+    padding-left: 60%;
+  }
 }
 
 .join .join-rule ol li:nth-child(2) .step,
@@ -110,11 +130,6 @@ header .pagelink ul {
   color: #fff;
 }
 
-.join .join-btn .h5 {
-  color: var(--darkblue);
-  padding-left: 71%;
-}
-
 .join .join-btn .pbig {
   padding-left: 30px;
 }
@@ -138,7 +153,7 @@ header .pagelink ul {
   max-width: 1268px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   column-gap: 70px;
 }
 

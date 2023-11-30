@@ -54,6 +54,8 @@ header .pagelink ul {
 .contact .wrap .title {
   justify-self: end;
   color: var(--darkblue);
+  white-space: nowrap;
+  overflow: visible;
 }
 
 .contact .wrap .info {
@@ -133,6 +135,12 @@ header .pagelink ul {
   cursor: pointer;
   font-size: 20px;
   line-height: 24px;
+}
+
+@media (width < 1441px) {
+  .qa-area .wrap .qa-type-list .type {
+    width: 180px;
+  }
 }
 
 .qa-area .qa-list {
