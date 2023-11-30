@@ -181,7 +181,7 @@ header .pagelink ul a {
   color: #111;
 }
 
-.course .pic-area {
+.course .pic-list {
   width: 66%;
   max-width: 1268px;
   margin: 20px auto;
@@ -190,18 +190,18 @@ header .pagelink ul a {
   flex-wrap: wrap;
 }
 
-.course .pic-area .pic {
+.course .pic-list .pic {
   width: 30%;
   position: relative;
 }
 
-.course .pic-area .pic img {
+.course .pic-list .pic img {
   vertical-align: middle;
   width: 100%;
   height: 100%;
 }
 
-.course .pic-area .pic .hover {
+.course .pic-list .pic .hover {
   position: absolute;
   top: 0;
   left: 0;
@@ -215,13 +215,14 @@ header .pagelink ul a {
   box-sizing: border-box;
   opacity: 0;
   transition: 0.5s ease-in-out;
+  user-select: none;
 }
 
-.course .pic-area .pic:hover .hover {
+.course .pic-list .pic:hover .hover {
   opacity: 0.7;
 }
 
-.course .pic-area .pic .hover p {
+.course .pic-list .pic .hover p {
   color: #fff;
   line-height: 32px;
 }
