@@ -69,8 +69,6 @@ input::placeholder {
   line-height: 24px;
 }
 
-/* 您提供的基礎樣式會保持不變 */
-
 /* 中型裝置 */
 @media screen and (width < 1440px) {
   h1 {
@@ -96,10 +94,12 @@ input::placeholder {
   } /* h5和h6保持相同大小 */
   .pbig {
     font-size: 18px;
+    line-height: 24px;
   }
   .psmall,
   input::placeholder {
     font-size: 16px;
+    line-height: 20px;
   }
 }
 
@@ -128,10 +128,14 @@ input::placeholder {
   } /* h5和h6保持相同大小 */
   .pbig {
     font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
   }
   .psmall,
   input::placeholder {
     font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
   }
 }
 
