@@ -112,7 +112,7 @@ header .pagelink ul {
 
 .join .join-btn .h5 {
   color: var(--darkblue);
-  text-align: end;
+  padding-left: 71%;
 }
 
 .join .join-btn .pbig {
