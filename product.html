@@ -145,7 +145,7 @@
           <div class="info">
             <p class="hashtag psmall">#BestSell #MustHave</p>
             <h4 class="item-name" id="newlaunchShow-link">
-              GRIP UP<br />Modern Approach Shoes
+              GRIP UP<br />Modern Approach Shoes<span> (man)</span>
             </h4>
             <p class="review pbig">Review 232 (4.8)</p>
             <p class="price h5">NTD 3,400</p>
@@ -182,25 +182,9 @@
               <div class="size-choice">
                 <div class="subtitle">
                   <p class="title pbig">Size Information</p>
-                  <a href="" class="pbig">Size Chart</a>
+                  <button class="pbig" id="size-chart-btn">Size Chart</button>
                 </div>
                 <ul>
-                  <label>
-                    <input type="checkbox" name="" id="" />
-                    <li class="size pbig">4</li>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="" id="" />
-                    <li class="size pbig">4.5</li>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="" id="" />
-                    <li class="size pbig">5</li>
-                  </label>
-                  <label>
-                    <input type="checkbox" name="" id="" />
-                    <li class="size pbig">5.5</li>
-                  </label>
                   <label>
                     <input type="checkbox" name="" id="" />
                     <li class="size pbig">6</li>
@@ -229,10 +213,30 @@
                     <input type="checkbox" name="" id="" />
                     <li class="size pbig">9</li>
                   </label>
+                  <label>
+                    <input type="checkbox" name="" id="" />
+                    <li class="size pbig">9.5</li>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="" id="" />
+                    <li class="size pbig">10</li>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="" id="" />
+                    <li class="size pbig">10.5</li>
+                  </label>
+                  <label>
+                    <input type="checkbox" name="" id="" />
+                    <li class="size pbig">11</li>
+                  </label>
                 </ul>
               </div>
               <div class="buying">
-                <input type="number" name="" id="item-number" min="1" />
+                <div class="number-wrap">
+                  <div class="cal h6" id="minus">-</div>
+                  <input type="number" name="" id="item-number" min="1" />
+                  <div class="cal h6" id="plus">+</div>
+                </div>
                 <button type="submit" id="add-btn">
                   <p class="h6">add to bag</p>
                   <div class="hover h6"></div>
@@ -563,5 +567,7 @@
         </p>
       </div>
     </footer>
+
+    <script src="./product/product.js"></script>
   </body>
 </html>
