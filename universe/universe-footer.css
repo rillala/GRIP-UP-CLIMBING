@@ -14,6 +14,10 @@ footer .subscribe {
   gap: 30px;
 }
 
+footer .subscribe form {
+  display: contents;
+}
+
 footer .subscribe input {
   height: 38px;
   width: 350px;
