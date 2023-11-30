@@ -1,8 +1,10 @@
 .header {
-  height: 1000px;
+  height: 100%;
   background-image: url("main-heroimg.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: bottom;
+  padding-bottom: 40px;
 }
 
 /*標題和頁面簡介*/
@@ -11,7 +13,7 @@ header .pagelink ul {
   display: flex;
   justify-content: space-between;
   max-width: 1268px;
-  margin: 90px auto 0;
+  margin: 40px auto 0;
 }
 
 header .pagelink ul a {
@@ -70,7 +72,7 @@ header .pagelink ul a {
   grid-template-columns: 30% 40% 30%;
   width: 66%;
   max-width: 1268px;
-  margin: 0 auto 0;
+  margin: 60px auto 0;
 }
 
 .latestnews .title {
@@ -104,6 +106,11 @@ header .pagelink ul a {
 .latestnews .news-pic img {
   vertical-align: middle;
   transition: 0.3s ease-in-out;
+  max-width: 100%;
+}
+
+.latestnews #news3-pic img {
+  max-width: 80%;
 }
 
 .latestnews .news-pic {
