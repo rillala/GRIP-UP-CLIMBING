@@ -97,12 +97,12 @@
         </div>
         <div class="pagelink">
           <ul>
-            <li><a class="btn-dark h4" href="#qa-link">Course</a></li>
-            <li><a class="btn-dark h4" href="#qa-link">Purchase</a></li>
             <li>
-              <a class="btn-dark h4" href="#qa-link">Membership</a>
+              <a class="btn-dark h4" href="#qa-link">Find Answers Quickly</a>
             </li>
-            <li><a class="btn-dark h4" href="#qa-link">Safety</a></li>
+            <li>
+              <a class="btn-dark h4" href="#contactus">Questions? Contact Us</a>
+            </li>
           </ul>
         </div>
       </header>
@@ -117,26 +117,14 @@
       </div>
       <section class="qa-area">
         <div class="wrap">
-          <h3 class="title" id="qa-link">
-            Climbing<br />
-            Courses
-          </h3>
+          <h3 class="title" id="qa-link">Climbing<br />Courses</h3>
           <div class="qa-type-list">
-            <div class="type btn-light h5">
-              Purchase &<br />
-              Tracking
-            </div>
-            <div class="type btn-light h5">
-              Membership<br />
-              & Center
-            </div>
-            <div class="type btn-light h5">
-              Safety &<br />
-              Others
-            </div>
+            <div class="type btn-light h5">Purchase &<br />Tracking</div>
+            <div class="type btn-light h5">Membership<br />& Center</div>
+            <div class="type btn-light h5">Safety &<br />Others</div>
           </div>
         </div>
-        <ul class="qa-list">
+        <ul class="qa-list" id="qa-list">
           <li>
             <input type="checkbox" name="question" id="course-q1" />
             <div class="content q">
@@ -217,6 +205,25 @@
               </p>
             </div>
           </li>
+          <li>
+            <input type="checkbox" name="question" id="course-q5" />
+            <div class="content q">
+              <p class="qa-type h6">Q:</p>
+              <p class="text pbig">
+                Does the course fee include insurance costs?
+              </p>
+              <label for="course-q5" class="btn-icon"
+                ><img src="./FAQ/arrow-up.svg" alt=""
+              /></label>
+            </div>
+            <div class="content a">
+              <p class="qa-type h6">A:</p>
+              <p class="text pbig">
+                Some of our courses include insurance costs. Please refer to the
+                course description page or contact us for confirmation.
+              </p>
+            </div>
+          </li>
         </ul>
       </section>
       <div class="poster">
@@ -229,7 +236,7 @@
       </div>
       <section class="contact">
         <div class="wrap">
-          <h3 class="title">contact us</h3>
+          <h3 class="title" id="contactus">contact us</h3>
           <div class="info pbig">
             Whether you have inquiries, suggestions, or just want to share some
             love for the thrill of the climb, we’re here for you. Reach out
