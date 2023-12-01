@@ -106,7 +106,8 @@ header .pagelink ul {
   overflow: hidden;
 }
 
-.latestnews .news-pic img:hover {
+.latestnews .news-pic img:hover,
+.img-hover {
   scale: 1.1;
   transition: 0.5s ease-in-out;
 }
