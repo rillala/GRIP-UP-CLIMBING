@@ -24,7 +24,7 @@ const courseQA = [
 ];
 
 const purchaseQA = [
-  "PURCHASE &\nTRACKING",
+  "PURCHASE\n& TRACK",
   [
     "How can I track my order?",
     "After ordering, you will receive a confirmation email with a tracking link and order number.",
