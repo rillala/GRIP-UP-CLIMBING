@@ -213,11 +213,18 @@ header .pagelink ul {
 
 .course .pic-list .pic .hover p {
   color: #fff;
-  line-height: 30px;
+  line-height: 32px;
+}
+
+@media (width <1800px) {
+  .course .pic-list .pic .hover p {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+  }
 }
 
 /* 社群和其他區塊-->同community grid排版 */
-
 .community .wrap {
   display: grid;
   grid-template-columns: 30% 70%;
