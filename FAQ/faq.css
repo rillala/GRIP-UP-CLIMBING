@@ -190,10 +190,6 @@ header .pagelink ul {
   background-color: var(--extralightgray);
 }
 
-.qa-area .qa-list li .q + .a {
-  border-top: 1px solid #ccc;
-}
-
 .qa-area .qa-list li .q {
   border-top: 2px solid var(--lightblue);
 }
@@ -209,7 +205,8 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked ~ .a {
   height: 60px;
+  border-top: 1px solid #ccc;
 }
-input[type="checkbox"]:checked ~ .q img {
+input[type="checkbox"]:checked ~ label .q img {
   transform: none;
 }

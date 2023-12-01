@@ -143,13 +143,12 @@ function buildQAarea(arr) {
 
     for (let j = 0; j < 2; j++) {
       if (j === 0) {
-        total += `<div class="content q">
+        total += `<label for="course-q${i}"><div class="content q">
         <p class="qa-type h6">Q:</p>
         <p class="text pbig">${arr[i][j]}</p>
-        <label for="course-q${i}" class="btn-icon"
+        <div class="btn-icon"
           ><img src="./FAQ/arrow-up.svg" alt=""
-        /></label>
-      </div>`;
+        /></div></div></label>`;
       } else {
         total += `<div class="content a">
         <p class="qa-type h6">A:</p>
