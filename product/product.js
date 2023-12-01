@@ -16,10 +16,10 @@ const scrollMinus = document.getElementById("scrollMinus");
 const scrollAdd = document.getElementById("scrollAdd");
 
 const picSrc = [
-  "/product/product%20(1).png",
-  "/product/product%20(2).png",
-  "/product/product%20(3).png",
-  "/product/product%20(4).png",
+  "/product/product-1.png",
+  "/product/product-2.png",
+  "/product/product-3.png",
+  "/product/product-4.png",
 ];
 
 //判斷目前圖片順序,給予新的圖片src
