@@ -27,7 +27,7 @@ function picPrevious() {
   let currentPicURL = new URL(currentPic.src);
   for (let i = 0; i < picSrc.length; i++) {
     if (currentPicURL.pathname.includes(picSrc[i]) && i !== 0) {
-      currentPic.src = picSrc[i - 1];
+      currentPic.src = "." + picSrc[i - 1];
       break;
     }
   }
@@ -36,7 +36,7 @@ function picNext() {
   let currentPicURL = new URL(currentPic.src);
   for (let i = 0; i < picSrc.length; i++) {
     if (currentPicURL.pathname.includes(picSrc[i]) && i !== picSrc.length - 1) {
-      currentPic.src = picSrc[i + 1];
+      currentPic.src = "." + picSrc[i + 1];
       break;
     }
   }
