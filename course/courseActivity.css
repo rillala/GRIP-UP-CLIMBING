@@ -40,25 +40,21 @@ section.content section + section {
   color: var(--darkblue);
 }
 
-.container .course-info .course-intro .level {
+.container .course-intro .level {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
 
-.container .course-info .course-intro .level .round-row {
+.container .course-intro .level .round-row {
   display: flex;
-  justify-self: flex-end;
-}
-
-.container .course-info .course-intro .level .round {
-  margin-right: 14px;
+  align-items: center;
+  column-gap: 14px;
 }
 
 .round {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 25px;
+  height: 15px;
 }
 
 .round-light {
@@ -119,33 +115,29 @@ section.content section + section {
 
 .card-img {
   position: relative;
+  margin: 20px 0 10px;
 }
 
 .card .card-img .card-hover {
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   background-color: var(--darkblue);
   opacity: 0;
-  margin: 20px 0 10px;
-  width: 100%;
   transition: 0.3s ease-in-out;
-}
-
-.card .card-img .card-hover a {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   text-decoration: none;
   color: #fff;
-  height: 220px;
 }
 
 .card img {
   width: 100%;
-  vertical-align: bottom;
-  margin: 20px 0 10px;
+  vertical-align: middle;
 }
 
 .card:hover .card-hover {
