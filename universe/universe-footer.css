@@ -32,22 +32,27 @@ footer .subscribe input::placeholder {
 }
 
 input[type="email"]:focus {
-  border: none; /* 更改邊框顏色 */
-  background-color: var(--orange); /* 更改背景顏色 */
-  outline: none; /* 移除藍色外框，這是瀏覽器的預設焦點樣式 */
-  /* 您可以添加其他想要的樣式 */
+  border: none;
+  /* 更改邊框顏色 */
+  background-color: var(--orange);
+  /* 更改背景顏色 */
+  outline: none;
+  /* 移除藍色外框，這是瀏覽器的預設焦點樣式 */
+
   color: #fff;
 }
 
-footer .subscribe .email-btn {
-  padding: 5px 20px;
+#email-submit {
+  height: 38px;
+  box-sizing: border-box;
+  padding: 0 20px;
   font-size: 20px;
   cursor: pointer;
   border: none;
   transition: 0.2s ease-in-out;
 }
 
-footer .subscribe .email-btn:hover {
+#email-submit:hover {
   box-shadow: -5px 5px var(--lightgray);
   color: #fff;
   background-color: var(--orange);
@@ -69,16 +74,16 @@ footer .info .map .map-list {
   column-gap: 40px;
 }
 
-footer .info .map .map-list .list-type {
+footer .info .list-type {
   display: flex;
   flex-direction: column;
 }
 
-footer .info .map .map-list .list-type:hover .map-list-title {
+footer .info .list-type:hover .map-list-title {
   color: var(--orange);
 }
 
-footer .info .map .map-list .map-list-title {
+footer .info .map-list-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -87,16 +92,16 @@ footer .info .map .map-list .map-list-title {
   padding-bottom: 10px;
 }
 
-footer .info .map .map-list a {
+footer .info a {
   color: #fff;
   text-decoration: none;
 }
 
-footer .info .map .map-list a::before {
+footer .info a::before {
   content: "- ";
 }
 
-footer .info .map .map-list a:hover {
+footer .info a:hover {
   text-decoration: underline;
 }
 
@@ -119,20 +124,20 @@ footer .social-media .media-link {
   padding: 0 30px;
 }
 
-footer .social-media .media-link .pic + .pic {
+footer .media-link .pic + .pic {
   margin-left: 20px;
 }
 
-footer .social-media .media-link img {
+footer .media-link img {
   width: 90%;
   vertical-align: middle;
 }
 
-footer .social-media .decoline {
+footer .decoline {
   flex-grow: 1;
 }
 
-footer .social-media .decoline .line {
+footer .decoline .line {
   width: 100%;
   height: 50%;
   border-bottom: 1px solid #fff;

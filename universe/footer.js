@@ -1,3 +1,33 @@
+// 當頁面加載完畢時執行頁尾載入
+// 以下預備用，之後有小裝置的footer的時候使用:
+
+// function loadFooter() {
+//   const footerFile = window.innerWidth >= 1280 ? 'footer-desktop.html' : 'footer-mobile.html';
+
+//   fetch(footerFile)
+//     .then(response => response.text())
+//     .then(html => {
+//       document.getElementById('footer-container').innerHTML = html;
+//     });
+// }
+
+// // 初次載入頁面時執行
+// loadFooter();
+
+// // 當視窗大小改變時重新載入適當的頁尾
+// window.onresize = loadFooter;
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  fetch("footer-desktop.html") // 獲取 footer.html 的內容
+    .then((response) => response.text()) // 將響應轉換為文本
+    .then((html) => {
+      document.getElementById("footer-container").innerHTML = html; // 將獲取的 HTML 插入到容器中
+    })
+    .catch((error) => {
+      console.error("載入頁尾失敗:", error);
+    });
+});
+
 //email subscribtion
 
 document.getElementById("email-submit").addEventListener("click", function (e) {
@@ -15,6 +45,3 @@ document.getElementById("email-submit").addEventListener("click", function (e) {
     window.alert("Oops! There seems to be a typing error, please try again.");
   }
 });
-
-// id = "email-submit";
-// <script src="./universe/footer.js"></script>;
