@@ -1,4 +1,4 @@
-//1.整理出each array:[title,[q,a],[q,a]...]
+//各類問答陣列整理: each array=[title,[q,a],[q,a]...]
 const courseQA = [
   "CLIMBING\nCOURSES",
   [
@@ -107,6 +107,7 @@ const QAlist = [courseQA, purchaseQA, memberQA, safetyQA];
 
 // QA按鈕類別text更換
 //QA問答替換
+
 let current = document.getElementById("qa-link");
 
 document.querySelectorAll(".type.btn-light.h5").forEach((button) => {
@@ -119,7 +120,11 @@ document.querySelectorAll(".type.btn-light.h5").forEach((button) => {
     // 將按鈕的文字設置為原本 #qa-link 的文字
     this.innerHTML = clickText;
 
+    //根據按下元素的value, 去替換掉qa-area裡的內容
     checkWhich();
+
+    //將答案展開的功能套用
+    checkAnswer();
   });
 });
 
@@ -127,28 +132,27 @@ document.querySelectorAll(".type.btn-light.h5").forEach((button) => {
 function checkWhich() {
   for (let i = 0; i < QAlist.length; i++) {
     if (current.innerText === QAlist[i][0]) {
+      //-2.將下方innerHTML替換為該array內容
       document.querySelector("#qa-list").innerHTML = buildQAarea(QAlist[i]);
     }
   }
 }
 
-//-2.將下方innerHTML替換為該array內容
-
-//3.依array內容建立QA格式的innerHTML
+//3.依問答類別array內容建立QA格式的innerHTML
 function buildQAarea(arr) {
   let total = "";
 
   for (let i = 1; i < arr.length; i++) {
-    total += `<li><input type="checkbox" name="question" id="course-q${i}" />`;
+    total += `<li>`;
 
     for (let j = 0; j < 2; j++) {
       if (j === 0) {
-        total += `<label for="course-q${i}"><div class="content q">
+        total += `<div class="content q">
         <p class="qa-type h6">Q:</p>
         <p class="text pbig">${arr[i][j]}</p>
         <div class="btn-icon"
-          ><img src="./FAQ/arrow-up.svg" alt=""
-        /></div></div></label>`;
+          ><img class="qa-icon" src="./FAQ/arrow-up.svg" alt=""
+        /></div></div>`;
       } else {
         total += `<div class="content a">
         <p class="qa-type h6">A:</p>
@@ -161,4 +165,33 @@ function buildQAarea(arr) {
   }
 
   return total;
+}
+
+//展開答案區域功能:
+
+// 0.頁面初始時先載入此功能
+document.addEventListener("DOMContentLoaded", checkAnswer);
+
+function checkAnswer() {
+  //選取所有的q
+  const questions = document.querySelectorAll(".content.q");
+
+  //對整個class集合裡的個別元素給予此function
+  questions.forEach((question) => {
+    question.addEventListener("click", function () {
+      // 找到對應的回答元素，這邊假設每個問題後面緊跟著的元素是對應的回答，所以用nextElementSibling
+      let answer = this.nextElementSibling;
+
+      // 如果存在回答元素，則進行類別名切換
+      if (answer && answer.classList.contains("a")) {
+        answer.classList.toggle("a-hover");
+      }
+
+      // 找到問題中的圖標元素並切換類別名
+      let icon = this.querySelector(".qa-icon");
+      if (icon) {
+        icon.classList.toggle("icon-hover");
+      }
+    });
+  });
 }

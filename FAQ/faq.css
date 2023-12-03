@@ -199,14 +199,17 @@ header .pagelink ul {
 
 /* QA動畫設置 */
 
-input[type="checkbox"] {
+/* input[type="checkbox"] {
   display: none;
-}
+} */
 
-input[type="checkbox"]:checked ~ .a {
-  height: 60px;
+/* for qa-apart hover effect*/
+.a-hover {
+  height: 60px !important;
   border-top: 1px solid #ccc;
 }
-input[type="checkbox"]:checked ~ label .q img {
-  transform: none;
+
+/* for qa-icon hover effect*/
+.icon-hover {
+  transform: none !important;
 }
