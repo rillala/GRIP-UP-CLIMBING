@@ -177,6 +177,13 @@ input::placeholder {
   background-color: var(--orange);
 }
 
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /*頁面導覽列*/
 
 header {

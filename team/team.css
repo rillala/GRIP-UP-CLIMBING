@@ -165,14 +165,25 @@ header {
   line-height: 28px;
 }
 
-.member .card-list .hiring .pic {
+.hiring .pic {
   width: 385px;
   height: 472px;
   background-color: var(--orange);
 }
 
-.member .card-list .hiring .nickname,
-.member .card-list .hiring .work-1 {
+.hiring .pic a {
+  width: 240px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+.hiring .pic a:hover {
+  color: #fff;
+  background-color: var(--lightblue);
+}
+
+.hiring .nickname,
+.hiring .work-1 {
   color: #111;
   left: -80px;
 }
