@@ -243,6 +243,11 @@ header .top .nav-list {
   height: 40px;
 }
 
+.nav-list a {
+  text-decoration: none;
+  position: relative;
+}
+
 header .top .nav-list + .nav-list {
   margin-left: 40px;
 }
@@ -257,6 +262,19 @@ header .top .menu {
 
 header .top .menu img {
   cursor: pointer;
+}
+
+#item-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  right: -15px;
+  bottom: 40px;
+  display: none;
 }
 
 /*要顯示下拉menu要改這個*/
@@ -308,6 +326,8 @@ header .top .menu a:hover {
   color: var(--white);
 }
 
+/* 頁面首區 */
+
 .header .pagetype {
   display: grid;
   grid-template-columns: 50% 6% 44%;
@@ -325,6 +345,7 @@ header .top .menu a:hover {
   grid-column: 1/3;
   grid-row: 2/3;
   justify-self: end;
+  align-self: end;
   color: var(--darkblue);
 }
 
@@ -351,11 +372,38 @@ header .top .menu a:hover {
 }
 
 .readmore {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 2%;
   text-decoration: none;
   transition: 0.3s ease-in-out;
+  color: #111;
+  text-align: end;
 }
 .readmore:hover {
   text-decoration: underline;
+  color: var(--orange);
+}
+
+.alink,
+.alink p {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.alink:hover,
+.alink:hover p {
+  color: var(--orange) !important;
+}
+
+.section-title {
+  color: var(--darkblue);
+  white-space: nowrap;
+  display: block;
+  width: 66%;
+  max-width: 1268px;
+  margin: 120px auto 30px;
 }
 
 /* 頁首快速連結按鈕 */

@@ -1,5 +1,5 @@
 // 購買數量按鈕增減
-const buyNumber = document.getElementById("item-number");
+const buyNumber = document.getElementById("buy-number");
 
 document.getElementById("plus").addEventListener("click", function () {
   buyNumber.value++;

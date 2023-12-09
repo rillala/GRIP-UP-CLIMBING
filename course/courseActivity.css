@@ -18,35 +18,35 @@ section.content section + section {
   margin-top: 150px;
 }
 
-.container .course-info {
+.wrap {
   display: grid;
-  height: 160px;
-  grid-template-columns: 30% 25% 45%;
-  margin-bottom: 50px;
+  grid-template-columns: 50% 50%;
+  width: 66%;
+  max-width: 1268px;
+  margin: -40px auto -20px;
 }
 
-.container .course-info .course-title {
+.wrap .course-intro {
+  grid-column: 2/3;
+}
+
+.course-title {
   grid-column: 1 / 2;
-  text-align: end;
+  color: var(--darkblue);
+  white-space: nowrap;
+}
+
+.course-intro .subtitle {
   color: var(--darkblue);
 }
 
-.container .course-info .course-intro {
-  grid-column: -2 / -1;
-  align-self: flex-end;
-}
-
-.container .course-info .course-intro .subtitle {
-  color: var(--darkblue);
-}
-
-.container .course-intro .level {
+.course-intro .level {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
 }
 
-.container .course-intro .level .round-row {
+.course-intro .level .round-row {
   display: flex;
   align-items: center;
   column-gap: 14px;
@@ -64,7 +64,7 @@ section.content section + section {
   background-color: var(--darkblue);
 }
 
-.container .card-list {
+.card-list {
   position: relative;
   display: flex;
   flex-wrap: wrap;

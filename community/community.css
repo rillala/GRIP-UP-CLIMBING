@@ -17,12 +17,12 @@ header .pagelink ul {
   color: var(--darkblue);
 }
 
-.join .pbig {
-  color: #000;
+.join .benefit .pbig {
+  color: #111;
 }
 
 .join .benefit .title {
-  justify-self: end;
+  justify-self: center;
   text-align: end;
   align-self: center;
 }
@@ -37,103 +37,93 @@ header .pagelink ul {
   overflow: visible;
 }
 
-.join .join-rule .wrap,
-.dynamic .wrap,
-.schedule .wrap {
-  display: grid;
-  grid-template-columns: 30% 70%;
+.join-rule .title,
+.dynamic .title,
+.schedule .title {
   width: 66%;
   max-width: 1268px;
-  margin: 80px auto 0;
-}
-
-.join .join-rule .title,
-.dynamic .wrap .title,
-.schedule .wrap .title {
-  justify-self: end;
-  text-align: end;
+  margin: 80px auto 30px;
   color: var(--darkblue);
 }
 
-.join .join-rule ol {
-  display: grid;
-  grid-template-columns: 30% 70%;
+.join-rule ol {
   width: 66%;
   max-width: 1268px;
-  margin: 30px auto 0;
+  margin: 0 auto 0;
 }
 
-.join .join-rule ol li {
-  display: contents;
+.join-rule ol {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 15px;
+  justify-content: center;
 }
 
-.join .join-rule ol li .step {
-  display: block;
-  padding: 5px 0;
-  grid-column: 1;
-  padding-left: 71%;
-  color: var(--darkblue);
-  background-color: var(--lightgray);
+.join-rule ol li {
+  display: flex;
+  width: 240px;
+  color: #fff;
+  padding: 5px;
 }
 
-.join .join-btn .h5 {
-  color: var(--darkblue);
-  padding-left: 71%;
-}
-
-@media (width < 1441px) {
-  .join .join-rule ol li .step {
-    padding-left: 60%;
-  }
-
-  .join .join-btn .h5 {
-    padding-left: 60%;
+@media (width < 1750px) {
+  .join-rule ol li {
+    width: 35%;
+    height: 85px;
   }
 }
 
-.join .join-rule ol li:nth-child(2) .step,
-.join .join-rule ol li:nth-child(4) .step,
-.join .join-rule ol li:nth-child(1) p,
-.join .join-rule ol li:nth-child(3) p {
-  background-color: var(--extralightgray);
+@media (width < 960px) {
+  .join-rule ol li {
+    width: 80%;
+    height: 50px;
+  }
 }
 
-.join .join-rule ol li p {
-  display: block;
-  padding: 5px 0;
-  grid-column: 2;
-  padding-left: 30px;
-  color: #000;
-  background-color: var(--lightgray);
+.join-rule ol li:nth-child(1) {
+  background-color: rgba(52, 74, 94, 1);
+}
+.join-rule ol li:nth-child(2) {
+  background-color: rgba(52, 74, 94, 0.8);
+}
+.join-rule ol li:nth-child(3) {
+  background-color: rgba(52, 74, 94, 0.6);
+}
+.join-rule ol li:nth-child(4) {
+  background-color: rgba(52, 74, 94, 0.4);
 }
 
-.join .join-btn a {
-  display: grid;
-  grid-template-columns: 30% 70%;
+.join-rule .step {
+  font-style: italic;
+  margin: 0 20px 0 10px;
+  align-self: center;
+}
+
+.join-rule li .step-title {
+  font-weight: 600;
+}
+
+.join .join-rule .wrap {
   width: 66%;
   max-width: 1268px;
-  margin: 40px auto;
-  text-decoration: none;
-  padding: 20px 0;
-  background-color: var(--extralightgray);
-  transition: 0.3s ease-in-out;
+  margin: 40px auto 40px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 
-.join .join-btn a:hover {
-  box-shadow: -10px 10px var(--lightgray);
-  color: #fff;
-  background-color: var(--orange);
+.join-rule .join-btn {
+  padding: 25px 0;
+  width: 250px;
 }
 
-.join .join-btn a:hover .h5,
-.join .join-btn a:hover .pbig {
-  color: #fff;
+.join-rule .wrap .psmall {
+  color: var(--orange);
+  margin-left: 5px;
 }
 
-.join .join-btn .pbig {
-  padding-left: 30px;
-}
-
+/* 深色區域標語 */
 .highlight {
   text-align: center;
   background-color: var(--lightblue);
@@ -227,11 +217,6 @@ header .pagelink ul {
 .dynamic .news-card .text .readmore {
   display: block;
   padding-top: 20px;
-  text-decoration: none;
-  color: #000;
-}
-.dynamic .news-card .text .readmore:hover {
-  text-decoration: underline;
 }
 
 .dynamic .social-media {
@@ -240,6 +225,14 @@ header .pagelink ul {
   align-self: end;
   color: var(--darkblue);
 }
+
+@media (width < 1440px) {
+  .dynamic .social-media {
+    grid-row: 4/5;
+    align-self: start;
+  }
+}
+
 .dynamic .social-media p {
   display: block;
   padding: 10px 0;
@@ -279,6 +272,14 @@ header .pagelink ul {
   padding: 5px;
 }
 
+.schedule .event-list .event a {
+  display: contents;
+}
+
+.schedule .event-list .event-name {
+  color: #111;
+}
+
 .schedule .event-list .light {
   background-color: var(--extralightgray);
 }
@@ -298,10 +299,10 @@ header .pagelink ul {
 .schedule .event-list .event .day,
 .schedule .event-list .event .month {
   font-family: "Montserrat", sans-serif;
-  font-size: 72px;
+  font-size: 64px;
   font-weight: bold;
   letter-spacing: 5%;
-  line-height: 64px;
+  line-height: 60px;
   color: var(--darkblue);
 }
 
@@ -309,15 +310,6 @@ header .pagelink ul {
   font-weight: 700;
   line-height: 20px;
   letter-spacing: 10%;
-}
-
-.schedule .lookmore a {
-  text-decoration: none;
-  color: var(--darkblue);
-}
-
-.schedule .lookmore a:hover {
-  text-decoration: underline;
 }
 
 .schedule .container {

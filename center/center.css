@@ -21,9 +21,8 @@ header .pagelink ul {
 
 .price .wrap .title,
 .facility .wrap .title {
-  justify-self: end;
-  text-align: end;
   color: var(--darkblue);
+  white-space: nowrap;
 }
 
 /* 分店介紹 */
@@ -154,20 +153,13 @@ header .pagelink ul {
   border-top: 1px solid #aaa;
 }
 
-.price .table td:first-child {
-  justify-content: end;
-}
-
-.price .rental-price .td:first-child {
-  margin-right: 20px;
-}
-
 .price .ps p {
   text-align: end;
+  color: var(--orange);
 }
 
 .price .ps p a {
-  color: #111;
+  color: var(--orange);
 }
 
 .price .ps p::before {
@@ -178,16 +170,17 @@ header .pagelink ul {
 
 .price .ticket-price tbody td {
   position: relative;
+  overflow: hidden;
 }
 .price .ticket-price tbody td:hover a.hover {
-  width: 50%;
+  width: 60%;
 }
 
 .price .ticket-price a.hover {
   position: absolute;
   display: block;
   top: 8px;
-  left: 75px;
+  left: 20%;
   width: 0%;
   overflow: hidden;
   padding: 20px 0;
@@ -319,11 +312,6 @@ header .pagelink ul {
 .facility .news-card .text .readmore {
   display: block;
   padding-top: 20px;
-  text-decoration: none;
-  color: #000;
-}
-.facility .news-card .text .readmore:hover {
-  text-decoration: underline;
 }
 
 .facility .team-link {

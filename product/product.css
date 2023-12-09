@@ -9,73 +9,115 @@ header .pagelink ul {
   grid-template-columns: repeat(3, 1fr);
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
-/* shop共用-related商品區域 */
-.bg {
-  background-color: var(--darkgray);
-  padding: 100px 0;
-}
-
+/* shop hot pick共用-related商品區域 */
 .related {
-  margin: 0 auto;
-  width: 66%;
-  max-width: 1268px;
+  background-color: var(--darkgray);
+  padding: 80px 0 80px;
 }
 
 .related .wrap {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  margin-bottom: 50px;
+  width: 66%;
+  max-width: 1268px;
+  margin: 0 auto;
 }
 
-.related .wrap .title {
-  color: #fff;
-  text-align: end;
-  justify-content: end;
-  margin-bottom: 40px;
-}
+/* 商品區域 */
 
-.item-list {
-  position: relative;
-  margin-top: -60px;
-}
-
-.item-list {
+.related .wrap {
   display: flex;
+  position: relative;
+}
+
+.related .section-title {
+  color: #fff;
+  margin-top: 0px;
+}
+
+#related-list {
+  overflow: hidden;
+  padding: 10px;
+}
+
+#related-roll {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
   justify-content: space-between;
-  flex-wrap: wrap;
+  column-gap: 30px;
+  flex-wrap: nowrap;
 }
 
-.item-list .item-card {
+.related .scroll {
+  position: absolute;
+  top: 36%;
+  cursor: pointer;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.scroll:hover {
+  scale: 1.5;
+}
+
+.related .scroll-left {
+  left: -40px;
+}
+
+.related .scroll-right {
+  right: -40px;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+  row-gap: 40px;
+  justify-items: center;
+}
+
+@media (width < 1860px) {
+  .item-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width < 1280px) {
+  .item-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width < 768px) {
+  .item-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 商品卡片 */
+.item-card {
   width: 272px;
+  flex-shrink: 0;
   color: #111;
-  margin-top: 60px;
-  background-color: var(--lightgray);
-  padding: 5px;
-  box-shadow: -10px 10px #fff;
+  background-color: #eee;
+  padding: 8px;
+  box-shadow: -10px 10px 2px #fff;
 }
 
-.item-list .item-card .name {
+.item-card .name {
   font-size: 22px;
   font-weight: 700;
   padding-top: 6px;
-  color: #111;
 }
 
-.item-list .item-card .pic {
+.item-card .pic {
   width: 100%;
   position: relative;
 }
 
-.item-list .item-card .pic img {
+.item-card .pic img {
   width: 100%;
   vertical-align: middle;
 }
 
-.item-list .item-card .pic .hover {
+.item-card .pic .hover {
   width: 0;
   height: 100%;
   overflow: hidden;
@@ -95,22 +137,22 @@ input[type="checkbox"] {
   transition: 0.5s ease-in-out;
 }
 
-.item-list .item-card:hover .hover {
+.item-card:hover .hover {
   width: 100%;
 }
 
-.item-list .item-card .choice {
+.item-card .choice {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
 }
 
-.item-list .item-card .choice .color-list {
+.item-card .choice .color-list {
   display: flex;
   justify-content: space-between;
 }
 
-.item-list .item-card .choice .color-list .color {
+.item-card .choice .color-list .color {
   width: 20px;
   height: 20px;
   border-radius: 20px;
@@ -129,28 +171,18 @@ input[type="checkbox"] {
 .color-list .gy {
   background-color: var(--lightgray);
 }
-.color-list .wt {
-  background-color: #fff;
-}
 
-.item-list .item-card .choice .color-list .color + .color {
+.item-card .choice .color-list .color + .color {
   margin-left: 10px;
 }
 
-.item-list .item-card .choice .size-list {
+.item-card .choice .size-list {
   flex-grow: 1;
   text-align: end;
   padding-right: 5px;
 }
 
-.item-list .readmore {
-  width: 100%;
-  text-align: end;
-  color: var(--darkblue);
-  padding: 40px 0;
-}
-
-.item-list .item-card .pic .tag {
+.item-card .pic .tag {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -175,10 +207,12 @@ input[type="checkbox"] {
 .item .breadcrumb a {
   text-decoration: none;
   color: var(--darkblue);
+  transition: 0.2s ease-in-out;
 }
 
 .item .breadcrumb a:hover {
   text-decoration: underline;
+  color: var(--orange);
 }
 
 .item .breadcrumb li + li::before {
@@ -208,6 +242,7 @@ input[type="checkbox"] {
   position: absolute;
   top: 45%;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .item .wrap .scroll-left {
@@ -260,6 +295,10 @@ input[type="checkbox"] {
   margin: 6px 0;
 }
 
+input[type="radio"] {
+  display: none;
+}
+
 .color-list .box {
   padding: 3px;
   border: 1px solid transparent;
@@ -269,15 +308,17 @@ input[type="checkbox"] {
 .color-list .color {
   width: 40px;
   height: 40px;
+  border-radius: 50%;
   box-sizing: border-box;
 }
 
 .color-list label + label {
-  margin-left: 40px;
+  margin-left: 29px;
 }
 
 .color-list input:checked ~ .box {
   border: 1px solid #111;
+  border-radius: 50%;
 }
 
 .item .info .size-choice {
@@ -312,6 +353,7 @@ input[type="checkbox"] {
   color: #111;
   border: 1px solid #111;
   user-select: none;
+  cursor: pointer;
 }
 
 .size-choice input:checked ~ li {
@@ -370,9 +412,10 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #add-btn {
-  background-color: var(--lightgray);
+  background-color: var(--orange);
   width: 200px;
   margin-left: 30px;
+  overflow: hidden;
 }
 
 #add-btn p {
@@ -386,19 +429,23 @@ input[type="number"]::-webkit-outer-spin-button {
   overflow: hidden;
   background-color: var(--lightblue);
   position: absolute;
-  top: 0;
+  top: -20px;
   left: 0;
-  transition: width 0.3s ease-in-out, height 0.6s ease-in-out;
+  rotate: 45deg;
+  transition: width 0.2s ease-in-out, height 0.4s ease-in-out;
   z-index: 1;
 }
 
 #add-btn:hover .hover {
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
+}
+
+.item .info .icon {
+  align-self: center;
 }
 
 .item .info .icon img {
-  vertical-align: bottom;
   margin-left: 30px;
 }
 
@@ -425,6 +472,10 @@ input[type="number"]::-webkit-outer-spin-button {
 .detail-type {
   color: var(--darkblue);
   margin-bottom: 10px;
+}
+
+ul.wrap2 li a {
+  text-decoration: underline;
 }
 
 .feature li,

@@ -8,85 +8,102 @@ header .pagelink ul {
 
 /* 本頁面大區塊共用 */
 
-.hotpick,
-.collection,
-.essential {
+.hotpick .wrap,
+.collection .wrap,
+.essential .wrap {
   width: 66%;
   max-width: 1268px;
   margin: 0 auto;
 }
 
-.collection,
-.essential {
-  margin: 50px auto;
-}
-
-.hotpick .wrap,
-.collection .wrap,
-.essential .wrap {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  margin-bottom: 50px;
-}
-
-.hotpick .wrap .title,
-.collection .wrap .title,
-.essential .wrap .title {
-  color: var(--darkblue);
-  text-align: end;
-  justify-content: end;
-}
-
 /* 商品區域 */
 
-.item-list {
+.hotpick .wrap {
+  display: flex;
   position: relative;
-  margin-top: -60px;
 }
 
-.item-list .scroll {
+#hot-list {
+  overflow: hidden;
+}
+
+#hot-roll {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  column-gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.scroll {
   position: absolute;
-  top: 40%;
+  top: 36%;
   cursor: pointer;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
 }
 
-.item-list .scroll-left {
+.scroll:hover {
+  scale: 1.5;
+}
+
+.scroll-left {
   left: -40px;
 }
 
-.item-list .scroll-right {
+.scroll-right {
   right: -40px;
 }
 
 .item-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 40px;
+  row-gap: 40px;
+  justify-items: center;
 }
 
-.item-list .item-card {
+@media (width < 1860px) {
+  .item-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (width < 1280px) {
+  .item-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (width < 768px) {
+  .item-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 商品卡片 */
+.item-card {
   width: 272px;
+  flex-shrink: 0;
   color: #111;
-  margin-top: 60px;
 }
 
-.item-list .item-card .name {
+.item-card .name {
   font-size: 22px;
   font-weight: 700;
   padding-top: 6px;
 }
 
-.item-list .item-card .pic {
+.item-card .pic {
   width: 100%;
   position: relative;
 }
 
-.item-list .item-card .pic img {
+.item-card .pic img {
   width: 100%;
   vertical-align: middle;
 }
 
-.item-list .item-card .pic .hover {
+.item-card .pic .hover {
   width: 0;
   height: 100%;
   overflow: hidden;
@@ -106,22 +123,22 @@ header .pagelink ul {
   transition: 0.5s ease-in-out;
 }
 
-.item-list .item-card:hover .hover {
+.item-card:hover .hover {
   width: 100%;
 }
 
-.item-list .item-card .choice {
+.item-card .choice {
   display: flex;
   justify-content: space-between;
   margin: 10px 0;
 }
 
-.item-list .item-card .choice .color-list {
+.item-card .choice .color-list {
   display: flex;
   justify-content: space-between;
 }
 
-.item-list .item-card .choice .color-list .color {
+.item-card .choice .color-list .color {
   width: 20px;
   height: 20px;
   border-radius: 20px;
@@ -141,24 +158,24 @@ header .pagelink ul {
   background-color: var(--lightgray);
 }
 
-.item-list .item-card .choice .color-list .color + .color {
+.item-card .choice .color-list .color + .color {
   margin-left: 10px;
 }
 
-.item-list .item-card .choice .size-list {
+.item-card .choice .size-list {
   flex-grow: 1;
   text-align: end;
   padding-right: 5px;
 }
 
-.item-list .readmore {
+.readmore {
+  display: block;
   width: 100%;
   text-align: end;
-  color: var(--darkblue);
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
-.item-list .item-card .pic .tag {
+.item-card .pic .tag {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -172,7 +189,7 @@ header .pagelink ul {
 
 .poster {
   width: 60%;
-  margin: 0 auto 40px;
+  margin: 80px auto 40px;
 }
 
 .poster .pic {

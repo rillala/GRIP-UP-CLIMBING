@@ -106,20 +106,20 @@
               <div class="choice-color">
                 <p class="subtitle pbig">Color information</p>
                 <div class="color-list">
-                  <label id="color1">
-                    <input type="checkbox" name="color1" id="color1" />
+                  <label>
+                    <input type="radio" name="color" value="black" />
                     <div class="box">
                       <div class="color bk"></div>
                     </div>
                   </label>
-                  <label for="color2">
-                    <input type="checkbox" name="color1" id="color2" />
+                  <label>
+                    <input type="radio" name="color" value="orange" />
                     <div class="box">
                       <div class="color og"></div>
                     </div>
                   </label>
-                  <label for="color3">
-                    <input type="checkbox" name="color1" id="color3" />
+                  <label>
+                    <input type="radio" name="color" value="gray" />
                     <div class="box">
                       <div class="color gy"></div>
                     </div>
@@ -129,51 +129,53 @@
               <div class="size-choice">
                 <div class="subtitle">
                   <p class="title pbig">Size Information</p>
-                  <button class="pbig" id="size-chart-btn">Size Chart</button>
+                  <button class="pbig alink" id="size-chart-btn">
+                    Size Chart
+                  </button>
                 </div>
                 <ul>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 6" />
                     <li class="size pbig">6</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 6.5" />
                     <li class="size pbig">6.5</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 7" />
                     <li class="size pbig">7</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 7.5" />
                     <li class="size pbig">7.5</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 8" />
                     <li class="size pbig">8</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 8.5" />
                     <li class="size pbig">8.5</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 9" />
                     <li class="size pbig">9</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 9.5" />
                     <li class="size pbig">9.5</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 10" />
                     <li class="size pbig">10</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 10.5" />
                     <li class="size pbig">10.5</li>
                   </label>
                   <label>
-                    <input type="checkbox" name="" id="" />
+                    <input type="radio" name="buy-size" value="US 11" />
                     <li class="size pbig">11</li>
                   </label>
                 </ul>
@@ -184,7 +186,7 @@
                   <input
                     type="number"
                     name=""
-                    id="item-number"
+                    id="buy-number"
                     min="1"
                     value="1"
                   />
@@ -283,7 +285,11 @@
               equipment, ensuring safety and performance adherence for climbing
               enthusiasts.
             </li>
-            <li class="psmall"><a href="">Manual Instruction (download)</a></li>
+            <li class="psmall">
+              <a href="#ManualInstructionDownload" class="alink"
+                >Manual Instruction (download)</a
+              >
+            </li>
           </ul>
           <div class="wrap2">
             <p class="detail-type h4">Caring and Cleaning Instructions</p>
@@ -317,91 +323,136 @@
           </div>
         </div>
       </section>
-      <section class="bg">
-        <section class="related">
-          <div class="wrap">
-            <h2 class="title">Related<br />Products</h2>
+
+      <section class="related">
+        <h3 class="section-title">Related Products</h3>
+        <div class="wrap">
+          <div class="scroll scroll-left" id="scroll-left">
+            <img src="./universe/scroll-left.svg" alt="" />
           </div>
-          <div class="item-list">
-            <div class="item-card">
-              <div class="pic">
-                <img src="./shop/tshirt.png" alt="Performance Tee" />
-                <div class="tag h6">SALE</div>
-                <a href="#moreDetail" class="hover">
-                  <p class="h6">MORE<br />DETAIL</p>
-                </a>
-              </div>
-              <p class="name pbig">Performance Tee</p>
-              <div class="choice">
-                <div class="color-list">
-                  <div class="color bk"></div>
-                  <div class="color og"></div>
-                  <div class="color gy"></div>
-                  <div class="color bl"></div>
-                  <div class="color wt"></div>
+          <div id="related-list">
+            <div id="related-roll">
+              <div class="item-card">
+                <div class="pic">
+                  <img src="./shop/tshirt.png" alt="Performance Tee" />
+                  <div class="tag h6">SALE</div>
+                  <a href="#moreDetail" class="hover">
+                    <p class="h6">MORE<br />DETAIL</p>
+                  </a>
                 </div>
-                <p class="size-list psmall">S - 2XL</p>
-              </div>
-              <p class="price pbig">NTD 700</p>
-            </div>
-            <div class="item-card">
-              <div class="pic">
-                <img src="./shop/beneie.png" alt="Ascend Tech Beanie" />
-                <div class="tag h6">SALE</div>
-                <a href="#moreDetail" class="hover">
-                  <p class="h6">MORE<br />DETAIL</p>
-                </a>
-              </div>
-              <p class="name pbig">Ascend Tech Beanie</p>
-              <div class="choice">
-                <div class="color-list">
-                  <div class="color bk"></div>
-                  <div class="color og"></div>
-                  <div class="color gy"></div>
-                  <div class="color bl"></div>
+                <p class="name pbig">Performance Tee</p>
+                <div class="choice">
+                  <div class="color-list">
+                    <div class="color bk"></div>
+                    <div class="color og"></div>
+                    <div class="color gy"></div>
+                    <div class="color bl"></div>
+                    <div class="color wt"></div>
+                  </div>
+                  <p class="size-list psmall">S - 2XL</p>
                 </div>
-                <p class="size-list psmall">S - L</p>
+                <p class="price pbig">NTD 700</p>
               </div>
-              <p class="price pbig">NTD 1,380</p>
-            </div>
-            <div class="item-card">
-              <div class="pic">
-                <img src="./shop/socks.png" alt="Climbing Socks" />
-                <a href="#moreDetail" class="hover">
-                  <p class="h6">MORE<br />DETAIL</p>
-                </a>
-              </div>
-              <p class="name pbig">Climbing Socks</p>
-              <div class="choice">
-                <div class="color-list">
-                  <div class="color bk"></div>
-                  <div class="color og"></div>
-                  <div class="color gy"></div>
-                  <div class="color bl"></div>
+              <div class="item-card">
+                <div class="pic">
+                  <img src="./shop/beneie.png" alt="Ascend Tech Beanie" />
+                  <div class="tag h6">SALE</div>
+                  <a href="#moreDetail" class="hover">
+                    <p class="h6">MORE<br />DETAIL</p>
+                  </a>
                 </div>
-                <p class="size-list psmall">S - L</p>
-              </div>
-              <p class="price pbig">NTD 300</p>
-            </div>
-            <div class="item-card">
-              <div class="pic">
-                <img src="./shop/shoe2.png" alt="Nika Approach Shoes" />
-                <div class="tag h6">SALE</div>
-                <a href="#moreDetail" class="hover">
-                  <p class="h6">MORE<br />DETAIL</p>
-                </a>
-              </div>
-              <p class="name pbig">Nika Approach Shoes</p>
-              <div class="choice">
-                <div class="color-list">
-                  <div class="color bk"></div>
+                <p class="name pbig">Ascend Tech Beanie</p>
+                <div class="choice">
+                  <div class="color-list">
+                    <div class="color bk"></div>
+                    <div class="color og"></div>
+                    <div class="color gy"></div>
+                    <div class="color bl"></div>
+                  </div>
+                  <p class="size-list psmall">S - L</p>
                 </div>
-                <p class="size-list psmall">US6 - US9</p>
+                <p class="price pbig">NTD 1,380</p>
               </div>
-              <p class="price pbig">NTD 3,000</p>
+              <div class="item-card">
+                <div class="pic">
+                  <img src="./shop/socks.png" alt="Climbing Socks" />
+                  <a href="#moreDetail" class="hover">
+                    <p class="h6">MORE<br />DETAIL</p>
+                  </a>
+                </div>
+                <p class="name pbig">Climbing Socks</p>
+                <div class="choice">
+                  <div class="color-list">
+                    <div class="color bk"></div>
+                    <div class="color og"></div>
+                    <div class="color gy"></div>
+                    <div class="color bl"></div>
+                  </div>
+                  <p class="size-list psmall">S - L</p>
+                </div>
+                <p class="price pbig">NTD 300</p>
+              </div>
+              <div class="item-card">
+                <div class="pic">
+                  <img src="./shop/shoe2.png" alt="Nika Approach Shoes" />
+                  <div class="tag h6">SALE</div>
+                  <a href="#moreDetail" class="hover">
+                    <p class="h6">MORE<br />DETAIL</p>
+                  </a>
+                </div>
+                <p class="name pbig">Nika Approach Shoes</p>
+                <div class="choice">
+                  <div class="color-list">
+                    <div class="color bk"></div>
+                  </div>
+                  <p class="size-list psmall">US6 - US9</p>
+                </div>
+                <p class="price pbig">NTD 3,000</p>
+              </div>
+              <div class="item-card">
+                <div class="pic">
+                  <img src="./shop/scoche.png" alt="Signature Sacoche Bag" />
+                  <a href="#moreDetail" class="hover">
+                    <p class="h6">MORE<br />DETAIL</p>
+                  </a>
+                </div>
+                <p class="name pbig">Signature Sacoche Bag</p>
+                <div class="choice">
+                  <div class="color-list">
+                    <div class="color bk"></div>
+                    <div class="color og"></div>
+                    <div class="color gy"></div>
+                    <div class="color wt"></div>
+                  </div>
+                  <p class="size-list psmall">S - M</p>
+                </div>
+                <p class="price pbig">NTD 1,280</p>
+              </div>
+              <div class="item-card">
+                <div class="pic">
+                  <img src="./shop/shorts.png" alt="TechFlex Shorts" />
+                  <div class="tag h6">SALE</div>
+                  <a href="#moreDetail" class="hover">
+                    <p class="h6">MORE<br />DETAIL</p>
+                  </a>
+                </div>
+                <p class="name pbig">TechFlex Shorts</p>
+                <div class="choice">
+                  <div class="color-list">
+                    <div class="color bl"></div>
+                    <div class="color og"></div>
+                    <div class="color gy"></div>
+                  </div>
+                  <p class="size-list psmall">S - 2XL</p>
+                </div>
+                <p class="price pbig">NTD 980</p>
+              </div>
             </div>
           </div>
-        </section>
+          <div class="scroll scroll-right" id="scroll-right">
+            <img src="./universe/scroll-right.svg" alt="" />
+          </div>
+        </div>
       </section>
     </section>
 

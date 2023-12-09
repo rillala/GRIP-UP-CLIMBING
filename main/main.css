@@ -28,6 +28,7 @@ header .pagelink ul {
   grid-row: 3/4;
   justify-self: end;
   color: var(--darkblue);
+  align-self: flex-end;
 }
 
 .header .pagetype-main .page-intro h4 {
@@ -42,38 +43,46 @@ header .pagelink ul {
   grid-row: 2/3;
   align-self: end;
   color: #111;
-  font-size: 20px;
-  line-height: 28px;
 }
-.header .pagetype-main .page-intro .h6 {
+.header .pagetype-main .page-intro .down {
   grid-column: 3/4;
   grid-row: 3/4;
+  color: #111;
+}
+
+.page-intro .h6 {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  display: block;
   color: var(--lightgray);
   font-weight: 600;
   font-size: 32px;
-  margin-top: 56px;
+  align-self: flex-end;
+}
+
+@media (width < 1920px) {
+  .page-intro .h6 {
+    font-size: 26px;
+  }
+}
+@media (width < 1440px) {
+  .page-intro .h6 {
+    font-size: 20px;
+  }
 }
 
 /* 最新消息-grid structure */
-
-.latestnews {
+.latestnews .wrap {
   display: grid;
   grid-template-columns: 30% 40% 30%;
   width: 66%;
   max-width: 1268px;
-  margin: 60px auto 0;
-}
-
-.latestnews .title {
-  text-align: end;
-  justify-self: end;
-  color: var(--darkblue);
+  margin: -60px auto 0;
 }
 
 .latestnews .news-list {
   grid-column: 1/2;
   grid-row: 2/4;
-  align-self: center;
 }
 
 .latestnews #news1-pic {
@@ -112,14 +121,6 @@ header .pagelink ul {
   transition: 0.5s ease-in-out;
 }
 
-.latestnews a {
-  text-decoration: none;
-}
-
-.latestnews .news-list a:hover p {
-  color: var(--orange);
-}
-
 .latestnews .news-list .news-title {
   color: var(--darkblue);
 }
@@ -136,6 +137,12 @@ header .pagelink ul {
   font-size: 20px;
 }
 
+.news-list .readmore {
+  display: block;
+  justify-content: end;
+  margin-right: 10px;
+}
+
 /* 課程區域 */
 
 .course .wrap {
@@ -143,18 +150,15 @@ header .pagelink ul {
   grid-template-columns: 30% 20% 50%;
   width: 66%;
   max-width: 1268px;
-  margin: 100px auto 0;
+  margin: 0 auto 0;
 }
 
-.course .wrap .title {
-  justify-self: end;
-  text-align: end;
-  color: var(--darkblue);
+.course .wrap.second {
+  margin-top: 60px;
 }
 
 .course .wrap .sub-wrap {
   grid-column: 3/4;
-  margin-top: 30px;
 }
 
 .course .wrap .sub-wrap .subtitle {
@@ -167,8 +171,9 @@ header .pagelink ul {
   padding: 5px 0;
 }
 
-.course .wrap .sub-wrap .readmore {
-  color: #111;
+.course .wrap .sub-wrap a {
+  display: block;
+  justify-content: end;
 }
 
 .course .pic-list {
@@ -226,19 +231,6 @@ header .pagelink ul {
 }
 
 /* 社群和其他區塊-->同community grid排版 */
-.community .wrap {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  width: 66%;
-  max-width: 1268px;
-  margin: 150px auto 0;
-}
-
-.community .wrap .title {
-  justify-self: end;
-  text-align: end;
-  color: var(--darkblue);
-}
 
 /* grid版型部分 */
 
@@ -318,14 +310,9 @@ header .pagelink ul {
   color: var(--darkgray);
 }
 
-.community .news-card .text .readmore {
+.news-card .readmore {
   display: block;
   padding-top: 20px;
-  text-decoration: none;
-  color: #000;
-}
-.community .news-card .text .readmore:hover {
-  text-decoration: underline;
 }
 
 .community .social-media {
