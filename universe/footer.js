@@ -21,10 +21,10 @@ function openMenu() {
     let navBarBGColor = $("#navbar").css("backgroundColor");
 
     if (window.matchMedia("(width < 768px)").matches) {
-      if (navBarBGColor != "rgba(52, 74, 94, 0.8)") {
+      if (navBarBGColor != "rgba(52, 74, 94, 0.9)") {
         navBarBGColor = $("#navbar").css(
           "backgroundColor",
-          "rgba(52, 74, 94, 0.8)"
+          "rgba(52, 74, 94, 0.9)"
         );
       } else {
         navBarBGColor = $("#navbar").css("backgroundColor", "transparent");
