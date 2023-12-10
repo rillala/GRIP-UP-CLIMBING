@@ -133,13 +133,13 @@ input::placeholder {
   } /* h5和h6保持相同大小 */
   .pbig {
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 20px;
   }
   .psmall,
   input::placeholder {
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 18px;
   }
 }
@@ -184,8 +184,6 @@ input::placeholder {
   align-items: center;
 }
 
-/*頁面導覽列*/
-
 header {
   width: 100%;
 }
@@ -196,6 +194,7 @@ header {
   background-position: bottom;
 }
 
+/*頁面導覽列*/
 #navbar {
   width: 100%;
   padding: 20px 20px 0;
@@ -438,13 +437,36 @@ nav {
 
 /* 頁面首區 */
 
+@media (width > 767px) {
+  header {
+    width: 66%;
+    margin: 0 auto 0;
+  }
+
+  section.page-intro-small {
+    display: none;
+  }
+}
+
 .header .pagetype {
   display: grid;
   grid-template-columns: 50% 6% 44%;
-  /* grid-template-rows: 95px 95px; */
   max-width: 1268px;
   margin: 150px auto 0;
   color: var(--darkblue);
+}
+
+@media (width < 768px) {
+  .header .pagetype {
+    display: block;
+    text-align: center;
+    margin: 200px auto 0;
+    color: var(--darkblue);
+  }
+
+  .header p.down {
+    display: none;
+  }
 }
 
 .header .page-intro {
@@ -480,6 +502,21 @@ nav {
 .header .pagelink li a.h4 {
   font-size: 28px;
 }
+
+/* section.page-intro-small專用 */
+
+#page-intro-small {
+  padding: 20px;
+  background-color: var(--lightblue);
+  color: #fff;
+}
+
+#page-intro-small p {
+  display: block;
+  padding-top: 5px;
+}
+
+/* 各頁面共用部分 */
 
 .readmore {
   font-family: "Montserrat", sans-serif;
@@ -537,7 +574,7 @@ section.content {
   position: relative;
 }
 
-section.content .backtotop {
+.backtotop {
   height: 99%;
   width: 80px;
   position: absolute;
@@ -548,7 +585,7 @@ section.content .backtotop {
   z-index: 2;
 }
 
-section.content .backtotop .top-wrap {
+.backtotop .top-wrap {
   position: sticky;
   padding-top: 400px;
   top: 700px;
@@ -566,16 +603,42 @@ section.content .backtotop .top-wrap {
   text-decoration: none;
 }
 
-section.content .backtotop .top-wrap:hover {
+.backtotop .top-wrap:hover {
   opacity: 1;
   box-shadow: 5px 5px 3px var(--lightgray);
 }
 
-section.content .backtotop .top-wrap p {
+.backtotop .top-wrap p {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 24px;
   letter-spacing: 3%;
   display: block;
   padding-top: 10px;
+}
+
+@media (width < 768px) {
+  section.content .backtotop {
+    width: 40px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+  }
+
+  .backtotop .top-wrap {
+    position: sticky;
+    top: 300px;
+    width: 70px;
+    height: 40px;
+  }
+
+  .backtotop .top-wrap:hover {
+    opacity: 1;
+    box-shadow: 5px 5px 3px var(--lightgray);
+  }
+
+  .backtotop .top-wrap p {
+    display: none;
+  }
 }

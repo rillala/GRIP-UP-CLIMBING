@@ -1,5 +1,18 @@
-// load navbar
-document.addEventListener("DOMContentLoaded", (event) => {
+// 當頁面加載完畢時執行頁尾載入footer
+document.addEventListener("DOMContentLoaded", function () {
+  loadFooter();
+  loadNavBar();
+  changeHeaderDesign();
+});
+
+// // 當視窗大小改變時重新載入適當的頁尾+調整頁首
+window.addEventListener("resize", function () {
+  loadFooter();
+  changeHeaderDesign();
+});
+
+// 導覽列相關----------------------------------------------
+function loadNavBar() {
   fetch("navbar.html") // 獲取 navbar.html 的內容
     .then((response) => response.text()) // 將響應轉換為文本
     .then((html) => {
@@ -11,7 +24,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .catch((error) => {
       console.error("載入導覽列失敗:", error);
     });
-});
+}
 
 function openMenu() {
   $("#menu-btn").click(function () {
@@ -67,14 +80,23 @@ function checkItemNumber() {
   }
 }
 
-// 當#menu-btn被點擊的時候,menu-link-list展開, 然後背景顏色改變
+// 頁首格式相關----------------------------------------------
 
-/////----------------以下為footer相關-----------------------///////
+function changeHeaderDesign() {
+  // if (window.innerWidth < 768) {
+  //   $("#page-intro-small").append($(".page-intro .up"));
+  //   $(".page-intro").remove();
+  // }
+  if (window.innerWidth < 768) {
+    // 當視窗寬度小於 768，移動 .up 到 #page-intro-small
+    $("#page-intro-small").append($(".page-intro .up"));
+  } else {
+    // 當視窗寬度大於或等於 768，將 .up 移回原來的位置
+    $(".page-intro").append($(".page-intro-small .up"));
+  }
+}
 
-// 當頁面加載完畢時執行頁尾載入footer
-document.addEventListener("DOMContentLoaded", loadFooter);
-// // 當視窗大小改變時重新載入適當的頁尾
-window.addEventListener("resize", loadFooter);
+/////footer相關---------------------------------------------
 
 //load footer
 function loadFooter() {
