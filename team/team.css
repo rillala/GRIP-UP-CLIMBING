@@ -29,7 +29,7 @@ header {
   .header .pagetype {
     display: block;
     text-align: center;
-    margin: 200px auto 0;
+    margin: 260px auto 0;
     color: var(--darkblue);
   }
 }

@@ -151,15 +151,20 @@ footer .license {
   padding-bottom: 10px;
 }
 
-@media (width <768px) {
+@media (width < 770px) {
   footer {
-    padding: 30px;
+    padding: 20px 30px;
   }
 
   footer .container {
     width: 100%;
     max-width: 420px;
     margin: 0 auto;
+  }
+
+  footer .container p.psmall {
+    display: block;
+    padding-top: 5px;
   }
 
   footer #customer-email {

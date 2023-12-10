@@ -1,8 +1,9 @@
-// 當頁面加載完畢時執行頁尾載入footer
+// 當頁面加載完畢時執行載入
 document.addEventListener("DOMContentLoaded", function () {
   loadFooter();
   loadNavBar();
   changeHeaderDesign();
+  pageLinkHide();
 });
 
 // // 當視窗大小改變時重新載入適當的頁尾+調整頁首
@@ -33,7 +34,7 @@ function openMenu() {
     $("#menu-link-list").toggle();
     let navBarBGColor = $("#navbar").css("backgroundColor");
 
-    if (window.matchMedia("(width < 768px)").matches) {
+    if (window.matchMedia("(width < 770px)").matches) {
       if (navBarBGColor != "rgba(52, 74, 94, 0.9)") {
         navBarBGColor = $("#navbar").css(
           "backgroundColor",
@@ -83,16 +84,26 @@ function checkItemNumber() {
 // 頁首格式相關----------------------------------------------
 
 function changeHeaderDesign() {
-  // if (window.innerWidth < 768) {
+  // if (window.innerWidth < 770) {
   //   $("#page-intro-small").append($(".page-intro .up"));
   //   $(".page-intro").remove();
   // }
-  if (window.innerWidth < 768) {
-    // 當視窗寬度小於 768，移動 .up 到 #page-intro-small
+  if (window.innerWidth < 770) {
+    // 當視窗寬度小於 770，移動 .up 到 #page-intro-small
     $("#page-intro-small").append($(".page-intro .up"));
   } else {
-    // 當視窗寬度大於或等於 768，將 .up 移回原來的位置
+    // 當視窗寬度大於或等於 770，將 .up 移回原來的位置
     $(".page-intro").append($(".page-intro-small .up"));
+  }
+}
+
+function pageLinkHide() {
+  if (!window.location.href.includes("index.html")) {
+    if (window.innerWidth < 770) {
+      $(".pagelink").hide();
+    } else {
+      $(".pagelink").show();
+    }
   }
 }
 
@@ -101,7 +112,7 @@ function changeHeaderDesign() {
 //load footer
 function loadFooter() {
   const footerFile =
-    window.innerWidth >= 768 ? "footer-desktop.html" : "footer-small.html";
+    window.innerWidth <= 768 ? "footer-small.html" : "footer-desktop.html";
 
   fetch(footerFile)
     .then((response) => response.text())
