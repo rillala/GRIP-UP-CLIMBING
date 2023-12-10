@@ -190,6 +190,12 @@ header {
   width: 100%;
 }
 
+.header {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 #navbar {
   width: 100%;
   padding: 20px 20px 0;
