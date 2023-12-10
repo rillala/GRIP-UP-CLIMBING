@@ -187,143 +187,247 @@ input::placeholder {
 /*頁面導覽列*/
 
 header {
-  width: 66%;
-  margin: 0 auto 100px;
+  width: 100%;
 }
 
-.header {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
+#navbar {
+  width: 100%;
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
 }
 
-header .top {
-  max-width: 1268px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 40px 0 0 0;
-}
-
-header .top .logo {
-  grid-column: 2 / 3;
-  justify-self: center;
-}
-
-header .top .logo a {
-  text-align: center;
+#navbar .logo-pic {
+  height: 60px;
   position: relative;
-  transition: 0.3s ease-in-out;
 }
 
-header .top .logo a .logohover {
+.logo-pic img {
+  height: 100%;
+  vertical-align: middle;
+}
+
+.logo-pic .logohover {
   position: absolute;
   top: 0;
   left: 0;
-  display: none;
+  z-index: -1;
 }
 
-header .top .logo a:hover .logohover {
+.logo-pic:hover .logohover {
+  z-index: 1;
+}
+
+nav > ul {
+  display: contents;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-list > a {
   display: block;
+  width: 35px;
+  height: 35px;
 }
 
-header .top nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.nav-list > a img {
+  width: 100%;
+  vertical-align: middle;
 }
 
-header .top nav ul {
-  display: flex;
-  justify-content: flex-end;
-}
+@media (width > 767px) {
+  header {
+    width: 66%;
+    margin: 0 auto 100px;
+  }
 
-header .top .nav-list {
-  width: 40px;
-  height: 40px;
-}
+  #navbar {
+    max-width: 1268px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 40px 0 0 0;
+  }
 
-.nav-list a {
-  text-decoration: none;
+  #navbar .logo-pic {
+    grid-column: 2 / 3;
+    justify-self: center;
+    height: 100px;
+  }
+
+  #navbar nav {
+    grid-column: 3/4;
+    justify-self: end;
+    gap: 40px;
+  }
+
+  .nav-list > a {
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
+}
+/* 購物車 */
+.shpping-car-icon {
   position: relative;
-}
-
-header .top .nav-list + .nav-list {
-  margin-left: 40px;
-}
-
-#member-pic {
-  width: 50px;
-}
-
-header .top .menu {
-  position: relative;
-}
-
-header .top .menu img {
-  cursor: pointer;
 }
 
 #item-number {
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   background-color: var(--orange);
   color: #fff;
   text-decoration: none;
   position: absolute;
-  right: -15px;
-  bottom: 40px;
-  display: none;
-}
-
-/*要顯示下拉menu要改這個*/
-header .top .menu .menu-link-list {
-  position: absolute;
-  top: calc(100% + 20px);
   right: -20px;
-  display: none;
-  transition: 1s ease-in-out;
+  top: -10px;
 }
 
-header .top .nav-list input {
-  display: none;
+@media (width > 767px) {
+  #item-number {
+    width: 35px;
+    height: 35px;
+  }
 }
 
-#menu-btn:checked ~ .menu .menu-link-list {
+/* 網站連結選單 */
+.nav-list #menu-btn {
+  width: 40px;
+  height: 35px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.nav-list #menu-btn span {
   display: block;
-}
-
-header .top .menu .menu-link-list ul {
-  display: flex;
-  flex-direction: column;
-}
-
-header .top .menu .menu-link-list .menu-link {
-  width: 260px;
-  height: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-header .top .menu a {
-  border: 1px solid var(--lightgray);
-  height: 100%;
   width: 100%;
-  background-color: var(--darkblue);
-  color: var(--white);
-  text-decoration: none;
-  padding: 5px 7px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 30%;
+  border-top: 4px solid #fff;
 }
 
-header .top .menu a:hover {
-  background-color: var(--orange);
-  color: var(--white);
+.menu-link-list {
+  position: absolute;
+  background-color: rgba(52, 74, 94, 0.8);
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 120px);
+  padding: 80px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+.menu-link-list a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-link-list p {
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu-link-list .contact-info {
+  position: absolute;
+  bottom: 20px;
+}
+
+.menu-link-list .contact-info p {
+  display: block;
+  padding-top: 5px;
+  color: #fff;
+  font-weight: 300;
+}
+
+.menu-link-list .menu-link {
+  padding-bottom: 50px;
+  user-select: none;
+}
+
+.menu-link-list .sub-menu {
+  display: none;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.menu-link-list .sub-menu:first-child {
+  padding-top: 0;
+}
+
+.sub-menu a {
+  display: block;
+  padding: 20px 0 5px;
+  margin-left: 20px;
+  border-bottom: 2px solid var(--orange);
+  transition: 0.2s ease-in-out;
+}
+
+@media (width > 767px) {
+  .nav-list .menu {
+    position: relative;
+  }
+
+  .nav-list #menu-btn {
+    width: 50px;
+    height: 45px;
+  }
+  .nav-list #menu-btn span {
+    border-top: 5px solid #fff;
+  }
+
+  #menu-link-list {
+    position: absolute;
+    background-color: rgba(52, 74, 94, 1);
+    top: 80px;
+    left: auto;
+    right: 0;
+    width: 280px;
+    height: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    display: none;
+    border: 2px solid #aaa;
+  }
+
+  #menu-link-list .menu-link > p {
+    font-size: 24px;
+    display: block;
+  }
+
+  .menu-link-list .contact-info {
+    display: none;
+  }
+
+  .menu-link-list .menu-link {
+    padding: 10px;
+  }
+
+  .menu-link-list .menu-link + .menu-link {
+    border-top: 2px solid #aaa;
+  }
+
+  .menu-link-list .sub-menu {
+    margin-top: 0;
+  }
+
+  .sub-menu a {
+    display: block;
+    padding: 10px 0 5px;
+    margin-left: 20px;
+    border-bottom: 0;
+    font-size: 20px;
+  }
+  .sub-menu li + li {
+    border-top: 2px solid var(--orange);
+  }
 }
 
 /* 頁面首區 */

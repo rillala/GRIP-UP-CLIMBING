@@ -151,6 +151,68 @@ footer .license {
   padding-bottom: 10px;
 }
 
+@media (width <768px) {
+  footer {
+    padding: 30px;
+  }
+
+  footer .container {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  footer #customer-email {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  footer #email-submit {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  footer .bottom {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  footer .bottom .wrap {
+    margin-left: 20px;
+    flex-grow: 1;
+    justify-self: center;
+  }
+
+  footer .wrap .media-link {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  footer .wrap .media-link .pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer .logo {
+    width: 90px;
+  }
+
+  footer img {
+    width: 100%;
+  }
+
+  footer .license {
+    font-size: 14px;
+    font-weight: 300;
+    white-space: nowrap;
+    padding-top: 10px;
+  }
+}
+
 /* 購物車區域 */
 .number-wrap {
   display: flex;

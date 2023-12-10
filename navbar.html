@@ -1,49 +1,81 @@
-<div class="logo">
-  <a href="index.html"
-    ><div class="logo-pic">
-      <img src="./universe/logo.png" alt="logo" class="logodefault" /><img
-        src="./universe/logo-dark.png"
-        alt="logo"
-        class="logohover"
-      /></div
-  ></a>
-</div>
+<a href="index.html" class="logo-pic">
+  <img src="./universe/logo.png" alt="logo" class="logodefault" />
+  <img src="./universe/logo-dark.png" alt="logo" class="logohover"
+/></a>
+
 <nav>
   <ul>
     <li class="nav-list">
-      <a href="#購物車"
+      <a href="#購物車" class="shpping-car-icon"
         ><img src="./universe/car.svg" alt="shopping-car" />
-        <div id="item-number" class="middle h5">0</div></a
+        <div id="item-number" class="middle h5">3</div></a
       >
     </li>
+
     <li class="nav-list">
       <a href="#會員登入"
         ><img src="./universe/member.svg" id="member-pic" alt="member-login"
       /></a>
     </li>
+
     <li class="nav-list">
-      <input type="checkbox" name="menu-btn" id="menu-btn" />
       <div class="menu">
-        <label for="menu-btn"
-          ><img src="./universe/menu.svg" alt="menu"
-        /></label>
-        <div class="menu-link-list">
-          <ul>
-            <li class="menu-link h5">
-              <a href="center.html">Climbing Center</a>
-            </li>
-            <li class="menu-link h5">
-              <a href="courseActivity.html">Course and Activity</a>
-            </li>
-            <li class="menu-link h5">
-              <a href="community.html">Community</a>
-            </li>
-            <li class="menu-link h5">
-              <a href="shop.html">Gear Shop</a>
-            </li>
-            <li class="menu-link h5"><a href="FAQ.html">FAQ</a></li>
-          </ul>
+        <div class="hambugar" id="menu-btn">
+          <span></span><span></span><span></span>
         </div>
+        <ul class="menu-link-list" id="menu-link-list">
+          <li class="menu-link">
+            <p class="h4">Climbing Center</p>
+            <ul class="sub-menu h5">
+              <li><a href="center.html#branches-link">Branches</a></li>
+              <li><a href="center.html#price-link">Price</a></li>
+              <li><a href="center.html#facility-link">Facility</a></li>
+              <li><a href="team.html">Our Team</a></li>
+            </ul>
+          </li>
+          <li class="menu-link">
+            <p class="h4">Course and Activity</p>
+            <ul class="sub-menu h5">
+              <li><a href="courseActivity.html#indoor-link">Indoor</a></li>
+              <li><a href="courseActivity.html#outdoor-link">Outdoor</a></li>
+              <li>
+                <a href="courseActivity.html#customized-link">Customize</a>
+              </li>
+              <li><a href="courseActivity.html#lecture-link">Lecture</a></li>
+            </ul>
+          </li>
+          <li class="menu-link">
+            <p class="h4">Community</p>
+            <ul class="sub-menu h5">
+              <li><a href="community.html#membership-link">Membership</a></li>
+              <li><a href="community.html#benefit-link">Benefit</a></li>
+              <li><a href="community.html#dynamic-link">Dynamic</a></li>
+              <li><a href="community.html#upcoming-link">Upcoming</a></li>
+            </ul>
+          </li>
+          <li class="menu-link h4">
+            <p class="h4">Gear Shop</p>
+            <ul class="sub-menu h5">
+              <li><a href="shop.html">All</a></li>
+              <li><a href="shop.html#hotpick-link">Hot Pick</a></li>
+              <li><a href="shop.html#gripup-link">Grip Up's</a></li>
+              <li><a href="shop.html#essential-link">Essentials</a></li>
+            </ul>
+          </li>
+          <li class="menu-link h4">
+            <p class="h4">FAQ</p>
+            <ul class="sub-menu h5">
+              <li><a href="FAQ.html#qa-link">Course</a></li>
+              <li><a href="FAQ.html#qa-link">Shopping</a></li>
+              <li><a href="FAQ.html#qa-link">Safety</a></li>
+              <li><a href="FAQ.html#qa-link">Other</a></li>
+            </ul>
+          </li>
+          <div class="contact-info">
+            <p class="phone psmall">+886 2-1234-5678</p>
+            <p class="email psmall">gripupclimbing@gmail.com</p>
+          </div>
+        </ul>
       </div>
     </li>
   </ul>

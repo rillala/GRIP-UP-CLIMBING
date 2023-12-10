@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./universe/reset.css" />
+    <link rel="stylesheet" href="./universe/universe.css" />
+    <link rel="stylesheet" href="./universe/universe-footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="cart">
+      <div class="wrap">
+        <div class="shopbag">
+          <h4 class="title">Shopping Bag</h4>
+          <div class="card-list">
+            <div class="card">
+              <div class="pic">
+                <img src="./product/product-4.png" alt="productPic" />
+              </div>
+              <div class="info">
+                <div class="productName h5">GRIP UP Modern Approach Shoes</div>
+                <div class="info-down">
+                  <div class="detail pbig">
+                    <p class="itemID">Item: ID246890</p>
+                    <div class="detail-show">
+                     <p class="itemColor">Color: Black
+                        <select name="" id="approachShoe-edit-color">
+                                <option value="black">Black</option>
+                                <option value="orange">Orange</option>
+                                <option value="gray">Gray</option>
+                            </select>
+                        </p>
+                    <p class="itemSize">Size: 7.5
+                        <select name="" id="approachShoe-cart-size">
+                                <option value="4">4</option>
+                                <option value="4.5">4.5</option>
+                                <option value="5">5</option>
+                                <option value="5.5">5.5</option>
+                                <option value="6">6</option>
+                                <option value="6.5">6.5</option>
+                                <option value="7">7</option>
+                                <option value="7.5">7.5</option>
+                                <option value="8">8</option>
+                                <option value="8.5">8.5</option>
+                                <option value="9">9</option>
+                             </select></p>
+                    <p class="itemPrice">Unit Price: $3,400</p>
+                    </div>                                    
+                  </div>
+                  <div class="number-wrap">
+                    <div class="cal h6" id="minus">-</div>
+                    <input
+                      type="number"
+                      name=""
+                      id="buy-number"
+                      min="1"
+                      value="1"
+                    />
+                    <div class="cal h6" id="plus">+</div>
+                  </div>
+                  <p class="sutotalPrice h5">$6,800</p>
+                </div>
+              </div>
+              <div class="edit">
+                <button type="submit">
+                  <img src="./universe/edit.svg" alt="edit" />
+                </button>
+                <button type="submit">
+                  <img src="./universe/trash.svg" alt="delete" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="summary">
+          <h4 class="title">Order Summary <span>(6)</span></h4>
+          <div class="card">
+            <p class="subtotal">
+                <p class="rowName">Item(s) Subtotal</p>
+                <p>$ 6,800</p>
+            </p>
+            <p class="shipping">
+                <p class="rowName">Est. Shipping</p>
+                <p>$ 0</p>
+            </p>
+            <div class="coupon">
+                <input type="text" name="" id="" class="pbig">
+                <input type="submit" value="APPLY" class="h6">
+                <p id="discount">-$ 0</p>
+            </div>
+            <div class="total">
+                <p class="typeNmae h5">Order Total</p>
+                <p class="price">$ 6,800</p>
+                <p class="psmall" id="shippingStatue">Congratulations! Your are qualifies for free standard shipping.</p>
+            </div>
+            <button type="submit" class="h4">CHECK OUT</button>
+            <div class="payment">
+                <div class="paymentPic"><img src="./universe/visa.svg" alt=""></div>
+                <div class="paymentPic"><img src="./universe/mastercard.svg" alt=""></div>
+                <div class="paymentPic"><img src="./universe/ae.svg" alt=""></div>
+                <div class="paymentPic"><img src="./universe/applepay.svg" alt=""></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -7,6 +7,9 @@ header {
   padding-bottom: 40px;
 }
 
+@media (width < 768px) {
+}
+
 /*標題和頁面簡介*/
 .header .pagetype {
   display: grid;
