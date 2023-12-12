@@ -8,12 +8,6 @@ header .pagelink ul {
 
 /*課程區塊*/
 
-@media (width > 770px) {
-  h3.section-title {
-    margin-bottom: -20px;
-  }
-}
-
 .container {
   margin: 50px auto;
   width: 66%;
@@ -24,7 +18,7 @@ section.content section + section {
   margin-top: 150px;
 }
 
-.wrap {
+section .wrap {
   display: grid;
   grid-template-columns: 55% 45%;
   width: 66%;
