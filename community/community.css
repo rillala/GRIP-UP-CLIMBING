@@ -162,6 +162,26 @@ header .pagelink ul {
   column-gap: 70px;
 }
 
+@media (width < 770px) {
+  .community .news-list {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-template-columns: none;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  .community .news-list .news-card + .news-card {
+    display: block;
+  }
+
+  .community .news-list .news-card {
+    display: block;
+  }
+}
+
 .dynamic .news-list .news-card {
   display: contents;
 }
@@ -211,6 +231,12 @@ header .pagelink ul {
   height: 50%;
   border-bottom: 3px solid var(--darkblue);
   margin: 0 10px;
+}
+
+@media (width < 400px) {
+  .community .news-card .subtitle .line {
+    width: 50px;
+  }
 }
 
 .dynamic .news-card img {
