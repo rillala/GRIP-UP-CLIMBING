@@ -196,8 +196,29 @@ header .pagelink ul {
 /* 頁尾海報區域 */
 
 .poster {
-  width: 60%;
-  margin: 80px auto 40px;
+  width: 66%;
+  margin: 100px auto;
+  max-width: 1268px;
+}
+
+.poster p.psmall {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+@media (width < 770px) {
+  .poster {
+    width: 100%;
+    margin: 0px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .poster p.psmall {
+    font-size: 14px;
+    margin: 10px 0;
+  }
 }
 
 .poster .pic {
@@ -211,24 +232,39 @@ header .pagelink ul {
 }
 
 .poster .pic .slogan {
-  width: 410px;
-  height: 180px;
+  width: 500px;
+  height: 100px;
   background-color: var(--orange);
   color: #fff;
   position: absolute;
-  top: 40px;
+  top: 20px;
   left: -190px;
   display: flex;
   align-items: center;
   justify-content: end;
   padding-right: 20px;
   text-align: end;
-  line-height: 56px;
 }
 
-.poster .pic .psmall {
-  display: block;
-  margin-top: 5px;
+@media (width < 650px) {
+  .poster .pic .slogan {
+    width: 60%;
+    height: auto;
+    background-color: var(--orange);
+    color: #fff;
+    position: absolute;
+    top: auto;
+    bottom: 5px;
+    left: -20px;
+    display: block;
+    padding: 5px 5px 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .poster .pic .slogan br {
+    display: none;
+  }
 }
 
 /* 類別海報區塊 */
