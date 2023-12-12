@@ -5,6 +5,14 @@
   background-repeat: no-repeat;
 }
 
+@media (width < 770px) {
+  .header {
+    background-image: url("product-heroimg-small.png");
+    padding-bottom: 20px;
+    margin: 0;
+  }
+}
+
 header .pagelink ul {
   grid-template-columns: repeat(3, 1fr);
 }

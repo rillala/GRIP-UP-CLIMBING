@@ -2,6 +2,14 @@
   background-image: url("center-heroimg.png");
 }
 
+@media (width < 770px) {
+  .header {
+    background-image: url("center-heroimg-small.png");
+    padding-bottom: 20px;
+    margin: 0;
+  }
+}
+
 /*標題和頁面簡介*/
 
 header .pagelink ul {

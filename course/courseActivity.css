@@ -2,6 +2,14 @@
   background-image: url("courseandactivity-top-image.png");
 }
 
+@media (width < 770px) {
+  .header {
+    background-image: url("courseandactivity-top-image-small.png");
+    padding-bottom: 20px;
+    margin: 0;
+  }
+}
+
 header .pagelink ul {
   grid-template-columns: repeat(4, 1fr);
 }

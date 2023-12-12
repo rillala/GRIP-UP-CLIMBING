@@ -2,6 +2,14 @@
   background-image: url("shop-heroimg.png");
 }
 
+@media (width < 770px) {
+  .header {
+    background-image: url("shop-heroimg-small.png");
+    padding-bottom: 20px;
+    margin: 0;
+  }
+}
+
 header .pagelink ul {
   grid-template-columns: repeat(3, 1fr);
 }
