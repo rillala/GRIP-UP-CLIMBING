@@ -215,8 +215,28 @@ section.branches {
   max-width: 1268px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   column-gap: 70px;
+}
+
+@media (width < 770px) {
+  .facility .news-list {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    grid-template-columns: none;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  .facility .news-list .news-card + .news-card {
+    display: block;
+  }
+
+  .facility .news-list .news-card {
+    display: block;
+  }
 }
 
 .facility .news-list .news-card {
@@ -286,6 +306,12 @@ section.branches {
   margin: 0 10px;
 }
 
+@media (width < 400px) {
+  .facility .news-card .subtitle .line {
+    width: 50px;
+  }
+}
+
 .facility .news-card img {
   width: 100%;
   vertical-align: middle;
@@ -310,6 +336,8 @@ section.branches {
   opacity: 0;
   transition: 0.3s ease-in-out;
 }
+
+/* 這邊hover-effect用js toggle classList */
 
 .facility .coworking:hover .hover-effect,
 .facility .yoga:hover .hover-effect {
