@@ -1,15 +1,25 @@
+loadFooter();
+loadNavBar();
+pageLinkHide();
+changeHeaderDesign();
+replaceWhiteSpaceWrap();
+
+var originalHtml = $(".section-title").html();
 // 當頁面加載完畢時執行載入
 document.addEventListener("DOMContentLoaded", function () {
   loadFooter();
   loadNavBar();
-  changeHeaderDesign();
   pageLinkHide();
+  changeHeaderDesign();
+  replaceWhiteSpaceWrap();
 });
 
 // // 當視窗大小改變時重新載入適當的頁尾+調整頁首
 window.addEventListener("resize", function () {
   loadFooter();
+  pageLinkHide();
   changeHeaderDesign();
+  replaceWhiteSpaceWrap();
 });
 
 // 導覽列相關----------------------------------------------
@@ -84,10 +94,6 @@ function checkItemNumber() {
 // 頁首格式相關----------------------------------------------
 
 function changeHeaderDesign() {
-  // if (window.innerWidth < 770) {
-  //   $("#page-intro-small").append($(".page-intro .up"));
-  //   $(".page-intro").remove();
-  // }
   if (window.innerWidth < 770) {
     // 當視窗寬度小於 770，移動 .up 到 #page-intro-small
     $("#page-intro-small").append($(".page-intro .up"));
@@ -107,12 +113,24 @@ function pageLinkHide() {
   }
 }
 
+//!!!!!!!!!!!測試一下resize的時候有沒有換回來
+//替換section-title的標題格式
+function replaceWhiteSpaceWrap() {
+  if (window.innerWidth < 770) {
+    $(".section-title").html(function (index, oldHtml) {
+      return oldHtml.replace(/<br>/g, " ");
+    });
+  } else {
+    $(".section-title").html(originalHtml);
+  }
+}
+
 /////footer相關---------------------------------------------
 
 //load footer
 function loadFooter() {
-  const footerFile =
-    window.innerWidth <= 768 ? "footer-small.html" : "footer-desktop.html";
+  let footerFile =
+    window.innerWidth <= 1200 ? "footer-small.html" : "footer-desktop.html";
 
   fetch(footerFile)
     .then((response) => response.text())
@@ -147,3 +165,46 @@ function emailSub() {
       }
     });
 }
+
+// 其他頁面連過來FAQ的特定類型,沒成功
+// function SitemapToFAQ() {
+//   $(document).ready(function () {
+//     $("li a.faq-click").on("click", function (event) {
+//       let faq_hash = window.location.hash;
+
+//       if (faq_hash.includes("faq")) {
+//         // 假設每個問題種類的按鈕有一個對應的 ID 或類別
+//         // 這裡的 "#button" 是假設的按鈕 ID，根據你的實際情況修改
+//         let clickIndex = parseInt(faq_hash.replace("#faq", ""));
+
+//         if (window.innerWidth < 770) {
+//           //小裝置時的功能
+//           $("#qa-type-list-small .h5").removeClass("btn-light-hover");
+//           $("#qa-type-list-small .h5")
+//             .eq(clickIndex)
+//             .addClass("btn-light-hover");
+
+//           let content = buildQAarea(QAlist[clickIndex]);
+//           $("#qa-list").html(content);
+
+//           checkAnswer();
+//         }
+//         // else {
+//         //   //大裝置時的功能
+//         //   $("#qa-link").text = QAlist[clickIndex][0];
+//         //   $("#qa-type-list-desktop .type.btn-light");
+
+//         //   let filteredArray = QAlist.slice(0, clickIndex).concat(
+//         //     QAlist.slice(clickIndex + 1)
+//         //   );
+
+//         //   $("#qa-type-list-desktop .type.btn-light").each(function (index) {
+//         //     if (index < filteredArray.length) {
+//         //       $(this).text(filteredArray[index]);
+//         //     }
+//         //   });
+//         // }
+//       }
+//     });
+//   });
+// }

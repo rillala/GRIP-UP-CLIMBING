@@ -13,7 +13,7 @@ header .pagelink ul {
   grid-template-columns: 30% 70%;
   width: 66%;
   max-width: 1268px;
-  margin: -20px auto 50px;
+  margin: 100px auto 50px;
   color: var(--darkblue);
 }
 
@@ -22,13 +22,13 @@ header .pagelink ul {
 }
 
 .join .benefit .title {
-  justify-self: center;
+  justify-self: end;
   text-align: end;
   align-self: center;
 }
 
 .join .benefit ul {
-  padding-left: 50px;
+  padding-left: 100px;
   list-style-type: disc;
 }
 
@@ -109,13 +109,14 @@ header .pagelink ul {
   max-width: 1268px;
   margin: 40px auto 40px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: end;
+  align-items: center;
 }
 
 .join-rule .join-btn {
   padding: 25px 0;
-  width: 250px;
+  width: 400px;
 }
 
 .join-rule .wrap .psmall {
@@ -136,6 +137,12 @@ header .pagelink ul {
 
 .dynamic .wrap {
   margin-bottom: 0;
+}
+
+@media (width > 770px) {
+  #dynamic-link {
+    margin-bottom: -20px;
+  }
 }
 
 .dynamic .news-list {

@@ -1,5 +1,14 @@
 .header {
   background-image: url("faqheroimg.png");
+  margin-bottom: 100px;
+}
+
+@media (width < 770px) {
+  .header {
+    background-image: url("faqheroimg-small.png");
+    padding-bottom: 20px;
+    margin: 0;
+  }
 }
 
 header .pagelink ul {
@@ -9,8 +18,18 @@ header .pagelink ul {
 /* 海報區域 */
 
 .poster {
-  width: 60%;
+  width: 66%;
   margin: 100px auto;
+  max-width: 1268px;
+}
+
+@media (width < 770px) {
+  .poster {
+    width: 100%;
+    margin: 0px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
 }
 
 .poster .pic {
@@ -38,69 +57,109 @@ header .pagelink ul {
   text-align: end;
 }
 
+@media (width < 650px) {
+  .poster .pic .slogan {
+    width: 80%;
+    height: auto;
+    background-color: var(--orange);
+    color: #fff;
+    position: absolute;
+    top: auto;
+    bottom: 5px;
+    left: -20px;
+    display: block;
+    padding: 5px 5px 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+  }
+}
+
 /* 聯絡資訊區域 */
-
-.contact {
-  width: 66%;
-  max-width: 1268px;
-  margin: 100px auto;
-}
-
-.contact .wrap {
-  display: grid;
-  grid-template-columns: 30% 25% 45%;
-}
-
-.contact .wrap .title {
-  justify-self: end;
-  color: var(--darkblue);
-  white-space: nowrap;
-  overflow: visible;
-}
-
-.contact .wrap .info {
-  grid-column: 3/4;
-  align-self: end;
-  padding-top: 20px;
-}
-
+.contact .wrap,
 .contact .wrap-info {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  margin: 80px 0;
+  width: 100%;
+  padding: 0 20px 20px;
+  box-sizing: border-box;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-.contact .wrap-info .office-info {
-  justify-self: end;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: var(--darkblue);
+.media-list {
+  display: none;
 }
 
-.contact .wrap-info .pbig {
-  color: #111;
+.contact .title {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  margin-bottom: -10px;
 }
 
-.contact .wrap-info .media-list {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
+@media (width >= 770px) {
+  .contact .title {
+    width: 66%;
+    padding: 0;
+    margin: 0 auto -10px;
+    max-width: 1268px;
+  }
+
+  .contact .wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 66%;
+    max-width: 1268px;
+  }
+
+  .contact .wrap .info {
+    grid-column: 2/3;
+    align-self: end;
+  }
 }
 
-.contact .wrap-info .media-list img {
-  vertical-align: middle;
-}
+@media (width >=770px) {
+  .contact .wrap-info {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 66%;
+    max-width: 1268px;
+    margin: 80px auto;
+  }
 
-.contact .wrap-info .media-list .media-type {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
+  .contact .wrap-info .office-info {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--darkblue);
+  }
 
-.contact .wrap-info .media-list .media-type .subtitle {
-  color: var(--darkblue);
-  margin-bottom: 8px;
+  .contact .wrap-info .pbig {
+    color: #111;
+  }
+
+  .contact .wrap-info .media-list {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+  }
+
+  .contact .wrap-info .media-list img {
+    vertical-align: middle;
+  }
+
+  .contact .wrap-info .media-list .media-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .contact .wrap-info .media-list .media-type .subtitle {
+    color: var(--darkblue);
+    margin-bottom: 8px;
+  }
 }
 
 /* 問答區域 */
@@ -113,6 +172,16 @@ header .pagelink ul {
 .qa-area .wrap {
   display: grid;
   grid-template-columns: 30% 70%;
+}
+
+@media (width < 770px) {
+  .qa-area {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
 }
 
 .qa-area .wrap .title {
@@ -128,6 +197,45 @@ header .pagelink ul {
   align-items: center;
   padding-left: 50px;
   text-align: center;
+}
+
+section.qa-area #qa-type-list-small {
+  display: none;
+  overflow: hidden;
+}
+
+@media (width < 770px) {
+  section.qa-area #qa-type-list-desktop {
+    display: none;
+    overflow: hidden;
+  }
+
+  section.qa-area #qa-type-list-small {
+    display: flex;
+    overflow: visible;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+  }
+
+  #qa-type-list-small div {
+    width: 48%;
+  }
+}
+
+@media (width < 426px) {
+  section.qa-area #qa-type-list-small {
+    display: block;
+    overflow: visible;
+  }
+
+  #qa-type-list-small div {
+    width: 100%;
+  }
+
+  #qa-type-list-small div + div {
+    margin-top: 20px;
+  }
 }
 
 .qa-area .wrap .qa-type-list .type {
@@ -157,6 +265,18 @@ header .pagelink ul {
   color: var(--darkblue);
 }
 
+@media (width < 770px) {
+  .qa-area .qa-list {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .qa-area .qa-list li .content {
+    padding: 10px;
+    height: auto;
+  }
+}
+
 .qa-area .qa-list li .a {
   display: flex;
   padding: 0 60px;
@@ -165,6 +285,12 @@ header .pagelink ul {
   align-items: center;
   color: var(--darkblue);
   transition: 0.3s ease-in-out;
+}
+
+@media (width < 770px) {
+  .qa-area .qa-list li .a {
+    padding: 0 10px;
+  }
 }
 
 .qa-area .qa-list li .pbig {
@@ -207,6 +333,13 @@ header .pagelink ul {
 .a-hover {
   height: 60px !important;
   border-top: 1px solid #ccc;
+}
+
+@media (width < 770px) {
+  .a-hover {
+    height: auto !important;
+    padding: 10px !important;
+  }
 }
 
 /* for qa-icon hover effect*/

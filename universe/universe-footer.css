@@ -151,14 +151,14 @@ footer .license {
   padding-bottom: 10px;
 }
 
-@media (width < 770px) {
+@media (width <= 1200px) {
   footer {
     padding: 20px 30px;
   }
 
   footer .container {
     width: 100%;
-    max-width: 420px;
+    max-width: 600px;
     margin: 0 auto;
   }
 
@@ -183,13 +183,12 @@ footer .license {
 
   footer .bottom {
     display: flex;
+    justify-content: space-between;
     margin-top: 20px;
   }
 
   footer .bottom .wrap {
     margin-left: 20px;
-    flex-grow: 1;
-    justify-self: center;
   }
 
   footer .wrap .media-link {

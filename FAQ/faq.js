@@ -105,37 +105,70 @@ const safetyQA = [
 
 const QAlist = [courseQA, purchaseQA, memberQA, safetyQA];
 
-// QA按鈕類別text更換
 //QA問答替換
-
 let current = document.getElementById("qa-link");
 
-document.querySelectorAll(".type.btn-light.h5").forEach((button) => {
-  button.addEventListener("click", function () {
-    let clickText = current.innerHTML;
-
-    // 將 #qa-link 的文字設置為當前按鈕的文字
-    current.innerHTML = this.innerHTML;
-
-    // 將按鈕的文字設置為原本 #qa-link 的文字
-    this.innerHTML = clickText;
-
-    //根據按下元素的value, 去替換掉qa-area裡的內容
-    checkWhich();
-
-    //將答案展開的功能套用
-    checkAnswer();
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  if (window.innerWidth <= 768) {
+    // 小裝置的時候執行
+    changeQAtypeSmall();
+    $("#qa-type-list-small .h5:first").addClass("btn-light-hover");
+  } else {
+    // 桌機+筆電的時候執行
+    changeQAtypeDesktop();
+  }
+  checkAnswer();
 });
 
-//-1.確認#qa-link.value,與哪個 array[0]一樣
-function checkWhich() {
-  for (let i = 0; i < QAlist.length; i++) {
-    if (current.innerText === QAlist[i][0]) {
-      //-2.將下方innerHTML替換為該array內容
-      document.querySelector("#qa-list").innerHTML = buildQAarea(QAlist[i]);
-    }
+$(window).resize(function () {
+  if (window.innerWidth <= 768) {
+    // 小裝置的時候執行
+    changeQAtypeSmall();
+  } else {
+    // 桌機+筆電的時候執行
+    changeQAtypeDesktop();
   }
+  checkAnswer();
+});
+
+// 大裝置: QA 按鈕類別 text 更換
+function changeQAtypeDesktop() {
+  document.querySelectorAll(".type.btn-light.h5").forEach((button) => {
+    button.addEventListener("click", function () {
+      let clickText = current.innerHTML;
+
+      // 將 #qa-link 的文字設置為當前按鈕的文字
+      current.innerHTML = this.innerHTML;
+
+      // 將按鈕的文字設置為原本 #qa-link 的文字
+      this.innerHTML = clickText;
+
+      //根據按下元素的value, 去替換掉qa-area裡的內容
+      for (let i = 0; i < QAlist.length; i++) {
+        if (current.innerText === QAlist[i][0]) {
+          //-2.將下方innerHTML替換為該array內容
+          document.querySelector("#qa-list").innerHTML = buildQAarea(QAlist[i]);
+        }
+      }
+
+      //將答案展開的功能套用
+      checkAnswer();
+    });
+  });
+}
+
+// 小裝置: QA 按鈕類別 text 更換
+function changeQAtypeSmall() {
+  $("#qa-type-list-small .h5").each(function (index) {
+    $(this).click(function () {
+      $("#qa-type-list-small .h5").not(this).removeClass("btn-light-hover");
+      let content = buildQAarea(QAlist[index]);
+      $("#qa-list").html(content);
+      $(this).addClass("btn-light-hover");
+
+      checkAnswer();
+    });
+  });
 }
 
 //3.依問答類別array內容建立QA格式的innerHTML
@@ -168,10 +201,6 @@ function buildQAarea(arr) {
 }
 
 //展開答案區域功能:
-
-// 0.頁面初始時先載入此功能
-document.addEventListener("DOMContentLoaded", checkAnswer);
-
 function checkAnswer() {
   //選取所有的q
   const questions = document.querySelectorAll(".content.q");

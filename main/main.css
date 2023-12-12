@@ -209,6 +209,12 @@ header .pagelink ul {
   }
 }
 
+@media (width > 770px) {
+  h3.section-title {
+    margin-bottom: -20px;
+  }
+}
+
 .course .wrap.second {
   margin-top: 60px;
 }

@@ -27,6 +27,10 @@ header .pagelink ul {
 
 /* 分店介紹 */
 
+section.branches {
+  margin-top: 100px;
+}
+
 .branches .center-list {
   width: 66%;
   max-width: 1268px;

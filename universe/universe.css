@@ -171,7 +171,8 @@ input::placeholder {
   transition: 0.3s ease-in-out;
 }
 
-.btn-light:hover {
+.btn-light:hover,
+.btn-light-hover {
   box-shadow: -10px 10px var(--lightgray);
   color: var(--white);
   background-color: var(--orange);
@@ -252,7 +253,7 @@ nav {
   vertical-align: middle;
 }
 
-@media (width > 767px) {
+@media (width > 770px) {
   header {
     width: 66%;
     margin: 0 auto 100px;
@@ -284,7 +285,7 @@ nav {
     height: 50px;
   }
 }
-/* 購物車 */
+/* 導覽列購物車 */
 .shpping-car-icon {
   position: relative;
 }
@@ -329,11 +330,13 @@ nav {
   top: 80px;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 120px);
+  /* height: calc(100vh - 120px); */
+  min-height: calc(100vh - 120px);
   padding: 80px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   display: none;
+  z-index: 3;
 }
 
 .menu-link-list a {
@@ -402,6 +405,7 @@ nav {
     right: 0;
     width: 280px;
     height: auto;
+    min-height: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -444,14 +448,10 @@ nav {
 
 /* 頁面首區 */
 
-@media (width > 767px) {
+@media (width >= 770px) {
   header {
     width: 66%;
     margin: 0 auto 0;
-  }
-
-  section.page-intro-small {
-    display: none;
   }
 }
 
@@ -499,11 +499,17 @@ nav {
   align-self: end;
   color: #111;
 }
-.header .pagetype .page-intro .down {
+.header .pagetype .page-intro p.down {
   grid-column: 3/4;
   grid-row: 2/3;
   color: #111;
   padding-left: 10px;
+}
+
+@media (width < 770px) {
+  .header p.down {
+    display: none;
+  }
 }
 
 .header .pagelink li a.h4 {
@@ -511,16 +517,24 @@ nav {
 }
 
 /* section.page-intro-small專用 */
-
 #page-intro-small {
-  padding: 20px;
-  background-color: var(--lightblue);
-  color: #fff;
+  padding: 0;
+  display: none;
+  overflow: hidden;
 }
 
-#page-intro-small p {
-  display: block;
-  padding-top: 5px;
+@media (width < 770px) {
+  #page-intro-small {
+    display: block;
+    padding: 20px;
+    background-color: var(--lightblue);
+    color: #fff;
+  }
+
+  #page-intro-small p {
+    display: block;
+    padding-top: 5px;
+  }
 }
 
 /* 各頁面共用部分 */
@@ -532,7 +546,7 @@ nav {
   letter-spacing: 2%;
   text-decoration: none;
   transition: 0.3s ease-in-out;
-  color: #111;
+  color: var(--darkblue);
   text-align: end;
 }
 .readmore:hover {
@@ -553,22 +567,25 @@ nav {
 
 .section-title {
   color: var(--darkblue);
-  white-space: nowrap;
-  display: block;
   width: 66%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  text-align: end;
+  white-space: nowrap;
   max-width: 1268px;
-  margin: 120px auto 30px;
+  margin: 120px auto 40px;
 }
 
 @media (width < 770px) {
   .section-title {
     color: var(--darkblue);
-    white-space: nowrap;
     display: block;
     width: 100%;
+    max-width: 600px;
     margin: 40px 0 20px;
     padding: 0 20px;
     box-sizing: border-box;
+    text-align: left;
   }
 }
 
@@ -678,4 +695,16 @@ section.content {
   .backtotop .top-wrap p {
     display: none;
   }
+}
+
+/* -------------購物車相關----------------小裝置先 */
+
+.cart .wrap {
+  width: 100%;
+  padding: 20px;
+}
+
+.cart .card {
+  background-color: #fff;
+  padding: 15px;
 }
