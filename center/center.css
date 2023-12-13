@@ -61,7 +61,9 @@ section.branches {
 }
 
 #taichung-branch,
-#kaohsiung-branch {
+#kaohsiung-branch,
+#taichung-map,
+#kaohsiung-map {
   display: none;
 }
 
@@ -87,7 +89,15 @@ section.branches {
   color: #111;
 }
 
-.center .googleMap iframe {
+.center-list #map-list {
+  width: 100%;
+}
+
+.center-list .googleMap {
+  width: 100%;
+}
+
+.googleMap iframe {
   width: 100%;
   aspect-ratio: 16/9;
 }
@@ -103,6 +113,19 @@ section.branches {
 
   .center-list {
     display: flex;
+    margin-top: 40px;
+  }
+
+  #map-list .googleMap {
+    height: 100%;
+    padding-left: 40px;
+    box-sizing: border-box;
+  }
+
+  .googleMap iframe {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: none;
   }
 }
 

@@ -11,14 +11,19 @@ $(document).resize(function () {});
 function showBranch() {
   $("#branches-link").change(function () {
     let selectBranch = $(this).val();
-    $(".center-list .center")
-      .not($(`#${selectBranch}-branch`))
-      .hide();
-    $(`#${selectBranch}-branch`).show();
+    let branchID = `#${selectBranch}-branch`;
+
+    $(".center-list .center").not($(branchID)).hide();
+
+    $(branchID).show();
+
+    let mapID = `#${selectBranch}-map`;
+    $("#map-list .googleMap").not($(mapID)).hide();
+    $(mapID).show();
+
+    //當大裝置的時候,把地圖移位子
   });
 }
-
-//當大裝置的時候,把地圖一味一味
 
 // 依照點擊按鈕更換地圖
 // function changeMap() {

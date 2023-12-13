@@ -86,15 +86,6 @@
               <p class="pbig">
                 No. 128, Cityscape Lane, Da'an District, Taipei City 221
               </p>
-              <div class="googleMap">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.223466545364!2d121.64588261054955!3d25.060413977706627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea51152e19%3A0xc42665561f719791!2sTibaMe!5e0!3m2!1szh-TW!2stw!4v1702435985922!5m2!1szh-TW!2stw"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
             </div>
           </div>
           <div class="center" id="taichung-branch">
@@ -115,15 +106,6 @@
               <p class="pbig">
                 No. 59, Peakview Boulevard, Xitun District, Taichung City 104
               </p>
-              <div class="googleMap">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.467830527485!2d121.54067261103053!3d25.052127977712033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abe6b0446815%3A0xf006dde8c27afcc7!2z57ev6IKyVGliYU1l6ZmE6Kit5Y-w5YyX6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1701351205680!5m2!1szh-TW!2stw"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
             </div>
           </div>
           <div class="center" id="kaohsiung-branch">
@@ -145,21 +127,41 @@
                 No. 88, Harborfront Road,<br />Yancheng District, Kaohsiung City
                 330
               </p>
-              <div class="googleMap">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115751.9737022725!2d121.13525252377633!3d24.957635500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1701351107468!5m2!1szh-TW!2stw"
-                  style="border: 0"
-                  allowfullscreen=""
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
             </div>
           </div>
-          <div id="googleMap-desktop"></div>
+          <div id="map-list">
+            <div class="googleMap" id="taipei-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.223466545364!2d121.64588261054955!3d25.060413977706627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea51152e19%3A0xc42665561f719791!2sTibaMe!5e0!3m2!1szh-TW!2stw!4v1702435985922!5m2!1szh-TW!2stw"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="googleMap" id="taichung-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.467830527485!2d121.54067261103053!3d25.052127977712033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abe6b0446815%3A0xf006dde8c27afcc7!2z57ev6IKyVGliYU1l6ZmE6Kit5Y-w5YyX6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1701351205680!5m2!1szh-TW!2stw"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="googleMap" id="kaohsiung-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115751.9737022725!2d121.13525252377633!3d24.957635500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1701351107468!5m2!1szh-TW!2stw"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
-      <!-- <section class="price">
+
+      <section class="price">
         <h3 class="section-title" id="price-link">
           TICKETS &<br />&nbspRental
         </h3>
@@ -258,7 +260,8 @@
             </p>
           </div>
         </div>
-      </section> -->
+      </section>
+
       <section class="facility">
         <h3 class="section-title" id="facility-link">Facility</h3>
 
