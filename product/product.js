@@ -32,6 +32,7 @@ function picPrevious() {
     }
   }
 }
+
 function picNext() {
   let currentPicURL = new URL(currentPic.src);
   for (let i = 0; i < picSrc.length; i++) {
@@ -49,4 +50,46 @@ function changePic() {
 
 document.addEventListener("DOMContentLoaded", function () {
   changePic();
+  ifSmallSize();
+  productDetailShow();
 });
+
+$(document).resize(function () {
+  changePic();
+  ifSmallSize();
+  productDetailShow();
+});
+
+function ifSmallSize() {
+  if (window.innerWidth < 770) {
+    $("#pic-small-area").append($("#product-pics"));
+    $("#features-btn-toggle").append($("ul.tech"));
+  } else {
+    $(".item .wrap:first-child").prepend($("#product-pics"));
+    $("#detail-middle").append($("ul.tech"));
+  }
+}
+
+function productDetailShow() {
+  if (window.innerWidth < 770) {
+    $("#productDetail").click(function () {
+      $("#productDetail-toggle").slideToggle();
+      $(this).find(".qa-icon").toggleClass("rotate");
+    });
+
+    $("#features-btn").click(function () {
+      $("#features-btn-toggle").slideToggle();
+      $(this).find(".qa-icon").toggleClass("rotate");
+    });
+
+    $("#techSpec-btn").click(function () {
+      $("#techSpec-btn-toggle").slideToggle();
+      $(this).find(".qa-icon").toggleClass("rotate");
+    });
+
+    $("#care-btn").click(function () {
+      $("#care-btn-toggle").slideToggle();
+      $(this).find(".qa-icon").toggleClass("rotate");
+    });
+  }
+}

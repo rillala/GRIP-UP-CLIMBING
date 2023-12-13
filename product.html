@@ -77,7 +77,7 @@
           </ul>
         </div>
         <div class="wrap">
-          <div class="pic">
+          <div class="pic" id="product-pics">
             <img
               id="showPic"
               src="./product/product-1.png"
@@ -97,6 +97,9 @@
             </h4>
             <p class="review pbig">Review 232 (4.8)</p>
             <p class="price h5">NTD 3,400</p>
+
+            <div id="pic-small-area"></div>
+
             <p class="intro psmall">
               Unveil the pinnacle of modern design and functionality with GRIP
               UP's latest approach shoes, engineered for superior traction,
@@ -206,8 +209,11 @@
         </div>
         <div class="detail">
           <div class="wrap2">
-            <h3 class="title">Product Details</h3>
-            <p class="pbig">
+            <div class="btn-icon" id="productDetail">
+              <h4 class="title">Product Details</h4>
+              <img class="qa-icon" src="./FAQ/arrow-up.svg" alt="" />
+            </div>
+            <p class="pbig" id="productDetail-toggle">
               GRIP UP's new approach shoes are a testament to advanced footwear
               technology, blending aesthetics with performance. Crafted for
               climbers who demand excellence, these shoes feature a sleek,
@@ -220,41 +226,50 @@
               technical gear.
             </p>
           </div>
-          <div class="wrap">
+          <div class="wrap" id="detail-middle">
             <ul class="feature">
-              <p class="detail-type h4">Features</p>
-              <li class="psmall">
-                <span class="pbig">Ultra-lightweight construction:</span> These
-                shoes defy gravity with materials that offer durability without
-                the weight, perfect for climbers who want to move quickly and
-                effortlessly.
-              </li>
-              <li class="psmall">
-                <span class="pbig">Quick and easy slip-on design:</span> Slip
-                them on, secure the fit, and you’re ready to go. Ideal for
-                adventurers who value time and convenience.
-              </li>
-              <li class="psmall">
-                <span class="pbig">Adaptive fit for maximum comfort:</span>
-                Contouring to your foot's shape, these shoes provide a custom
-                fit, ensuring comfort that lasts all day.
-              </li>
-              <li class="psmall">
-                <span class="pbig">Exceptional grip on rocky surfaces:</span>
-                The superior tread design grips onto any terrain, providing
-                stability and safety on the most challenging climbs.
-              </li>
-              <li class="psmall">
-                <span class="pbig">Abrasion-resistant outer materials:</span>
-                Tough against terrain, these materials prevent wear and tear,
-                prolonging the life of your shoes.
-              </li>
-              <li class="psmall">
-                <span class="pbig">Enhanced cushioning for extended wear:</span>
-                Soft yet supportive, the cushioning system absorbs impact,
-                keeping your feet comfortable during prolonged use.
-              </li>
+              <div class="btn-icon" id="features-btn">
+                <h4 class="detail-type h4">Features</h4>
+                <img class="qa-icon" src="./FAQ/arrow-up.svg" alt="" />
+              </div>
+
+              <div id="features-btn-toggle">
+                <li class="psmall">
+                  <span class="pbig">Ultra-lightweight construction:</span>
+                  These shoes defy gravity with materials that offer durability
+                  without the weight, perfect for climbers who want to move
+                  quickly and effortlessly.
+                </li>
+                <li class="psmall">
+                  <span class="pbig">Quick and easy slip-on design:</span> Slip
+                  them on, secure the fit, and you’re ready to go. Ideal for
+                  adventurers who value time and convenience.
+                </li>
+                <li class="psmall">
+                  <span class="pbig">Adaptive fit for maximum comfort:</span>
+                  Contouring to your foot's shape, these shoes provide a custom
+                  fit, ensuring comfort that lasts all day.
+                </li>
+                <li class="psmall">
+                  <span class="pbig">Exceptional grip on rocky surfaces:</span>
+                  The superior tread design grips onto any terrain, providing
+                  stability and safety on the most challenging climbs.
+                </li>
+                <li class="psmall">
+                  <span class="pbig">Abrasion-resistant outer materials:</span>
+                  Tough against terrain, these materials prevent wear and tear,
+                  prolonging the life of your shoes.
+                </li>
+                <li class="psmall">
+                  <span class="pbig"
+                    >Enhanced cushioning for extended wear:</span
+                  >
+                  Soft yet supportive, the cushioning system absorbs impact,
+                  keeping your feet comfortable during prolonged use.
+                </li>
+              </div>
             </ul>
+
             <ul class="tech">
               <p class="detail-type h4">Technology</p>
               <li class="tech-wrap">
@@ -280,21 +295,30 @@
             </ul>
           </div>
           <ul class="wrap2">
-            <p class="detail-type h4">Technical Specifications</p>
-            <li class="psmall">
-              Complies with relevant EU and UIAA standards for climbing
-              equipment, ensuring safety and performance adherence for climbing
-              enthusiasts.
-            </li>
-            <li class="psmall">
-              <a href="#ManualInstructionDownload" class="alink"
-                >Manual Instruction (download)</a
-              >
-            </li>
+            <div class="btn-icon" id="techSpec-btn">
+              <h4 class="detail-type h4">Technical Specifications</h4>
+              <img class="qa-icon" src="./FAQ/arrow-up.svg" alt="" />
+            </div>
+
+            <div id="techSpec-btn-toggle">
+              <li class="psmall">
+                Complies with relevant EU and UIAA standards for climbing
+                equipment, ensuring safety and performance adherence for
+                climbing enthusiasts.
+              </li>
+              <li class="psmall">
+                <a href="#ManualInstructionDownload" class="alink"
+                  >Manual Instruction (download)</a
+                >
+              </li>
+            </div>
           </ul>
           <div class="wrap2">
-            <p class="detail-type h4">Caring and Cleaning Instructions</p>
-            <ul class="caring">
+            <div class="btn-icon" id="care-btn">
+              <h4 class="detail-type h4">Caring and Cleaning Instructions</h4>
+              <img class="qa-icon" src="./FAQ/arrow-up.svg" alt="" />
+            </div>
+            <ul class="caring" id="care-btn-toggle">
               <p class="psmall">
                 To maintain the integrity and performance of the GRIP UP
                 approach shoes:
