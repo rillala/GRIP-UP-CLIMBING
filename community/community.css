@@ -14,36 +14,7 @@ header .pagelink ul {
   grid-template-columns: repeat(3, 1fr);
 }
 
-/* 主頁面 */
-
-.join .benefit {
-  display: grid;
-  grid-template-columns: 30% 70%;
-  width: 66%;
-  max-width: 1268px;
-  margin: 100px auto 50px;
-  color: var(--darkblue);
-}
-
-.join .benefit .pbig {
-  color: #111;
-}
-
-.join .benefit .title {
-  justify-self: end;
-  text-align: end;
-  align-self: center;
-}
-
-.join .benefit ul {
-  padding-left: 100px;
-  list-style-type: disc;
-}
-
-.join .benefit ul li {
-  white-space: nowrap;
-  overflow: visible;
-}
+/* 頁面共通 */
 
 .join-rule .title,
 .dynamic .title,
@@ -54,82 +25,234 @@ header .pagelink ul {
   color: var(--darkblue);
 }
 
-.join-rule ol {
-  width: 66%;
-  max-width: 1268px;
-  margin: 0 auto 0;
+/* 會員權益--由小寫到大 */
+
+.join .benefit {
+  width: 100%;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.join-rule ol {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 30px;
-  row-gap: 15px;
-  justify-content: center;
+#membership-link {
+  color: var(--darkblue);
+  margin-bottom: 10px;
 }
 
-.join-rule ol li {
-  display: flex;
-  width: 240px;
+#membership-link br {
+  display: none;
+}
+
+.benefit .h5 {
+  color: var(--darkblue);
+  display: block;
+  padding: 10px 0 5px;
+}
+
+.benefit .h5:before {
+  content: "• ";
+}
+
+.benefit .pbig {
+  color: #111;
+}
+
+@media (width >= 770px) {
+  .join .benefit {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 66%;
+    max-width: 1268px;
+    margin: 100px auto 50px;
+    color: var(--darkblue);
+  }
+
+  .join .benefit .pbig {
+    color: #111;
+  }
+
+  .join .benefit .title {
+    justify-self: end;
+    text-align: end;
+    align-self: center;
+  }
+
+  .join .benefit ul {
+    padding-left: 80px;
+  }
+
+  .join .benefit ul li {
+    white-space: wrap;
+    overflow: visible;
+    padding-bottom: 10px;
+  }
+
+  .benefit .h5 {
+    display: inline-block;
+    padding-right: 10px;
+  }
+
+  .join {
+    padding: 0;
+  }
+}
+
+/* 如何加入--由小寫到大 */
+
+.join-rule ol {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+@media (width > 770px) {
+  .join-rule ol {
+    width: 66%;
+    max-width: 1268px;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+}
+
+.join-rule .step-wrap {
+  display: none;
+  height: 70px;
+  padding: 10px 10px 10px 0;
   color: #fff;
-  padding: 5px;
+  box-sizing: border-box;
+  background-color: var(--lightblue);
 }
 
-@media (width < 1750px) {
-  .join-rule ol li {
+.join-rule .step-wrap.click {
+  display: flex;
+}
+
+.step-wrap .step {
+  flex-grow: 1;
+}
+.step-wrap .content {
+  flex-grow: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.step-btn {
+  display: flex;
+  width: 200px;
+  margin: -5px auto 10px;
+  justify-content: space-evenly;
+}
+
+.step-btn-round {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--lightgray);
+}
+
+.step-btn-round.clicked {
+  background-color: var(--darkgray);
+}
+
+/* 步驟-細節樣式 */
+
+.join-rule .step {
+  font-style: italic;
+  min-width: 50px;
+  align-self: center;
+  text-align: center;
+}
+
+.join-rule .step-title {
+  font-weight: 600;
+}
+
+.join-rule .content p.pbig {
+  line-height: 20px;
+  margin-left: 5px;
+}
+
+@media (width > 770px) {
+  .join-rule #step-content {
+    margin: 0 auto 20px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+    row-gap: 15px;
+    justify-content: center;
+  }
+
+  .join-rule .step-wrap {
+    display: flex;
+    width: 80%;
+    height: 50px;
+  }
+
+  .join-rule .step {
+    margin-right: 2px;
+  }
+
+  .join-rule div.step-btn {
+    display: none;
+    overflow: hidden;
+  }
+
+  .join-rule ol li:nth-child(1) {
+    background-color: rgba(52, 74, 94, 1);
+  }
+  .join-rule ol li:nth-child(2) {
+    background-color: rgba(52, 74, 94, 0.8);
+  }
+  .join-rule ol li:nth-child(3) {
+    background-color: rgba(52, 74, 94, 0.6);
+  }
+  .join-rule ol li:nth-child(4) {
+    background-color: rgba(52, 74, 94, 0.4);
+  }
+}
+
+@media (width > 960px) {
+  .join-rule .step-wrap {
     width: 35%;
     height: 85px;
   }
 }
 
-@media (width < 960px) {
-  .join-rule ol li {
-    width: 80%;
-    height: 50px;
+@media (width >1440px) {
+  .join-rule .step-wrap {
+    display: flex;
+    width: 240px;
+    color: #fff;
+    padding: 5px;
   }
 }
 
-.join-rule ol li:nth-child(1) {
-  background-color: rgba(52, 74, 94, 1);
-}
-.join-rule ol li:nth-child(2) {
-  background-color: rgba(52, 74, 94, 0.8);
-}
-.join-rule ol li:nth-child(3) {
-  background-color: rgba(52, 74, 94, 0.6);
-}
-.join-rule ol li:nth-child(4) {
-  background-color: rgba(52, 74, 94, 0.4);
-}
-
-.join-rule .step {
-  font-style: italic;
-  margin: 0 20px 0 10px;
-  align-self: center;
-}
-
-.join-rule li .step-title {
-  font-weight: 600;
-}
-
-.join .join-rule .wrap {
-  width: 66%;
-  max-width: 1268px;
-  margin: 40px auto 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.join-btn-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .join-rule .join-btn {
-  padding: 25px 0;
-  width: 400px;
+  width: 100%;
 }
 
-.join-rule .wrap .psmall {
+.join-rule .btn-wrap .psmall {
   color: var(--orange);
   margin-left: 5px;
+}
+
+@media (width > 770px) {
+  .join-rule .join-btn {
+    padding: 25px 0;
+  }
 }
 
 /* 深色區域標語 */
@@ -141,7 +264,27 @@ header .pagelink ul {
   padding: 35px 0;
 }
 
+@media (width < 740px) {
+  .highlight {
+    display: none;
+  }
+}
+
 /* 社群動態--grid版型部分 */
+
+@media (width < 770px) {
+  .dynamic {
+    padding: 1px 0 20px;
+  }
+}
+
+.dynamic {
+  background: linear-gradient(
+    to bottom,
+    rgba(236, 240, 241, 1) 70%,
+    rgba(255, 255, 255, 1)
+  );
+}
 
 .dynamic .wrap {
   margin-bottom: 0;
@@ -162,30 +305,24 @@ header .pagelink ul {
   column-gap: 70px;
 }
 
+.dynamic .news-list .news-card {
+  display: contents;
+}
 @media (width < 770px) {
-  .community .news-list {
+  .dynamic .news-list {
     width: 100%;
     max-width: 600px;
     display: flex;
     flex-direction: column;
-    gap: 40px;
     grid-template-columns: none;
     padding: 0 20px;
     box-sizing: border-box;
   }
-  .community .news-list .news-card + .news-card {
+  .dynamic .news-list .news-card {
     display: block;
-  }
-
-  .community .news-list .news-card {
-    display: block;
+    margin-bottom: 20px;
   }
 }
-
-.dynamic .news-list .news-card {
-  display: contents;
-}
-
 .dynamic .news-card .subwrapA-1 {
   grid-column: 2/3;
   grid-row: 1/2;
@@ -234,8 +371,8 @@ header .pagelink ul {
   margin: 0 10px;
 }
 
-@media (width < 400px) {
-  .community .news-card .subtitle .line {
+@media (width < 430px) {
+  .dynamic .news-card .subtitle .line {
     flex-grow: 1;
   }
 }
@@ -272,6 +409,7 @@ header .pagelink ul {
   .dynamic .social-media {
     grid-row: 4/5;
     align-self: start;
+    margin: 0 auto;
   }
 }
 
@@ -358,4 +496,26 @@ header .pagelink ul {
   text-align: end;
   max-width: 820px;
   margin: 0 auto;
+}
+
+/* //測到崩潰 */
+@media (width < 770px) {
+  .schedule .container {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    height: 230px;
+    overflow: auto;
+    padding: 0 20px;
+  }
+
+  .schedule .event-list {
+    margin: 0;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+
+  .schedule .event a p {
+    white-space: wrap;
+  }
 }
