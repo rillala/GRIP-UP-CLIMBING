@@ -33,9 +33,80 @@ header .pagelink ul {
   white-space: nowrap;
 }
 
-/* 分店介紹 */
+/* 分店介紹-從小寫到大 */
 
 section.branches {
+  width: 100%;
+  max-width: 600px; /* 在 770px 以下 */
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.branches select {
+  background-color: var(--extralightgray);
+  color: var(--darkblue);
+  width: 100%;
+  text-align: center;
+  border: 2px solid var(--lightgray);
+  border-radius: 0;
+  padding: 5px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.branches select:focus {
+  border: 2px solid var(--orange);
+  border-radius: 0;
+}
+
+#taichung-branch,
+#kaohsiung-branch {
+  display: none;
+}
+
+.center .pic {
+  width: 100%;
+  overflow: hidden;
+}
+
+.center .pic img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+.center .subtitle {
+  margin: 10px auto 5px;
+  text-align: center;
+  color: var(--darkblue);
+}
+
+.center .pbig {
+  margin: 10px auto 5px;
+  text-align: center;
+  color: #111;
+}
+
+.center .googleMap iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+@media (width > 770px) {
+  section.branches {
+    width: 66%;
+    max-width: 1268px;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 60px auto 0;
+  }
+
+  .center-list {
+    display: flex;
+  }
+}
+
+/* section.branches {
   margin-top: 100px;
 }
 
@@ -46,6 +117,9 @@ section.branches {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+@media (width < 770px) {
 }
 
 .branches .center-list .center {
@@ -92,7 +166,7 @@ section.branches {
 .branches .center-list .center .subtitle {
   color: var(--darkblue);
   margin: 15px 0 10px;
-}
+} */
 
 /* 票價和設備租借 */
 
@@ -213,7 +287,7 @@ section.branches {
 .facility .news-list {
   width: 66%;
   max-width: 1268px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
   display: grid;
   grid-template-columns: 50% 50%;
   column-gap: 70px;
@@ -356,7 +430,7 @@ section.branches {
 
 .facility .team-link {
   justify-self: center;
-  align-self: end;
+  align-self: center;
   color: var(--darkblue);
   text-align: center;
 }

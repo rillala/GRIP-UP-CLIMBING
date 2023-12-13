@@ -30,11 +30,11 @@
               <p class="pbig">
                 Welcome to Grip Up Climbing Center, one of Taiwan's top-tier
                 climbing destinations. Catering to everyone from novices to
-                climbing experts,
+                climbing experts.
               </p>
             </div>
             <p class="pbig down">
-              we boast superior facilities and a vibrant atmosphere designed for
+              We boast superior facilities and a vibrant atmosphere designed for
               experiencing the thrill and joy of climbing firsthand.
             </p>
           </div>
@@ -60,14 +60,15 @@
           <p>TOP</p>
         </a>
       </div>
+
       <section class="branches">
+        <select class="h4" id="branches-link">
+          <option value="taipei" selected>Taipei</option>
+          <option value="taichung">Taichung</option>
+          <option value="kaohsiung">Kaohsiung</option>
+        </select>
         <div class="center-list">
-          <div class="center" id="branches-link">
-            <div class="center-name">
-              <div class="line"></div>
-              <p class="h4">Taipei</p>
-              <div class="line"></div>
-            </div>
+          <div class="center" id="taipei-branch">
             <div class="pic">
               <img src="./center/taipei.png" alt="TaipeiBranchePic" />
             </div>
@@ -75,23 +76,28 @@
               <p class="subtitle h5">Operating Hours</p>
               <p class="pbig">9:00 AM - 10:00 PM</p>
             </div>
-            <div class="address">
-              <p class="subtitle h5">Address</p>
-              <p class="pbig">
-                No. 128, Cityscape Lane,<br />Da'an District, Taipei City
-              </p>
-            </div>
+
             <div class="phone">
               <p class="subtitle h5">Phone</p>
               <p class="pbig">(02) 1234-5678</p>
             </div>
-          </div>
-          <div class="center">
-            <div class="center-name">
-              <div class="line"></div>
-              <p class="h4">Taichung</p>
-              <div class="line"></div>
+            <div class="address">
+              <p class="subtitle h5">Address</p>
+              <p class="pbig">
+                No. 128, Cityscape Lane, Da'an District, Taipei City 221
+              </p>
+              <div class="googleMap">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.223466545364!2d121.64588261054955!3d25.060413977706627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea51152e19%3A0xc42665561f719791!2sTibaMe!5e0!3m2!1szh-TW!2stw!4v1702435985922!5m2!1szh-TW!2stw"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
+          </div>
+          <div class="center" id="taichung-branch">
             <div class="pic">
               <img src="./center/taichung.png" alt="TaichungBranchePic" />
             </div>
@@ -99,23 +105,28 @@
               <p class="subtitle h5">Operating Hours</p>
               <p class="pbig">10:00 AM - 10:00 PM</p>
             </div>
-            <div class="address">
-              <p class="subtitle h5">Address</p>
-              <p class="pbig">
-                No. 59, Peakview Boulevard,<br />Xitun District, Taichung City
-              </p>
-            </div>
+
             <div class="phone">
               <p class="subtitle h5">Phone</p>
               <p class="pbig">(04) 1234-5678</p>
             </div>
-          </div>
-          <div class="center">
-            <div class="center-name">
-              <div class="line"></div>
-              <p class="h4">Kaohsiung</p>
-              <div class="line"></div>
+            <div class="address">
+              <p class="subtitle h5">Address</p>
+              <p class="pbig">
+                No. 59, Peakview Boulevard, Xitun District, Taichung City 104
+              </p>
+              <div class="googleMap">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.467830527485!2d121.54067261103053!3d25.052127977712033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abe6b0446815%3A0xf006dde8c27afcc7!2z57ev6IKyVGliYU1l6ZmE6Kit5Y-w5YyX6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1701351205680!5m2!1szh-TW!2stw"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
             </div>
+          </div>
+          <div class="center" id="kaohsiung-branch">
             <div class="pic">
               <img src="./center/kaoshung.png" alt="KaohsiungBranchePic" />
             </div>
@@ -123,20 +134,32 @@
               <p class="subtitle h5">Operating Hours</p>
               <p class="pbig">9:00 AM - 9:00 PM</p>
             </div>
-            <div class="address">
-              <p class="subtitle h5">Address</p>
-              <p class="pbig">
-                No. 88, Harborfront Road,<br />Yancheng District, Kaohsiung City
-              </p>
-            </div>
+
             <div class="phone">
               <p class="subtitle h5">Phone</p>
               <p class="pbig">(07) 1234-5678</p>
             </div>
+            <div class="address">
+              <p class="subtitle h5">Address</p>
+              <p class="pbig">
+                No. 88, Harborfront Road,<br />Yancheng District, Kaohsiung City
+                330
+              </p>
+              <div class="googleMap">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115751.9737022725!2d121.13525252377633!3d24.957635500000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1701351107468!5m2!1szh-TW!2stw"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
           </div>
+          <div id="googleMap-desktop"></div>
         </div>
       </section>
-      <section class="price">
+      <!-- <section class="price">
         <h3 class="section-title" id="price-link">
           TICKETS &<br />&nbspRental
         </h3>
@@ -235,7 +258,7 @@
             </p>
           </div>
         </div>
-      </section>
+      </section> -->
       <section class="facility">
         <h3 class="section-title" id="facility-link">Facility</h3>
 
@@ -341,52 +364,6 @@
             <a href="team.html" class="btn-light h4"
               >Wanna meet<br />our teams?</a
             >
-          </div>
-        </div>
-      </section>
-      <section class="transport">
-        <div class="container">
-          <div class="title h3">Transport</div>
-          <div class="center-list">
-            <div class="center-info">
-              <a href="#Taipei" class="center-name h4 btn-light" id="taipei-btn"
-                >Taipei</a
-              >
-              <div class="address-title h5">Address</div>
-              <div class="address pbig">
-                No. 128, Cityscape Lane,<br />Da'an District, Taipei City
-              </div>
-            </div>
-            <div class="center-info">
-              <a
-                href="#Taichung"
-                class="center-name h4 btn-light"
-                id="taichung-btn"
-                >Taichung</a
-              >
-              <div class="address-title h5">Address</div>
-              <div class="address pbig">
-                No. 59, Peakview Boulevard,<br />Xitun District, Taichung City
-              </div>
-            </div>
-            <div class="center-info">
-              <a href="#Kaohsiung" class="center-name h4 btn-light" id="kao-btn"
-                >Kaohsiung</a
-              >
-              <div class="address-title h5">Address</div>
-              <div class="address pbig">
-                No. 88, Harborfront Road,<br />Yancheng District, Kaohsiung City
-              </div>
-            </div>
-          </div>
-          <div class="googlemap">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.2491788490865!2d121.22244241102756!3d24.957635477773664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346823ea50c732a5%3A0x1b5e6ee66e9fec49!2z57ev6IKyVGliYU1l6ZmE6Kit5Lit5aOi6IG36KiT5Lit5b-D!5e0!3m2!1szh-TW!2stw!4v1700835586631!5m2!1szh-TW!2stw"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
           </div>
         </div>
       </section>
