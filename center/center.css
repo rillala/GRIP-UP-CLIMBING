@@ -33,6 +33,10 @@ header .pagelink ul {
   white-space: nowrap;
 }
 
+.section-title br {
+  display: block;
+}
+
 /* 分店介紹-從小寫到大 */
 
 section.branches {
@@ -231,6 +235,21 @@ section.branches {
   align-items: center;
 }
 
+@media (width < 600px) {
+  .price .table .ticket-price {
+    grid-template-rows: repeat(4, 55px);
+  }
+  .price .table .rental-price {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(2, 55px);
+  }
+
+  .rental-price td {
+    padding: 0 2px;
+  }
+}
+
 .price .table td:first-child {
   justify-self: end;
   text-align: start;
@@ -265,6 +284,57 @@ section.branches {
 .price .ps p {
   text-align: end;
   color: var(--orange);
+}
+
+.price .repersent {
+  display: none;
+}
+
+@media (width < 1220px) {
+  .price .ps p {
+    text-align: start;
+    color: var(--orange);
+  }
+}
+
+@media (width < 770px) {
+  .price .table {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
+
+@media (width < 600px) {
+  .price .repersent {
+    display: block;
+    font-weight: bold;
+  }
+
+  .price .table tbody tr td:first-child {
+    font-weight: 600;
+    font-size: 16px;
+    color: #111;
+    text-align: center;
+  }
+
+  .ticket-price .white-bg:first-of-type td:first-of-type {
+    color: transparent;
+  }
+
+  table p {
+    font-size: 14px;
+  }
+
+  .rental-price tr td:first-of-type {
+    display: none;
+  }
+
+  .rental-price thead td {
+    font-size: 16px;
+  }
 }
 
 .price .ps p a {
@@ -393,6 +463,7 @@ section.branches {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 
 .facility .news-card .subtitle .line {
@@ -405,7 +476,7 @@ section.branches {
 
 @media (width < 400px) {
   .facility .news-card .subtitle .line {
-    width: 50px;
+    flex-grow: 1;
   }
 }
 
@@ -460,6 +531,13 @@ section.branches {
 .facility .team-link a {
   height: 140px;
   width: 340px;
+}
+
+@media (width < 770px) {
+  .facility .team-link a {
+    height: 100px;
+    width: 300px;
+  }
 }
 
 /* 交通資訊區塊 */

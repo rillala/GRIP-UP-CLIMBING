@@ -223,6 +223,7 @@ header .pagelink ul {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 
 .dynamic .news-card .subtitle .line {
@@ -235,7 +236,7 @@ header .pagelink ul {
 
 @media (width < 400px) {
   .community .news-card .subtitle .line {
-    width: 50px;
+    flex-grow: 1;
   }
 }
 

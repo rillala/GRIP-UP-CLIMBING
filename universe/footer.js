@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // // 當視窗大小改變時重新載入適當的頁尾+調整頁首
 window.addEventListener("resize", function () {
   loadFooter();
+  loadNavBar();
   pageLinkHide();
   changeHeaderDesign();
 });

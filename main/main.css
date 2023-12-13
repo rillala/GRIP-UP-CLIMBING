@@ -419,11 +419,12 @@ header .pagelink ul {
   height: 50%;
   border-bottom: 3px solid var(--darkblue);
   margin: 0 10px;
+  white-space: nowrap;
 }
 
 @media (width < 400px) {
   .community .news-card .subtitle .line {
-    width: 50px;
+    flex-grow: 1;
   }
 }
 
