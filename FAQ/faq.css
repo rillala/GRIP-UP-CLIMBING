@@ -96,6 +96,15 @@ header .pagelink ul {
   box-sizing: border-box;
   white-space: nowrap;
   margin-bottom: -10px;
+  color: var(--darkblue);
+}
+
+.contact .subtitle {
+  color: var(--darkblue);
+}
+
+.contact div {
+  color: #111;
 }
 
 @media (width >= 770px) {

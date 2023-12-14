@@ -468,7 +468,10 @@ input[type="radio"] {
 
 .item .buying .number-wrap .cal {
   width: 30px;
-  padding: 15px 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
   font-size: 36px;
   background-color: var(--lightgray);
@@ -496,13 +499,10 @@ input[type="radio"] {
 @media (width < 770px) {
   .item .buying .number-wrap .cal {
     width: 30px;
-    padding: 5px 0;
-    text-align: center;
-    font-size: 36px;
-    background-color: var(--lightgray);
-    cursor: pointer;
-    color: #fff;
-    user-select: none;
+  }
+
+  .item input[type="number"] {
+    font-size: 32px;
   }
 }
 

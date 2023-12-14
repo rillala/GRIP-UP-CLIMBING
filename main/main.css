@@ -145,7 +145,6 @@ header .pagelink ul {
     width: 100%;
     margin: 0;
     padding: 0 20px 20px;
-    box-sizing: border-box;
   }
 
   .latestnews .news-pic {
@@ -205,7 +204,6 @@ header .pagelink ul {
     max-width: 600px;
     width: 100%;
     padding: 0 20px 20px;
-    box-sizing: border-box;
   }
 }
 
@@ -262,7 +260,7 @@ header .pagelink ul {
   .course .pic-list {
     width: 100%;
     max-width: 600px;
-    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
     justify-content: none;
@@ -288,7 +286,7 @@ header .pagelink ul {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-sizing: border-box;
+
   opacity: 0;
   transition: 0.5s ease-in-out;
   user-select: none;
@@ -355,6 +353,10 @@ header .pagelink ul {
   display: contents;
 }
 
+.news-card p {
+  color: #111;
+}
+
 @media (width < 770px) {
   .community .news-list {
     width: 100%;
@@ -364,7 +366,6 @@ header .pagelink ul {
     gap: 40px;
     grid-template-columns: none;
     padding: 0 20px;
-    box-sizing: border-box;
   }
   .community .news-list .news-card + .news-card {
     display: block;
@@ -411,6 +412,7 @@ header .pagelink ul {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+  white-space: nowrap;
 }
 
 .community .news-card .subtitle .line {
@@ -434,7 +436,6 @@ header .pagelink ul {
 }
 
 .community .news-card .text {
-  box-sizing: border-box;
   padding: 5px;
 }
 

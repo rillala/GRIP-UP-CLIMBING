@@ -16,10 +16,29 @@ header .pagelink ul {
 
 /*課程區塊*/
 
+.section-title {
+  margin: 120px auto 0;
+}
+
+@media (width < 770px) {
+  .section-title {
+    margin: 40px auto 20px;
+  }
+}
+
 .container {
   margin: 50px auto;
   width: 66%;
   max-width: 1268px;
+  position: relative;
+}
+
+section.content p.pbig {
+  color: #111;
+}
+
+section.content p.card-price {
+  color: var(--darkblue);
 }
 
 section.content section + section {
@@ -32,6 +51,28 @@ section .wrap {
   width: 66%;
   max-width: 1268px;
   margin: -40px auto -20px;
+}
+
+@media (width < 770px) {
+  .container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section.content section + section {
+    margin: 0;
+  }
+
+  section .wrap {
+    display: flex;
+    grid-template-columns: none;
+    max-width: 600px;
+    width: 100%;
+    padding: 0 20px 20px;
+    margin: 0 auto;
+  }
 }
 
 .wrap .course-intro {
@@ -86,7 +127,8 @@ section .wrap {
   transition: 0.3s ease-in-out;
 }
 
-.scroll:hover {
+.scroll:hover,
+.scroll:focus {
   scale: 1.5;
 }
 
@@ -107,6 +149,43 @@ section .wrap {
 @media (width < 1660px) {
   .card-list .card {
     width: 220px;
+  }
+}
+
+@media (width < 770px) {
+  .slider {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-list {
+    flex-wrap: nowrap;
+    justify-content: none;
+    width: 100%;
+    position: relative;
+    left: 0;
+  }
+
+  .scroll-right {
+    right: 5%;
+    z-index: 2;
+  }
+
+  .scroll-left {
+    left: 5%;
+    z-index: 2;
+  }
+
+  .card-list .card {
+    width: 100%;
+    flex-direction: none;
+    flex-shrink: 0;
+  }
+
+  .card-title p {
+    font-size: 24px;
   }
 }
 

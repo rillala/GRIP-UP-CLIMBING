@@ -3,7 +3,6 @@ loadNavBar();
 pageLinkHide();
 changeHeaderDesign();
 
-var originalHtml = $(".section-title").html();
 // 當頁面加載完畢時執行載入
 document.addEventListener("DOMContentLoaded", function () {
   loadFooter();
@@ -15,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // // 當視窗大小改變時重新載入適當的頁尾+調整頁首
 window.addEventListener("resize", function () {
   loadFooter();
-  loadNavBar();
+  // loadNavBar();
   pageLinkHide();
   changeHeaderDesign();
 });
@@ -120,18 +119,6 @@ function pageLinkHide() {
       $(".pagelink").show();
     }
   }
-}
-
-//!!!!!!!!!!!測試一下resize的時候有沒有換回來
-//替換section-title的標題格式
-function replaceWhiteSpaceWrap() {
-  // if (window.innerWidth < 770) {
-  //   $(".section-title").html(function (index, oldHtml) {
-  //     return oldHtml.replace(/<br>/g, " ");
-  //   });
-  // } else {
-  //   $(".section-title").html(originalHtml);
-  // }
 }
 
 /////footer相關---------------------------------------------
