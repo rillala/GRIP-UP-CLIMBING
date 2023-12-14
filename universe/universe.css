@@ -336,7 +336,7 @@ nav {
   width: 100vw;
   /* height: calc(100vh - 120px); */
   min-height: calc(100vh - 120px);
-  padding: 80px 20px 20px 20px;
+  padding: 80px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   display: none;
@@ -366,7 +366,7 @@ nav {
 }
 
 .menu-link-list .menu-link {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   user-select: none;
 }
 
