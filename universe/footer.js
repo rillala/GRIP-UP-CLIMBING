@@ -97,12 +97,23 @@ function changeHeaderDesign() {
     $("#page-intro-small").append($(".page-intro .up"));
   } else {
     // 當視窗寬度大於或等於 770，將 .up 移回原來的位置
-    $(".page-intro").append($(".page-intro-small .up"));
+    $(".page-intro").prepend($(".page-intro-small .up"));
   }
 }
 
 function pageLinkHide() {
-  if (!window.location.href.includes("index.html")) {
+  //看能不能改掉
+  const fileArr = [
+    "center.html",
+    "community.html",
+    "courseActivity.html",
+    "FAQ.html",
+    "product.html",
+    "shop.html",
+    "team.html",
+  ];
+
+  if (fileArr.some((file) => window.location.href.includes(file))) {
     if (window.innerWidth < 770) {
       $(".pagelink").hide();
     } else {
