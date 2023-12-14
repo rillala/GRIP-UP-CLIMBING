@@ -505,17 +505,61 @@ header .pagelink ul {
     max-width: none;
     box-sizing: border-box;
     height: 230px;
-    overflow: auto;
+    overflow: hidden;
     padding: 0 20px;
+    position: relative;
   }
 
   .schedule .event-list {
-    margin: 0;
+    margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     width: 100%;
+    position: relative;
+    animation: 15s slider infinite;
+  }
+
+  .schedule .event {
+    height: 230px;
   }
 
   .schedule .event a p {
     white-space: wrap;
+  }
+}
+
+@keyframes slider {
+  0% {
+    top: 0px;
+  }
+  10% {
+    top: -240px;
+  }
+  20% {
+    top: -480px;
+  }
+  30% {
+    top: -720px;
+  }
+  40% {
+    top: -960px;
+  }
+  50% {
+    top: -1200px;
+  }
+  60% {
+    top: -960px;
+  }
+  70% {
+    top: -720px;
+  }
+  80% {
+    top: -480px;
+  }
+  90% {
+    top: -240px;
+  }
+  100% {
+    top: 0;
   }
 }
