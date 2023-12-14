@@ -613,6 +613,12 @@ header .pagelink ul {
   margin: 60px auto 0;
 }
 
+@media (width < 1100px) {
+  header .pagelink ul {
+    column-gap: 1vw;
+  }
+}
+
 header .pagelink ul a {
   width: 100%;
   text-align: center;

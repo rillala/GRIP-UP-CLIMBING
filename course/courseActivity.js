@@ -1,29 +1,42 @@
 $(document).ready(function () {
-  scrollPosition(handleSwipe(cardList, startX, endX));
+  $(".container").each(function () {
+    var container = $(this);
+    var cardList = container.find(".card-list");
+    var startX, endX;
+
+    // 設置初始位置
+    cardList.data("position", 0);
+
+    container.on("touchstart", function (e) {
+      startX = e.touches[0].clientX;
+    });
+
+    container.on("touchend", function (e) {
+      endX = e.changedTouches[0].clientX;
+      handleSwipe(cardList, startX, endX);
+    });
+  });
+
+  // slogan position animate
+  $(window).on("scroll", function () {
+    var windowScrollTop = $(window).scrollTop();
+    var sloganPosition = $("#slogan").offset().top;
+    var windowHeight = $(window).height();
+
+    if (windowScrollTop + windowHeight > sloganPosition) {
+      $("#slogan span").each(function (index) {
+        $(this)
+          .delay(1000 * index)
+          .animate({ left: "0" }, 1000);
+      });
+    }
+  });
 });
 
-$(window).resize(function () {
-  scrollPosition();
-});
+//視窗變更尺寸的時候要處理的功能
+$(window).resize(function () {});
 
 // 為每個.container添加觸摸事件處理程序
-$(".container").each(function () {
-  var container = $(this);
-  var cardList = container.find(".card-list");
-  var startX, endX;
-
-  // 設置初始位置
-  cardList.data("position", 0);
-
-  container.on("touchstart", function (e) {
-    startX = e.touches[0].clientX;
-  });
-
-  container.on("touchend", function (e) {
-    endX = e.changedTouches[0].clientX;
-    handleSwipe(cardList, startX, endX);
-  });
-});
 
 function handleSwipe(cardList, startX, endX) {
   var position = cardList.data("position");
