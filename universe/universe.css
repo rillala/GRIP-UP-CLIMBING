@@ -294,7 +294,7 @@ nav {
   position: relative;
 }
 
-#item-number {
+/* #item-number {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -311,6 +311,89 @@ nav {
     width: 35px;
     height: 35px;
   }
+} */
+
+#shop-cart {
+  position: absolute;
+  background-color: rgba(52, 74, 94, 0.9);
+  top: 80px;
+  right: 0;
+  width: 100vw;
+  max-width: 450px;
+  min-height: calc(100vh - 80px);
+  display: none;
+  z-index: 3;
+}
+
+nav .cart .shopbag,
+nav .cart .summary {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.shopbag .product-list .card {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+}
+
+.shopbag .card .card-info {
+  width: calc(100%-35px);
+  padding: 5px 0 5px 5px;
+}
+
+/* 購物車編輯區域按鈕 */
+.shopbag .card .card-edit {
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.card-edit div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-edit #edit-btn {
+  justify-content: start;
+}
+
+.card-edit #delete-btn {
+  justify-content: end;
+}
+
+.card-edit img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* 購物車產品卡片區域---------寫到這 */
+.shopbag .card .info-wrap {
+  display: flex;
+  flex-grow: 1;
+}
+
+.shopbag .card .info-wrap .pic {
+  width: 50%;
+}
+
+.shopbag .card .info-wrap img {
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.shopbag .card .info {
+  white-space: nowrap;
+}
+
+.shopbag .card .info .productName {
+  white-space: wrap;
 }
 
 /* 網站連結選單 */
@@ -324,7 +407,7 @@ nav {
 .nav-list #menu-btn span {
   display: block;
   width: 100%;
-  height: 30%;
+  height: 33%;
   border-top: 4px solid #fff;
 }
 
@@ -334,8 +417,8 @@ nav {
   top: 80px;
   left: 0;
   width: 100vw;
-  /* height: calc(100vh - 120px); */
-  min-height: calc(100vh - 120px);
+  height: calc(100vh - 80px);
+  /* min-height: calc(100vh - 120px); */
   padding: 80px 20px 40px 20px;
   display: flex;
   flex-direction: column;
@@ -711,16 +794,4 @@ section.content {
   .backtotop .top-wrap p {
     display: none;
   }
-}
-
-/* -------------購物車相關----------------小裝置先 */
-
-.cart .wrap {
-  width: 100%;
-  padding: 20px;
-}
-
-.cart .card {
-  background-color: #fff;
-  padding: 15px;
 }
