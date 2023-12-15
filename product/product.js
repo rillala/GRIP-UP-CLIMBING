@@ -95,22 +95,20 @@ function productDetailShow() {
 
 ////Related Products滑動效果
 $(document).ready(function () {
-  $(".related .wrap").each(function () {
-    var container = $(this);
-    var cardList = container.find("#related-roll");
-    var startX, endX;
+  var container = $(".related .wrap");
+  var cardList = container.find("#related-roll");
+  var startX, endX;
 
-    // 設置初始位置
-    cardList.data("position", 0);
+  // 設置初始位置
+  cardList.data("position", 0);
 
-    container.on("touchstart", function (e) {
-      startX = e.touches[0].clientX;
-    });
+  container.on("touchstart", function (e) {
+    startX = e.touches[0].clientX;
+  });
 
-    container.on("touchend", function (e) {
-      endX = e.changedTouches[0].clientX;
-      handleSwipe(cardList, startX, endX);
-    });
+  container.on("touchend", function (e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe(cardList, startX, endX);
   });
 });
 

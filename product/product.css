@@ -256,6 +256,13 @@ header .pagelink ul {
   box-shadow: -5px 5px var(--lightblue);
 }
 
+@media (width < 770px) {
+  .item-card .pic .tag {
+    top: 0;
+    right: 0;
+  }
+}
+
 /* 本頁面商品區域 */
 
 .item {
