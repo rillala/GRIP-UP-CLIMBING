@@ -159,7 +159,8 @@ input::placeholder {
   transition: 0.3s ease-in-out;
 }
 
-.btn-dark:hover {
+.btn-dark:hover,
+.btn-dark:focus {
   box-shadow: -10px 10px var(--lightgray);
   color: var(--white);
   background-color: var(--orange);
@@ -176,6 +177,7 @@ input::placeholder {
 }
 
 .btn-light:hover,
+.btn-light:focus,
 .btn-light-hover {
   box-shadow: -10px 10px var(--lightgray);
   color: var(--white);
@@ -232,7 +234,8 @@ header {
   z-index: -1;
 }
 
-.logo-pic:hover .logohover {
+.logo-pic:hover .logohover,
+.logo-pic:focus .logohover {
   z-index: 1;
 }
 
@@ -642,7 +645,8 @@ nav .cart .summary {
   color: var(--darkblue);
   text-align: end;
 }
-.readmore:hover {
+.readmore:hover,
+.readmore:focus {
   text-decoration: underline;
   color: var(--orange);
 }
@@ -654,7 +658,9 @@ nav .cart .summary {
 }
 
 .alink:hover,
-.alink:hover p {
+.alink:hover p,
+.alink:focus,
+.alink:focus p {
   color: var(--orange) !important;
 }
 
@@ -756,7 +762,8 @@ section.content {
   text-decoration: none;
 }
 
-.backtotop .top-wrap:hover {
+.backtotop .top-wrap:hover,
+.backtotop .top-wrap:focus {
   opacity: 1;
   box-shadow: 5px 5px 3px var(--lightgray);
 }
@@ -786,7 +793,8 @@ section.content {
     height: 40px;
   }
 
-  .backtotop .top-wrap:hover {
+  .backtotop .top-wrap:hover,
+  .backtotop .top-wrap:focus {
     opacity: 1;
     box-shadow: 5px 5px 3px var(--lightgray);
   }

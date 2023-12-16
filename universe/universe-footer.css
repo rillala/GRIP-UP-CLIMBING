@@ -52,7 +52,8 @@ input[type="email"]:focus {
   transition: 0.2s ease-in-out;
 }
 
-#email-submit:hover {
+#email-submit:hover,
+#email-submit:focus {
   box-shadow: -5px 5px var(--lightgray);
   color: #fff;
   background-color: var(--orange);
@@ -79,7 +80,8 @@ footer .info .list-type {
   flex-direction: column;
 }
 
-footer .info .list-type:hover .map-list-title {
+footer .info .list-type:hover .map-list-title,
+footer .info .list-type:focus .map-list-title {
   color: var(--orange);
 }
 

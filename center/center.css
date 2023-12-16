@@ -64,6 +64,16 @@ section.branches {
   border-radius: 0;
 }
 
+.branches .center {
+  width: 100%;
+}
+
+@media (width > 1000px) {
+  .branches .center {
+    width: 400px;
+  }
+}
+
 #taichung-branch,
 #kaohsiung-branch,
 #taichung-map,
@@ -132,68 +142,6 @@ section.branches {
     aspect-ratio: none;
   }
 }
-
-/* section.branches {
-  margin-top: 100px;
-}
-
-.branches .center-list {
-  width: 66%;
-  max-width: 1268px;
-  margin: 0 auto 0;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-@media (width < 770px) {
-}
-
-.branches .center-list .center {
-  width: 360px;
-  text-align: center;
-}
-
-@media (width < 1441px) {
-  .branches .center-list .center {
-    width: 280px;
-  }
-}
-
-.branches .center-list .center .center-name {
-  display: flex;
-}
-
-.branches .center-list .center .center-name p {
-  color: var(--darkblue);
-  margin: 0 10px;
-}
-
-.branches .center-list .center .center-name .line {
-  height: 3px;
-  flex-grow: 1;
-  background-color: var(--lightblue);
-  align-self: center;
-  transition: 0.3s ease-in-out;
-}
-
-.branches .center-list .center:hover .line {
-  background-color: var(--orange);
-}
-
-.branches .center-list .center .pic {
-  margin: 20px 0 15px;
-}
-
-.branches .center-list .center .pic img {
-  width: 100%;
-  vertical-align: middle;
-}
-
-.branches .center-list .center .subtitle {
-  color: var(--darkblue);
-  margin: 15px 0 10px;
-} */
 
 /* 票價和設備租借 */
 
@@ -351,14 +299,15 @@ section.branches {
   position: relative;
   overflow: hidden;
 }
-.price .ticket-price tbody td:hover a.hover {
+.price .ticket-price tbody td:hover a.hover,
+.price .ticket-price tbody td:focus a.hover {
   width: 60%;
 }
 
 .price .ticket-price a.hover {
   position: absolute;
   display: block;
-  top: 8px;
+  top: 5px;
   left: 20%;
   width: 0%;
   overflow: hidden;
@@ -474,7 +423,7 @@ section.branches {
   margin: 0 10px;
 }
 
-@media (width < 400px) {
+@media (width < 450px) {
   .facility .news-card .subtitle .line {
     flex-grow: 1;
   }
@@ -508,7 +457,9 @@ section.branches {
 /* 這邊hover-effect用js toggle classList */
 
 .facility .coworking:hover .hover-effect,
-.facility .yoga:hover .hover-effect {
+.facility .yoga:hover .hover-effect,
+.facility .coworking:focus .hover-effect,
+.facility .yoga:focus .hover-effect {
   opacity: 0.6;
 }
 
