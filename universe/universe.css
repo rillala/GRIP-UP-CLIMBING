@@ -297,7 +297,7 @@ nav {
   position: relative;
 }
 
-/* #item-number {
+#item-number {
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -314,7 +314,7 @@ nav {
     width: 35px;
     height: 35px;
   }
-} */
+}
 
 #shop-cart {
   position: absolute;
@@ -324,14 +324,22 @@ nav {
   width: 100vw;
   max-width: 450px;
   min-height: calc(100vh - 80px);
-  display: none;
+  /* display: none; */
   z-index: 3;
+}
+
+.cart .section-title {
+  color: #fff;
 }
 
 nav .cart .shopbag,
 nav .cart .summary {
   width: 100%;
   padding: 0 20px;
+}
+
+.shopbag .product-list > * {
+  margin-bottom: 20px;
 }
 
 .shopbag .product-list .card {
@@ -375,28 +383,199 @@ nav .cart .summary {
   vertical-align: middle;
 }
 
-/* 購物車產品卡片區域---------寫到這 */
+/* 購物車產品卡片區域--------- */
 .shopbag .card .info-wrap {
   display: flex;
   flex-grow: 1;
 }
 
 .shopbag .card .info-wrap .pic {
-  width: 50%;
+  width: 55%;
+  max-width: 260px;
+  margin-right: 10px;
 }
 
 .shopbag .card .info-wrap img {
   width: 100%;
-  height: 100%;
   vertical-align: middle;
 }
 
 .shopbag .card .info {
   white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .shopbag .card .info .productName {
   white-space: wrap;
+}
+
+.shopbag .card .info-down {
+  position: relative;
+}
+
+@media (width > 375px) {
+  .shopbag .card .info-down {
+    font-size: 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .shopbag .card .info-down p {
+    display: block;
+  }
+}
+
+.shopbag .select-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  font-size: 18px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  display: none;
+}
+
+.select-box select {
+  border-radius: 0;
+  border: 1px solid var(--darkgray);
+}
+
+.shopbag .card .card-buttom {
+  display: flex;
+  height: 50px;
+  margin-top: 10px;
+}
+
+#cart-buy-number {
+  width: 45px;
+  margin: 0 10px;
+  height: 40px;
+
+  background-color: var(--lightgray);
+  border: 2px solid var(--darkgray);
+  outline: none;
+  color: #fff;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.card-buttom .number-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-buttom .number-wrap .cal {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 36px;
+  background-color: var(--lightgray);
+  cursor: pointer;
+  color: #fff;
+  user-select: none;
+}
+
+.card-buttom .product-total {
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--darkblue);
+}
+
+/* 購物車--order summary */
+
+.cart .section-title {
+  display: flex;
+  text-transform: uppercase;
+}
+
+#cart-priduct-total {
+  text-align: end;
+  flex-grow: 1;
+}
+
+.cart .summary .card {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.summary .subtotal,
+.summary .shipping,
+.summary .coupon,
+.summary .total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary .total {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px solid var(--darkgray);
+}
+
+.summary #coupon-input {
+  border: 0;
+  border-radius: 0;
+  background-color: var(--lightgray);
+  font-size: 16px;
+}
+
+.summary #coupon-input:focus {
+  border: none;
+  background-color: var(--orange);
+  outline: none;
+  color: #fff;
+}
+
+.summary #coupon-input::placeholder {
+  color: #000;
+}
+
+#coupon-result {
+  color: var(--orange);
+}
+
+.summary #shippingStatue {
+  color: #fff;
+  padding: 10px;
+  font-weight: 300;
+}
+
+.summary #cart-checkout {
+  text-align: center;
+  background-color: var(--orange);
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+  border: 0;
+}
+
+.summary .payment {
+  display: flex;
+  margin: 10px 0;
+  gap: 15px;
 }
 
 /* 網站連結選單 */
