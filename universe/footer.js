@@ -1,12 +1,10 @@
 loadFooter();
 loadNavBar();
-pageLinkHide();
-changeHeaderDesign();
 
 // 當頁面加載完畢時執行載入
 document.addEventListener("DOMContentLoaded", function () {
-  loadFooter();
-  loadNavBar();
+  // loadFooter();
+  // loadNavBar();
   pageLinkHide();
   changeHeaderDesign();
 });
@@ -24,10 +22,19 @@ function loadNavBar() {
   fetch("navbar.html") // 獲取 navbar.html 的內容
     .then((response) => response.text()) // 將響應轉換為文本
     .then((html) => {
-      document.getElementById("navbar").innerHTML = html; // 將獲取的 HTML 插入到容器中
-      openMenu(); // 確保在 navbar 加載後調用 openMenu
+      // 將獲取的 HTML 插入到容器中
+      document.getElementById("navbar").innerHTML = html;
+
+      // 確保在 navbar 加載後調用
+      openMenu();
+      openCart();
       logoHoverEffect();
+      addtobag();
       checkItemNumber();
+      cardItemNumberChange();
+      checkCoupon();
+      updateSummarySubtotal();
+      updateOrderSummary();
     })
     .catch((error) => {
       console.error("載入導覽列失敗:", error);
@@ -38,17 +45,16 @@ function openMenu() {
   $("#menu-btn").click(function () {
     $(".sub-menu").hide();
     $(".menu-link").find("p:first").css("color", "#fff");
+    $("#shop-cart").hide();
     $("#menu-link-list").toggle();
+
     let navBarBGColor = $("#navbar").css("backgroundColor");
 
-    if (window.matchMedia("(width < 770px)").matches) {
-      if (navBarBGColor != "rgba(52, 74, 94, 0.9)") {
-        navBarBGColor = $("#navbar").css(
-          "backgroundColor",
-          "rgba(52, 74, 94, 0.9)"
-        );
+    if (window.matchMedia("(width < 450px)").matches) {
+      if ($("#menu-link-list").is(":visible")) {
+        $("#navbar").css("backgroundColor", "rgba(52, 74, 94, 0.9)");
       } else {
-        navBarBGColor = $("#navbar").css("backgroundColor", "transparent");
+        $("#navbar").css("backgroundColor", "transparent");
       }
     }
   });
@@ -76,16 +82,176 @@ function logoHoverEffect() {
   });
 }
 
-// 檢查 #item-number 的值
-function checkItemNumber() {
-  let itemNumber = $("#item-number").text();
-  itemNumber = parseInt(itemNumber, 10); // 轉換為數字
+// 購物車相關-------------
 
-  if (itemNumber > 0) {
-    $("#item-number").show(); // 如果 itemNumber 大於 0，則顯示
+function openCart() {
+  $("#shopping-car-icon img").click(function () {
+    $("#menu-link-list").hide();
+    $("#shop-cart").toggle();
+
+    if (window.innerWidth < 450) {
+      if ($("#shop-cart").is(":visible")) {
+        $("#navbar").css("backgroundColor", "rgba(52, 74, 94, 0.9)");
+      } else {
+        $("#navbar").css("backgroundColor", "transparent");
+      }
+    }
+  });
+}
+
+// 購物車裡 每張卡片的增減刪除事件
+function cardItemNumberChange() {
+  $(".shopbag .card").each(function () {
+    let $card = $(this);
+    let $buyNumber = $card.find(".cart-buy-number");
+    let $productTotal = $card.find(".product-total");
+
+    // 綁定減號事件
+    $card.find(".card-minus").click(function () {
+      let currentNum = parseInt($buyNumber.val(), 10);
+      if (currentNum > 1) {
+        currentNum -= 1;
+        $buyNumber.val(currentNum);
+        updateProductTotal(currentNum, $productTotal);
+        updateSummarySubtotal();
+        checkItemNumber();
+        updateOrderSummary();
+      }
+    });
+
+    // 綁定加號事件
+    $card.find(".card-plus").click(function () {
+      let currentNum = parseInt($buyNumber.val(), 10);
+      currentNum += 1;
+      $buyNumber.val(currentNum);
+      updateProductTotal(currentNum, $productTotal);
+      updateSummarySubtotal();
+      checkItemNumber();
+      updateOrderSummary();
+    });
+
+    //綁定刪除事件
+    $card.find("#delete-btn").click(function () {
+      $card.remove();
+      updateSummarySubtotal();
+      checkItemNumber();
+      updateOrderSummary();
+    });
+  });
+}
+
+// 依據該商品卡片數量更新總金額
+function updateProductTotal(quantity, $totalElement) {
+  let totalPrice = quantity * 3400;
+  let formattedTotal = `$${totalPrice.toLocaleString()}`;
+  $totalElement.text(formattedTotal);
+}
+
+// 依據所有商品卡片加總金額更新 order summary 處總金額
+function updateSummarySubtotal() {
+  let totalSum = 0;
+  $(".shopbag .card").each(function () {
+    let quantity = parseInt($(this).find(".cart-buy-number").val(), 10);
+    totalSum += quantity * 3400;
+  });
+  let formattedSum = `$${totalSum.toLocaleString()}`;
+  $("#summary-subtotal").text(formattedSum);
+}
+
+// 更新 order summary 的總金額
+function parseCurrency(str) {
+  return parseInt(str.replace(/[^0-9]/g, ""), 10);
+}
+
+function updateOrderSummary() {
+  let subtotal = parseCurrency($("#summary-subtotal").text());
+  let shippingCost;
+  let discount = parseCurrency($("#discount").text());
+
+  if (subtotal > 15000) {
+    shippingCost = 0;
+    $("#shippingStatue").text(
+      " Congratulations! Your are qualifies for free standard shipping."
+    );
   } else {
-    $("#item-number").hide(); // 否則隱藏
+    shippingCost = 500;
+    let remain = (15000 - subtotal).toLocaleString();
+    $("#shippingStatue").text(
+      `You are still $${remain} away from free shipping.`
+    );
   }
+
+  // 更新運費
+  $("#order-shipping").text(`$${shippingCost.toLocaleString()}`);
+
+  // 計算訂單總計
+  let orderTotal = subtotal + shippingCost - discount;
+  $("#order-total").text(`$${orderTotal.toLocaleString()}`);
+}
+
+// 確認折扣碼是否有效
+function checkCoupon() {
+  $("#coupon-input").on("input", function () {
+    let inputValue = $(this).val();
+    if (inputValue == "coupon") {
+      $("#coupon-result").text("Success").css("color", "var(--orange)");
+      $("#discount").text("$ 100");
+    } else {
+      $("#coupon-result").text("Fail").css("color", "#111");
+      $("#discount").text("$ 0");
+    }
+    updateOrderSummary();
+  });
+}
+
+// 更新導覽列上購物車圖示的數量
+function checkItemNumber() {
+  let orderSummary = 0;
+
+  $(".card-buttom").each(function () {
+    orderSummary += parseInt($(this).find(".cart-buy-number").val(), 10);
+  });
+
+  $("#cart-product-total").text(orderSummary);
+  $("#cart-item-number").text(orderSummary);
+  let itemNumber = $("#cart-item-number").text();
+
+  // > 0 則顯示在導覽列上
+  itemNumber = parseInt(itemNumber, 10); // 轉換為數字
+  if (itemNumber > 0) {
+    $("#cart-item-number").show(); // 如果 itemNumber 大於 0，則顯示
+  } else {
+    $("#cart-item-number").hide(); // 否則隱藏
+  }
+}
+
+// 加入購物車
+function addtobag() {
+  // 存储.card元素
+  let cardTemplate = $(".cart .product-list .card").first().clone();
+
+  // 监听add-btn的点击事件
+  $("#add-btn").click(function () {
+    // 複製.card元素
+    let newCard = cardTemplate.clone();
+
+    // 获取radio的值並更新到新的.card元素中
+    let colorValue = $('input:radio[name="color"]:checked').val();
+    let sizeValue = $('input:radio[name="buy-size"]:checked').val();
+    let numValue = $("#buy-number").val();
+
+    newCard.find(".card-color").text(colorValue);
+    newCard.find(".card-size").text(sizeValue);
+    newCard.find(".cart-buy-number").val(numValue);
+
+    // 將新的.card元素添加到.product-list中
+    $(".cart .product-list").append(newCard);
+    checkItemNumber();
+    cardItemNumberChange();
+    checkCoupon();
+    updateSummarySubtotal();
+    updateOrderSummary();
+  });
 }
 
 // 頁首格式相關----------------------------------------------

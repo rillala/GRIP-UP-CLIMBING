@@ -20,6 +20,7 @@ $(document).resize(function () {
   ifSmallSize();
   productDetailShow();
 });
+
 //更換商品圖片
 const currentPic = document.getElementById("showPic");
 

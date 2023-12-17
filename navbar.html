@@ -6,12 +6,12 @@
 <nav>
   <ul>
     <li class="nav-list">
-      <a href="#購物車" class="shpping-car-icon"
-        ><img src="./universe/car.svg" alt="shopping-car" />
-        <div id="item-number" class="middle h5">3</div></a
-      >
+      <div class="shopping-car-icon" id="shopping-car-icon">
+        <img src="./universe/car.svg" alt="shopping-car" />
+        <div id="cart-item-number" class="middle h5">3</div>
+      </div>
       <div class="cart" id="shop-cart">
-        <h3 class="section-title">Shopping Bag</h3>
+        <h4 class="section-title">Shopping Bag</h4>
         <div class="shopbag">
           <div class="product-list">
             <div class="card">
@@ -27,9 +27,15 @@
                     </p>
                     <div class="info-down psmall">
                       <p class="itemID">Item: ID246890</p>
-                      <p class="itemColor">Color: <span>Black</span></p>
-                      <p class="itemSize">Size: <span>7.5</span></p>
-                      <p class="itemPrice">Unit Price: $3,400</p>
+                      <p class="itemColor">
+                        Color: <span class="card-color">Black</span>
+                      </p>
+                      <p class="itemSize">
+                        Size: <span class="card-size">US 7.5</span>
+                      </p>
+                      <p class="itemPrice">
+                        Unit Price: <span class="itemPrice-num">$3,400</span>
+                      </p>
                       <div class="select-box">
                         <div class="select-wrap">
                           <span>Color: </span
@@ -70,96 +76,16 @@
 
                 <div class="card-buttom">
                   <div class="number-wrap">
-                    <div class="cal h6" id="minus">-</div>
+                    <div class="cal h6 card-minus">-</div>
                     <input
                       type="number"
-                      name=""
-                      id="cart-buy-number"
+                      class="cart-buy-number"
                       min="1"
                       value="1"
                     />
-                    <div class="cal h6" id="plus">+</div>
+                    <div class="cal h6 card-plus">+</div>
                   </div>
-                  <p class="product-total h4">$6,800</p>
-                </div>
-              </div>
-
-              <div class="card-edit">
-                <div id="edit-btn">
-                  <img src="./universe/edit.svg" alt="edit" />
-                </div>
-                <div id="delete-btn">
-                  <img src="./universe/trash.svg" alt="delete" />
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-info">
-                <div class="info-wrap">
-                  <div class="pic">
-                    <img src="./shop/shoes1.png" alt="productPic" />
-                  </div>
-
-                  <div class="info">
-                    <p class="productName pbig">
-                      GRIP UP Modern Approach Shoes
-                    </p>
-                    <div class="info-down psmall">
-                      <p class="itemID">Item: ID246890</p>
-                      <p class="itemColor">Color: <span>Black</span></p>
-                      <p class="itemSize">Size: <span>7.5</span></p>
-                      <p class="itemPrice">Unit Price: $3,400</p>
-                      <div class="select-box">
-                        <div class="select-wrap">
-                          <span>Color: </span
-                          ><select
-                            class="pbig"
-                            name=""
-                            id="approachShoe-edit-color"
-                          >
-                            <option value="black">Black</option>
-                            <option value="orange">Orange</option>
-                            <option value="gray">Gray</option>
-                          </select>
-                        </div>
-                        <div class="select-wrap">
-                          <span>Size: </span
-                          ><select
-                            class="pbig"
-                            name=""
-                            id="approachShoe-cart-size"
-                          >
-                            <option value="4">4</option>
-                            <option value="4.5">4.5</option>
-                            <option value="5">5</option>
-                            <option value="5.5">5.5</option>
-                            <option value="6">6</option>
-                            <option value="6.5">6.5</option>
-                            <option value="7">7</option>
-                            <option value="7.5">7.5</option>
-                            <option value="8">8</option>
-                            <option value="8.5">8.5</option>
-                            <option value="9">9</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card-buttom">
-                  <div class="number-wrap">
-                    <div class="cal h6" id="minus">-</div>
-                    <input
-                      type="number"
-                      name=""
-                      id="cart-buy-number"
-                      min="1"
-                      value="1"
-                    />
-                    <div class="cal h6" id="plus">+</div>
-                  </div>
-                  <p class="product-total h4">$6,800</p>
+                  <p class="product-total h4">$3,400</p>
                 </div>
               </div>
 
@@ -176,17 +102,17 @@
         </div>
         <h4 class="section-title">
           Order Summary
-          <p id="cart-priduct-total">(6)</p>
+          <p>(<span id="cart-product-total">6</span>)</p>
         </h4>
         <div class="summary">
           <div class="card">
             <div class="subtotal pbig">
               <p class="rowName">Item(s) Subtotal</p>
-              <p>$ 6,800</p>
+              <p id="summary-subtotal">$ 3,400</p>
             </div>
             <div class="shipping pbig">
               <p class="rowName">Est. Shipping</p>
-              <p>$ 0</p>
+              <p id="order-shipping">$ 500</p>
             </div>
             <div class="coupon pbig">
               <input
@@ -197,17 +123,17 @@
                 placeholder="apply coupon"
               />
               <p class="pbig" id="coupon-result"></p>
-              <p id="discount">-$ 0</p>
+              <p>-<span id="discount">$ 0</span></p>
             </div>
             <h5 class="total">
               <p class="typeNmae">Order Total</p>
-              <p class="price">$ 6,800</p>
+              <p class="price" id="order-total">$ 3,400</p>
             </h5>
           </div>
           <p class="pbig" id="shippingStatue">
             Congratulations! Your are qualifies for free standard shipping.
           </p>
-          <button type="submit" class="h3" id="cart-checkout">CHECK OUT</button>
+          <button type="submit" class="h4" id="cart-checkout">CHECK OUT</button>
 
           <div class="payment">
             <div class="paymentPic">
