@@ -248,15 +248,14 @@ function checkItemNumber() {
 
 // 加入購物車
 function addtobag() {
-  // 存储.card元素
+  // 先複製一份card
   let cardTemplate = $(".cart .product-list .card").first().clone();
 
-  // 监听add-btn的点击事件
   $("#add-btn").click(function () {
     // 複製.card元素
     let newCard = cardTemplate.clone();
 
-    // 获取radio的值並更新到新的.card元素中
+    // 抓選擇的顏色的尺寸, 寫入到 card 範本中
     let colorValue = $('input:radio[name="color"]:checked').val();
     let sizeValue = $('input:radio[name="buy-size"]:checked').val();
     let numValue = $("#buy-number").val();
@@ -265,7 +264,7 @@ function addtobag() {
     newCard.find(".card-size").text(sizeValue);
     newCard.find(".cart-buy-number").val(numValue);
 
-    // 將新的.card元素添加到.product-list中
+    // 將新的 .card 元素添加到 .product-list 中
     $(".cart .product-list").append(newCard);
     checkItemNumber();
     cardItemNumberChange();
@@ -287,18 +286,18 @@ function changeHeaderDesign() {
   }
 }
 
+const fileArr = [
+  "center.html",
+  "community.html",
+  "courseActivity.html",
+  "FAQ.html",
+  "product.html",
+  "shop.html",
+  "team.html",
+];
+
 function pageLinkHide() {
   //看能不能改掉
-  const fileArr = [
-    "center.html",
-    "community.html",
-    "courseActivity.html",
-    "FAQ.html",
-    "product.html",
-    "shop.html",
-    "team.html",
-  ];
-
   if (fileArr.some((file) => window.location.href.includes(file))) {
     if (window.innerWidth < 770) {
       $(".pagelink").hide();

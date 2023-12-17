@@ -327,7 +327,7 @@ section .wrap {
 
 #slogan span {
   position: relative;
-  left: -250%;
+  left: -400%;
 }
 
 @media (width < 770px) {
