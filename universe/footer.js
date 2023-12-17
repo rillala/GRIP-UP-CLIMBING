@@ -259,10 +259,15 @@ function addtobag() {
     let colorValue = $('input:radio[name="color"]:checked').val();
     let sizeValue = $('input:radio[name="buy-size"]:checked').val();
     let numValue = $("#buy-number").val();
+    let subtotalPrice = (
+      parseInt($("#buy-number").val()) * 3400
+    ).toLocaleString();
+    // $${orderTotal.toLocaleString()}
 
     newCard.find(".card-color").text(colorValue);
     newCard.find(".card-size").text(sizeValue);
     newCard.find(".cart-buy-number").val(numValue);
+    newCard.find(".product-total").text(`$${subtotalPrice}`);
 
     // 將新的 .card 元素添加到 .product-list 中
     $(".cart .product-list").append(newCard);

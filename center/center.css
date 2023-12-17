@@ -335,6 +335,9 @@ section.branches {
   column-gap: 70px;
 }
 
+.facility .news-list .news-card {
+  display: contents;
+}
 @media (width < 770px) {
   .facility .news-list {
     width: 100%;
@@ -354,11 +357,6 @@ section.branches {
     display: block;
   }
 }
-
-.facility .news-list .news-card {
-  display: contents;
-}
-
 .facility .news-card .subwrapA-1 {
   grid-column: 2/3;
   grid-row: 1/2;
