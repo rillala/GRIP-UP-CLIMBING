@@ -131,11 +131,32 @@ function cardItemNumberChange() {
     });
 
     //綁定刪除事件
-    $card.find("#delete-btn").click(function () {
+    $card.find(".delete-btn").click(function () {
       $card.remove();
       updateSummarySubtotal();
       checkItemNumber();
       updateOrderSummary();
+    });
+
+    $card.find(".edit-btn").click(function () {
+      // 使用.attr()來獲取和設置圖像的src屬性
+      let imgSrc = $(this).find("img").attr("src");
+
+      if (imgSrc.includes("edit")) {
+        $(this).find("img").attr("src", "./universe/check.svg");
+        $(".select-box").show();
+      } else {
+        $(this).find("img").attr("src", "./universe/edit.svg");
+        $(".select-box").hide();
+
+        // 更新卡片的顏色和尺寸
+        let colorValue = $card.find(".approachShoe-edit-color").val();
+        let sizeValue = $card.find(".approachShoe-cart-size").val();
+        console.log(colorValue);
+
+        $card.find(".card-color").text(colorValue);
+        $card.find(".card-size").text(sizeValue);
+      }
     });
   });
 }
