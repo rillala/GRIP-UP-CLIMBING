@@ -208,6 +208,13 @@ header {
   background-position: bottom;
 }
 
+@media (width < 770px) {
+  .no-scroll {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+
 /*頁面導覽列*/
 #navbar {
   width: 100%;
@@ -628,7 +635,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100vw;
   height: calc(100vh - 80px);
   /* min-height: calc(100vh - 120px); */
-  padding: 80px 20px 40px 20px;
+  padding: 60px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   display: none;
@@ -896,8 +903,6 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* 頁首快速連結按鈕 */
 
-
-
 header .pagelink ul {
   display: grid;
   align-items: center;
@@ -918,10 +923,9 @@ header .pagelink ul a {
 }
 
 @media (width < 770px) {
-  
   header .pagelink {
-  overflow: hidden;
-}
+    overflow: hidden;
+  }
   header .pagelink ul {
     display: flex;
     flex-direction: column;

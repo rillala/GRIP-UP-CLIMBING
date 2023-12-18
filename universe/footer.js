@@ -53,8 +53,10 @@ function openMenu() {
     if (window.matchMedia("(width < 450px)").matches) {
       if ($("#menu-link-list").is(":visible")) {
         $("#navbar").css("backgroundColor", "rgba(52, 74, 94, 0.9)");
+        document.body.classList.add("no-scroll");
       } else {
         $("#navbar").css("backgroundColor", "transparent");
+        document.body.classList.remove("no-scroll");
       }
     }
   });
