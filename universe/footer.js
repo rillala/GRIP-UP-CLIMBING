@@ -196,6 +196,10 @@ function updateOrderSummary() {
     $("#shippingStatue").text(
       " Congratulations! Your are qualifies for free standard shipping."
     );
+  } else if (subtotal == 0) {
+    shippingCost = 0;
+    let remain = (15000 - subtotal).toLocaleString();
+    $("#shippingStatue").text(`Spend over $15,000 now to get free shipping!`);
   } else {
     shippingCost = 500;
     let remain = (15000 - subtotal).toLocaleString();
