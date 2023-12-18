@@ -300,8 +300,9 @@ section.branches {
   overflow: hidden;
 }
 .price .ticket-price tbody td:hover a.hover,
-.price .ticket-price tbody td:focus a.hover {
-  width: 60%;
+.price .ticket-price tbody td:focus a.hover,
+.active-hover {
+  width: 60% !important;
 }
 
 .price .ticket-price a.hover {

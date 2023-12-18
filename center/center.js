@@ -44,3 +44,15 @@ function shortenTicketType() {
     tdElements.eq(i + 1).text(`${big[i]}`);
   }
 }
+
+document.querySelectorAll(".ticket-price td").forEach((td) => {
+  td.addEventListener("click", function () {
+    const aHover = this.querySelector("a.hover");
+    if (aHover) {
+      aHover.classList.add("active-hover");
+      setTimeout(() => {
+        aHover.classList.remove("active-hover");
+      }, 1000); // 1000 毫秒後移除效果
+    }
+  });
+});
