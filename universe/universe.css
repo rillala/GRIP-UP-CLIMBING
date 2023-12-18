@@ -896,9 +896,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* 頁首快速連結按鈕 */
 
-header .pagelink {
-  overflow: hidden;
-}
+
 
 header .pagelink ul {
   display: grid;
@@ -920,6 +918,10 @@ header .pagelink ul a {
 }
 
 @media (width < 770px) {
+  
+  header .pagelink {
+  overflow: hidden;
+}
   header .pagelink ul {
     display: flex;
     flex-direction: column;
