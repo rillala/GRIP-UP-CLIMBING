@@ -389,8 +389,10 @@ header .pagelink ul {
 
 .dynamic .news-card .text .hashtag {
   display: block;
-  padding: 5px 0;
+  padding: 2px 0;
   color: var(--darkgray);
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .dynamic .news-card .text .readmore {

@@ -849,7 +849,7 @@ input[type="number"]::-webkit-outer-spin-button {
 /* 各頁面共用部分 */
 
 .readmore {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 2%;

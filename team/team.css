@@ -271,6 +271,9 @@ header {
   padding: 0 5px;
   color: var(--lightgray);
   line-height: 28px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: -5px;
 }
 
 @media (width < 768px) {
