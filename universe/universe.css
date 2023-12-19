@@ -999,7 +999,6 @@ section.content {
   }
 
   .backtotop .top-wrap {
-    top: 600px;
     width: 40px;
     height: 40px;
   }
@@ -1012,5 +1011,17 @@ section.content {
 
   .backtotop .top-wrap p {
     display: none;
+  }
+}
+
+@media screen and (width < 450px) and (height > 800px) {
+  .backtotop .top-wrap {
+    top: 800px;
+  }
+}
+
+@media screen and (width < 450px) and (height < 800px) {
+  .backtotop .top-wrap {
+    top: 600px;
   }
 }
