@@ -635,7 +635,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 100vw;
   height: calc(100vh - 80px);
   /* min-height: calc(100vh - 120px); */
-  padding: 60px 20px 40px 20px;
+  padding: 40px 20px 40px 20px;
   display: flex;
   flex-direction: column;
   display: none;
@@ -999,9 +999,8 @@ section.content {
   }
 
   .backtotop .top-wrap {
-    position: sticky;
-    top: 800px;
-    width: 70px;
+    top: 600px;
+    width: 40px;
     height: 40px;
   }
 
