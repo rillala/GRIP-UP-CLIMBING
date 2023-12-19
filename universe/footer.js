@@ -101,18 +101,26 @@ function openCart() {
   });
 }
 
-// 購物車裡 每張卡片的增減刪除事件
+// 購物車裡 每張卡片的商品數量(1)增減(2)刪除(3)編輯事件
 function cardItemNumberChange() {
   $(".shopbag .card").each(function () {
     let $card = $(this);
+
     let $buyNumber = $card.find(".cart-buy-number");
     let $productTotal = $card.find(".product-total");
+
+    //解除之前綁定的事件, 下方重新對所有卡片進行綁定, 避免數字上的重複綁定動作
+    $card.find(".card-minus").off("click");
+    $card.find(".card-plus").off("click");
+    $card.find(".delete-btn").off("click");
+    $card.find(".edit-btn").off("click");
 
     // 綁定減號事件
     $card.find(".card-minus").click(function () {
       let currentNum = parseInt($buyNumber.val(), 10);
+      console.log(currentNum);
       if (currentNum > 1) {
-        currentNum -= 1;
+        currentNum--;
         $buyNumber.val(currentNum);
         updateProductTotal(currentNum, $productTotal);
         updateSummarySubtotal();
@@ -124,7 +132,8 @@ function cardItemNumberChange() {
     // 綁定加號事件
     $card.find(".card-plus").click(function () {
       let currentNum = parseInt($buyNumber.val(), 10);
-      currentNum += 1;
+      console.log(currentNum);
+      currentNum++;
       $buyNumber.val(currentNum);
       updateProductTotal(currentNum, $productTotal);
       updateSummarySubtotal();
@@ -142,14 +151,15 @@ function cardItemNumberChange() {
 
     $card.find(".edit-btn").click(function () {
       // 使用.attr()來獲取和設置圖像的src屬性
-      let imgSrc = $(this).find("img").attr("src");
+      let $img = $card.find(".edit-btn img");
+      let imgSrc = $img.attr("src");
 
       if (imgSrc.includes("edit")) {
-        $(this).find("img").attr("src", "./universe/check.svg");
-        $(".select-box").show();
+        $img.attr("src", "./universe/check.svg");
+        $card.find(".select-box").show();
       } else {
-        $(this).find("img").attr("src", "./universe/edit.svg");
-        $(".select-box").hide();
+        $img.attr("src", "./universe/edit.svg");
+        $card.find(".select-box").hide();
 
         // 更新卡片的顏色和尺寸
         let colorValue = $card.find(".approachShoe-edit-color").val();
@@ -252,10 +262,11 @@ function checkItemNumber() {
   }
 }
 
+// 暫時先這樣處理, 之後要建物件 + card 結構進 js 和 localStorage
 // 加入購物車
 function addtobag() {
   // 先複製一份card
-  let cardTemplate = $(".cart .product-list .card").first().clone();
+  let cardTemplate = $(".cart .product-list .card").first().clone(false);
 
   $("#add-btn").click(function () {
     // 複製.card元素
