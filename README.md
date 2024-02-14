@@ -40,10 +40,10 @@ cd grip-up-climbing
 
 由於專案僅包含 HTML, CSS, 和 JavaScript，無需進行額外的安裝步驟。你可以使用任何靜態文件伺服器來預覽網站，例如使用 Python 的 HTTP 伺服器：
 
-# 如果你有安裝 Python 3
+### 如果你有安裝 Python 3
 python -m http.server
 
-# 或者使用 Python 2
+### 或者使用 Python 2
 python -m SimpleHTTPServer
 
 然後在瀏覽器中訪問 http://localhost:8000 來查看網站。
