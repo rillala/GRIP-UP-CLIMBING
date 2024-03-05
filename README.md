@@ -1,5 +1,4 @@
-# Grip Up Climbing 網站
-https://rillala.github.io/GRIP-UP-CLIMBING
+# [Grip Up Climbing 網站](https://rillala.github.io/GRIP-UP-CLIMBING)
 
 ## 專案描述
 
@@ -9,6 +8,8 @@ https://rillala.github.io/GRIP-UP-CLIMBING
 Grip Up, Look Up, Climb Up——我們激勵大家把握攀爬的瞬間、勇於挑戰可能性，一起攀向更高峰！
 
 此網站主要功能包括提供攀岩相關資訊、場館介紹、課程與活動介紹、商品銷售與線上購物功能、攀岩社群介紹以及回應常見問題。
+
+[Grip Up Climbing 設計介紹簡報](https://drive.google.com/file/d/1TCYVRgFQY2l5QkB-WVH665kLSI5IXLQ0/view?usp=sharing)
 
 ## 網站架構
 
